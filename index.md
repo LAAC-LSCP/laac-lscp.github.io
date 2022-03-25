@@ -10,6 +10,8 @@ permalink: /
 
 ## Mission statement
 
+---
+
 We work on early language acquisition. We are interested in how children come to learn their native language(s), what kinds of experiences they require to do this, and what kinds of biases and learning mechanisms they bring to the task. To this end, we use every tool available: lab experiments and computational modeling to check for specific learning mechanisms, analyses of day-long recordings and other corpora to describe input and outcomes, cohort analyses to study individual and group variation, meta-analyses to synthesize evidence, etc.
 
 External validity is very important for us: We want to study language as it happens in the real world. This also entails studying language where it actually happens. Since most children are not growing up in Europe but in Africa & Asia, and more generally in low-income settings, we make it a goal to have their experiences and outcomes represented in the literature.
