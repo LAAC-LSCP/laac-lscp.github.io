@@ -12,6 +12,10 @@ description: "Communication basics around the lab"
 Lab language is English (including scientific meetings).
 Depending on who is involved, discussion may also be in French sometimes
 
+## Mattermost
+
+We use [mattermost](https://mattermost.cognitive-ml.fr/laac/) as a way to discuss in the team on a daily bases. You will need to have an account and be added to the team channel.
+
 ## Meetings
 
 Our meetings will typically be 30 mins long once a week.
