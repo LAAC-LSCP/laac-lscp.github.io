@@ -27,7 +27,7 @@ parent: Getting started
 
 ## Getting down to business
 
-- [ ] get your computer :
+- [ ] get your computer :   
 
     - Do not forget to encrypt the hard drive.
     - Pick a tough password (consider 1password or similar)

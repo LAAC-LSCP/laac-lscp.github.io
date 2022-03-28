@@ -32,6 +32,11 @@ If there are issues that would make it better for you to work from elsewhere you
 - The kitchen is free for use, you can use the fridge & coffee machine but please read the instructions posted in the kitchen. Note you'll be expected to pitch in for cleaning if you do use the kitchen…
 - There is also a coffee machine in the main hall downstairs, which is mug adaptable
 
+## Equipement
+
+- If you are missing computer hardware (cables, peripherals), you can ask Michel or Vireack.
+- If you are missing pens, notebooks, etc - ask Radhia
+
 ## Additional literature
 
 - règlement intérieur
