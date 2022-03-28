@@ -37,3 +37,14 @@ parent: Getting started
 - [ ] Set up your access to [oberon](../oberon) and learn the way it operates.
 
 - [ ] Install [ChildProject](../childproject) and make sure you understand how to use it.
+
+<!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
+-->
+<script>
+var inp = document.getElementsByTagName("input")
+for (var i = 0; i < inp.length; i++) {
+    if ( inp[i].type == "checkbox" ) {
+        inp[i].disabled=false;
+    }
+}
+</script>
