@@ -1,6 +1,6 @@
 # laac-lscp.github.io
 
-This is the Lab book of the language acquisition across cultures team in the LSCP.
+This is the handbook of the language acquisition across cultures team in the LSCP.
 
 You can access the website [here](https://laac-lscp.github.io/)
 
