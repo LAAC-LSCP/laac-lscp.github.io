@@ -13,9 +13,7 @@ The lab is open from 9am to 7pm. You can get buzzed in by security through the 2
 
 - you need your card to re-enter the lab after going to the restroom
 
-*--code of the lab door--*
-
-*--code for the room key--*
+- codes to access the lab are kept [here](https://github.com/LAAC-LSCP/private-lab-info/blob/main/access_codes.md)
 
 ## Teleworking
 
