@@ -6,26 +6,9 @@ parent: Getting started
 
 # Getting started as an intern
 
-## Some paperwork
-- [ ] Sign charte informatique.
-
-- [ ] Get ENS card.
-
-- [ ] Check that you are on mailing lists (coml, vacataires, laac).
+## Getting down to business
 
 - [ ] Alex should ask Gwendal/Nick to add you on oberon and in the laac group. This will allow you to connect to the server and to the [ComL wiki](https://wiki.cognitive-ml.fr/).
-
-## The lab environment
-- [ ] Read [how communication is organized](../communication) in the lab.
-
-- [ ] Check the [administrative and logistic information](../logistics).
-
-- [ ] Read through the [ethics information](../ethics).
-
-- [ ] meet people (permanents)
-[People in the LSCP]()
-
-## Getting down to business
 
 - [ ] get your computer :   
 
