@@ -15,7 +15,7 @@ has_toc: false
 
 - [ ] Get and sign the charte informatique from Michel Dutat.
 
-- [ ] Get ENS card.
+- [ ] Get ENS card if you don't have one.
 
 - [ ] If you are not getting any emails from the team, the lab, or the department ask Philippe -- we may have forgotten to put you in the relevant mailing lists
 
@@ -34,7 +34,9 @@ has_toc: false
 
 - [annotator](./getting-started/annotators)
 
-- [intern](./getting-started/interns)
+- [intern with a technical task (NLP, ML)](./getting-started/interns-tech)
+
+- [other intern](./getting-started/interns-other)
 
 - [manager](./getting-started/managers)
 
