@@ -27,18 +27,18 @@ has_toc: false
 
 - [ ] Read and complete the [ethics formation](./ethics).
 
-- [ ] meet people - you can find out their names, emails, & office number in 
+- [ ] Meet people - you can find out their names, emails, & office number in 
 [People in the LSCP](https://docs.google.com/spreadsheets/d/1-e8knsDx-rcT-nSBc66jt5cV6788EMgOjDpw8wzcfe4/edit#gid=1013895259)
 
 ## what's next? select your role:
 
-- [annotator](./getting-started/annotators)
+- [Annotator](./getting-started/annotators)
 
-- [intern with a technical task (NLP, ML)](./getting-started/interns-tech)
+- [Intern or visitor with a technical task (NLP, ML)](./getting-started/interns-tech)
 
-- [other intern](./getting-started/interns-other)
+- [Other intern](./getting-started/interns-other)
 
-- [manager](./getting-started/managers)
+- [Manager](./getting-started/managers)
 
 <!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
 -->
