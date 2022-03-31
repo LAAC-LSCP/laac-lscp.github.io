@@ -18,11 +18,17 @@ We use [mattermost](https://mattermost.cognitive-ml.fr/laac/) as a way to discus
 
 ## Meetings
 
-Our meetings will typically be 30 mins long once a week.
+We usually have a team meeting every week where we discuss various topics and where people can present their work.
 
-We usualy do a goal review once a month.
+Tipically a plenary meeting for the whole lab takes place once a month.
 
-Consider keeping record of all decisions relevant to some project in some central location (eg create channels in mattermost, or projects on github, etc)
+Other teams in the lab, like the CoML team for example, have their own meeting. You may want to attend some of them occasionaly.
+
+The LSCP calendar is available [here.](https://calendar.google.com/calendar/embed?src=vsvnk7q30d9h9lj866g25m98ok%40group.calendar.google.com&ctz=Europe%2FParis)
+
+---
+
+The department (DEC) is hosting a lot of events and seminars. Once you're on the mailing lists, you should receive a schedule of the upcoming meetings every week.
 
 ## When you need someone
 

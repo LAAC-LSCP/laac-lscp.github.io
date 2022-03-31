@@ -8,8 +8,8 @@ parent: Getting started
 
 <!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
 -->
-<!--- Enables the checkboxes-->
 <script>
+//Enables the checkboxes
 var inp = document.getElementsByTagName("input");
 for (var i = 0; i < inp.length; i++) {
     if ( inp[i].type == "checkbox" ) {
