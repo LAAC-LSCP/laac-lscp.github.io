@@ -17,7 +17,7 @@ has_toc: false
 
 - [ ] Get and sign the charte informatique from Michel Dutat.
 
-- [ ] Get ENS card if you don't have one.
+- [ ] How to get ENS card : 48 hours or 72 hours after signing your contract, you will have to go to 45 rue d'Ulm, enter the main building, take the left and arrive at the card service (open Monday to Friday between 9:00 to 12:00 and 13:00 to 16:00). You will need to bring your identity card, then the ENS card will be produced to you immediately. 
 
 - [ ] If you are not getting any emails from the team, the lab, or the department ask Philippe -- we may have forgotten to put you in the relevant mailing lists
 
