@@ -13,6 +13,8 @@ has_toc: false
 
 - [ ] You will need a [GitHub](https://github.com) account to view the information that we keep private. Create an account if you don't have one and tell your handle to Loann.
 
+- [ ] Create an account in mattermost, the system we use for most communication. To do so click [here](https://mattermost.cognitive-ml.fr/signup_user_complete/?id=jmes7xi5obbmtnjw1bnn1o8tnh) and follow the instructions. When you're done creating the account, let Loann know and ask him to add you to the LAAC and LSCP teams.  Depending on your topic, you may also want to ask to be added to the CoML team.
+
 - [ ] Get and sign the charte informatique from Michel Dutat.
 
 - [ ] Get ENS card if you don't have one.
