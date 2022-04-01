@@ -15,6 +15,11 @@ The people in LAAC you'll likely interact are:
 - Philippe Dauli, our project manager. Talk to him about administrative matters (getting your convention de stage signed, getting an ENS card, etc.)
 - Loann Peurey, our data manager & software engineer. Talk to him about technical matters (access to the cluster, using ChildProject, etc.)
 
-We are part of a bigger lab (~ 70 people): The [Cognitive Sciences and Psycholinguistics Lab (LSCP)](https://lscp.dec.ens.fr/) is a joint research unit of the School of Advanced Studies in the Social Sciences (EHESS, École des Hautes Études en Sciences Sociales), the Ecole Normale Supérieure, and the National Centre for Scientific Research (CNRS, Centre National de la Recherche Scientifique). The aim of the research at LSCP is to understand the psychological mechanisms underlying the acquisition and functioning of typical human cognitive functions, such as language, social cognition, and consciousness. Within the LSCP, our team works closely with the [Cognitive Machine Learning (CoML) team](https://cognitive-ml.fr/).
+We are part of a bigger lab (~ 70 people): The [Cognitive Sciences and Psycholinguistics Lab (LSCP)](https://lscp.dec.ens.fr/) is a joint research unit of the School of Advanced Studies in the Social Sciences (EHESS, École des Hautes Études en Sciences Sociales), the Ecole Normale Supérieure, and the National Centre for Scientific Research (CNRS, Centre National de la Recherche Scientifique). The aim of the research at LSCP is to understand the psychological mechanisms underlying the acquisition and functioning of typical human cognitive functions, such as language, social cognition, and consciousness. Here's the "organigramme" of the LSCP:
+
+INSERT PICTURE PDF HERE
+
+
+Within the LSCP, our team works closely with the [Cognitive Machine Learning (CoML) team](https://cognitive-ml.fr/). They are the largest team in the LSCP (~25 people) and are physically in a different place (45 rue d'ulm). Echolalia is a work group within CoML, and they produce the babylogger. 
 
 One level up, our laboratory is located in the [Department of Cognitive Studies (DEC)](https://cognition.ens.fr/fr) of the Ecole Normale Supérieure, which is part of PSL University. If your head is spinning with so many acronyms and institutions, don't worry: It's normal.
