@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Intern
+title: Intern with technical task
 parent: Getting started
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Intern
+title: Other Intern
 parent: Getting started
+nav_order: 2
 ---
 
 # Getting started as an intern
