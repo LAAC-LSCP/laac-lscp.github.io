@@ -2,6 +2,7 @@
 layout: default
 title: Intern with technical task
 parent: Getting started
+nav_order: 1
 ---
 
 # Getting started as an intern
