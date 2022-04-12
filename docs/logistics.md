@@ -35,6 +35,10 @@ If there are issues that would make it better for you to work from elsewhere you
 - If you are missing computer hardware (cables, peripherals), you can ask Michel or Vireack.
 - If you are missing pens, notebooks, etc - ask Radhia
 
+## Training opportunities
+
+If you would like to get training on topics ranging from statistics, programming, to French as a foreign language, you can ask Radhia Achheb, who is 'correspondante formation'". Once you know when the course will take place & how long it lasts, ask Alex whether it would be appropriate for your project.
+
 ## Additional literature
 
 - règlement intérieur
