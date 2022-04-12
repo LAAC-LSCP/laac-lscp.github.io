@@ -26,7 +26,7 @@ Typically on the first Tuesday of each month, a plenary meeting for the whole la
 
 On the second Tuesday of each month, we currently have a meeting on Benchmarking human and machines' speech perception (4-5pm). 
 
-The other Tuesdays, we usually have a team meeting where we discuss various topics and where people can present their work (2-3pm). This is the perfect place to share news (did you get an abstract accepted somewhere? did you apply for a PhD program? etc) and ask general questions (what are some good books on the topic to read?)
+The other Tuesdays, we usually have a team meeting where we discuss various topics and where people can present their work (2-3pm). This is the perfect place to share news (did you get an abstract accepted somewhere? did you apply for a PhD program? etc) and ask general questions (what are some good books on the topic to read?).
 
 
 Other teams in the lab, like the CoML team for example, have their own meeting. You may want to attend some of them occasionally.

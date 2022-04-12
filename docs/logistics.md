@@ -21,11 +21,11 @@ teleworking 40% is allowed (but needs to be declared on a platform -- ask Radhia
 
 Most people are around on Tuesdays (Mondays, Thursdays).
 
-If there are issues that would make it better for you to work from elsewhere you can totally do this! If it happens very frequently, let us know - perhaps there is something we can do to fix the situation
+If there are issues that would make it better for you to work from elsewhere you can totally do this! If it happens very frequently, let us know - perhaps there is something we can do to fix the situation.
 
 ## Lunch
 
-- You can eat at the “cantine ENS”, located inside 45 rue d’Ulm (just follow the noon crowd!). Menus for outsiders are about 9E but quiches and sandwiches at the bar (at the end of the room) are 2-3E - you'll probably have an intermediate price. Ask about this when getting the ENS card 
+- You can eat at the “cantine ENS”, located inside 45 rue d’Ulm (just follow the noon crowd!). Menus for outsiders are about 9E but quiches and sandwiches at the bar (at the end of the room) are 2-3E - you'll probably have an intermediate price. Ask about this when getting the ENS card.
 - You can also get a sandwich etc from a nearby store (several on e.g. rue Saint Jacques, rue du pot de fer, rue mouffetard). 
 - The kitchen is free for use, you can use the fridge & coffee machine but please read the instructions posted in the kitchen. Note you'll be expected to pitch in for cleaning if you do use the kitchen…
 - There is also a coffee machine in the main hall downstairs, which is mug adaptable
@@ -33,11 +33,11 @@ If there are issues that would make it better for you to work from elsewhere you
 ## Equipement
 
 - If you are missing computer hardware (cables, peripherals), you can ask Michel or Vireack.
-- If you are missing pens, notebooks, etc - ask Radhia
+- If you are missing pens, notebooks, etc - ask Radhia.
 
 ## Training opportunities
 
-If you would like to get training on topics ranging from statistics, programming, to French as a foreign language, you can ask Radhia Achheb, who is 'correspondante formation'". Once you know when the course will take place & how long it lasts, ask Alex whether it would be appropriate for your project.
+If you would like to get training on topics ranging from statistics, programming, to French as a foreign language, you can ask Radhia Achheb, who is 'correspondante formation'. Once you know when the course will take place & how long it lasts, ask Alex whether it would be appropriate for your project.
 
 ## Additional literature
 
