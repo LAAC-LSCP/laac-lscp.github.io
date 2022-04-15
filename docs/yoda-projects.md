@@ -41,6 +41,7 @@ The next step is to install the datasets you need for your project. Choose where
 
 ### Getting subdatasets
 
+-----
 On oberon with the dataset available locally
 {: .label }
 
@@ -56,9 +57,9 @@ We now have a local dataset linked to our project. However, if one day we publis
 ```bash
 cd .. # root of the superdataset
 datalad subdatasets -d . --set-property url git@gin.g-node.org:/LAAC-LSCP/mydata.git datasets/mydata
-datalad subdatasets -d . --set-property datalad-url git@gin.g-node.org:/LAAC-LSCP/vanuatu.git datasets/mydata
+datalad subdatasets -d . --set-property datalad-url git@gin.g-node.org:/LAAC-LSCP/mydata.git datasets/mydata
 ```
-
+-----
 Outside the lab or if the dataset is not present locally
 {: .label }
 
@@ -69,7 +70,7 @@ cd datasets
 datalad clone -d .. git@gin.g-node.org:/LAAC-LSCP/mydata.git # for example to install a dataset named mydata
 cd mydata
 ```
-
+-----
 ### Getting the needed data
 Now that your datasets are installed and correctly nested, you will want to access the data files you need. If you have worked with datalad and git annex before, you know that large files content is not present yet, we need to ask datalad to retrieve it for us using `datalad get`.
 ```bash
@@ -89,6 +90,8 @@ Every time you finished a task (even a small one), you should the current state 
 datalad save -m "message about the changes you made to remember what this was about"
 ```
 It is good practice NOT to leave a directory in a dirty state (ie with modifications not saved) at the end of a day. So remember to save it often.
+
+Please try to give a good overview of what is the project in the README.md file and keep it updated. This is important for people that will take interest in the project later.
 
 #### Locked content
 An important aspect of datalad/git-annex is that as the content of annexed files is not checked (because they are too large to be versioned), the modification of these files is protected and blocked to make sure that changes to these do not go unnoticed. So if you want to modify their content, you first need to unlock them. That will tell git-annex that this file is allowed to be modified for one thing and then that at the nex `datalad save`, this largefile content will need to be considered the new correct file, effectively being compressed and saved once again as a largefile. So all you need to do is.
@@ -130,4 +133,4 @@ Now you can push your project to its online repo whenever you want to update the
 ```bash
 datalad push --to gin
 ```
-On Gin, you will be able to choose who has access to your repository or who can modify its content. Remember that when you give access to your repository, the person will be able to see and download all of ==your files== but they will need further authorizations to the data repository itself to see this data.
+On Gin, you will be able to choose who has access to your repository or who can modify its content. Remember that when you give access to your repository, the person will be able to see and download all of *your files* but they will need further authorizations to the data repository itself to see this data.
