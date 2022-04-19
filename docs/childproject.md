@@ -7,14 +7,24 @@ description: "Manipulating and utilizing scientific data: the childProject libra
 
 # Manipulating and utilizing scientific data: the ChildProject library
 
-## The origins of the project
+## What is Childproject?
+
+Childproject is a python package that is intended to help researchers organize manipulate and share their data. It has been made with the usage of long-form recordings of children in mind. Along with organization and manipulation, the aspect of versioning and sharing the data are equally important, this is handled by [datalad](https://handbook.datalad.org/) and works together with childproject.
+
+The complete documentation of the package and explanations on how to utilize it can be found [here](https://childproject.readthedocs.io).
+
+## What childproject provides
 
 
-Some literature:
 
+## Some literature:
 
 - [Managing, storing, and sharing long-form recordings and their annotations. Language Resources and Evaluation.](https://psyarxiv.com/w8trm/download?format=pdf)(Gautheron, L., Rochat, N., & Cristia, A. (2021))
 
 ---
 
 - [Long-form recordings: From A to Z](https://bookdown.org/alecristia/exelang-book/)(Pisani, S., Gautheron, L., & Cristia, A. (2021))
+
+---
+
+- [Childproject documentation](https://childproject.readthedocs.io)
