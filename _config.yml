@@ -5,6 +5,9 @@ search_enabled: true
 
 description: Handbook for the LAAC team
 
+#open links in a new tab
+aux_links_new_tab: false
+
 # Back to top link
 back_to_top: true
 back_to_top_text: "Back to top"
