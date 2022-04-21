@@ -9,7 +9,7 @@ description: "Creating your own projects and publishing them"
 
 ## What is YODA and why you should use it.
 
-The YODA principles are a set of organizational standards for datasets used for data analysis projects. The name stands for “YODAs Organigram on Data Analysis”. The principles outlined in YODA set simple rules for directory names and structures, best-practices for version-controlling dataset elements and analyses. You can read all about them and why they were created in the [datalad handbook](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html).
+The YODA principles are a set of organizational standards for datasets used for data analysis projects. The name stands for “YODAs Organigram on Data Analysis”. The principles outlined in YODA set simple rules for directory names and structures, best-practices for version-controlling dataset elements and analyses. You can read all about them and why they were created in the [datalad handbook](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html){:target="_blank"}.
 
 In our case and in the lab context, we are mainly interested in using them for the following reasons:
 - It will keep the original data in a clean state available for every study that requires it. The different versions of this data (eg before and after audio is converted to a standard format) are kept and available.
@@ -18,7 +18,7 @@ In our case and in the lab context, we are mainly interested in using them for t
 
 If at some point you feel a bit lost or some instructions are not clear you can:
 - Reach out to Loann.
-- Follow the [Datalad handbook](http://handbook.datalad.org/en/latest/index.html) or the sections that interest you to better understand the way it works.
+- Follow the [Datalad handbook](http://handbook.datalad.org/en/latest/index.html){:target="_blank"} or the sections that interest you to better understand the way it works.
 
 ## Initializing your project repository and the nested datasets
 
@@ -34,8 +34,8 @@ cd /directory/of/my/projects # navigate to the directory where you will create y
 datalad create -c yoda mystudy
 cd mystudy
 ```
-This will create a new directory mystudy. The procedure `-c yoda` initializes it with a `code` directory where no file is annexed. Every other file in the repo (except config files and README) is considered a largefile and is therefore annexed. You can customize the behaviour of your datalad repo by editing [.gitattributes](http://handbook.datalad.org/en/latest/basics/101-123-config2.html#gitattributes), either at the root of the repo or in subdirectories.
-The man page for `datalad create` can be found [here](https://docs.datalad.org/en/latest/generated/man/datalad-create.html).
+This will create a new directory mystudy. The procedure `-c yoda` initializes it with a `code` directory where no file is annexed. Every other file in the repo (except config files and README) is considered a largefile and is therefore annexed. You can customize the behaviour of your datalad repo by editing [.gitattributes](http://handbook.datalad.org/en/latest/basics/101-123-config2.html#gitattributes){:target="_blank"}, either at the root of the repo or in subdirectories.
+The man page for `datalad create` can be found [here](https://docs.datalad.org/en/latest/generated/man/datalad-create.html){:target="_blank"}.
 
 The next step is to install the datasets you need for your project. Choose where you want to put your datasets, for example here in a dataset directory.
 
@@ -78,7 +78,7 @@ datalad get path/to/retrieve # can be files or entire directories
 datalad get annotations/*/converted # get all the converted annotations from every set
 ```
 If datalad retrieves your files from the wrong target (eg online instead of from the local dataset), use can use the `datalad get --source NAME`to get from a particular sibling.
-The man page for `datalad get` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-get.html).
+The man page for `datalad get` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-get.html){:target="_blank"}.
 
 ### Working on your project
 
@@ -111,14 +111,14 @@ Instead of running the script yourself, you call `datalad run` who will do it fo
 ```bash
 datalad run -m "description of what the script does" "python scripts/myscript.py --option 1 argument"
 ```
-To better understand `datalad run` and `datalad rerun`, follow the [datalad handbook guide](http://handbook.datalad.org/en/latest/basics/basics-run.html)
+To better understand `datalad run` and `datalad rerun`, follow the [datalad handbook guide](http://handbook.datalad.org/en/latest/basics/basics-run.html){:target="_blank"}
 
 ### Publishing you project to an online repository
 Finally your project will need to be published in a repository online. This is a great way to keep an archive of your work and have a backup besides your local copy.
 
-We will be covering the publishment to a [gin](https://gin.g-node.org/) respository as this is the easiest way to store both annexed and not annexed content and we use this platform for most of our datasets. If you wish to use another platform, you can do so and you can have a look at the [guide prepared by datalad](http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html).
+We will be covering the publishment to a [gin](https://gin.g-node.org/){:target="_blank"} respository as this is the easiest way to store both annexed and not annexed content and we use this platform for most of our datasets. If you wish to use another platform, you can do so and you can have a look at the [guide prepared by datalad](http://handbook.datalad.org/en/latest/basics/basics-thirdparty.html){:target="_blank"}.
 
-First you need to [create a repository on gin](https://gin.g-node.org/repo/create). Go to the + sign and select create new repository
+First you need to [create a repository on gin](https://gin.g-node.org/repo/create){:target="_blank"}. Go to the + sign and select create new repository
 ![Create your Gin repository](../ressources/img/Gin-create.png)
 
 Go to the root directory of your dataset and add you Gin repository as a sibling
@@ -127,7 +127,7 @@ cd /directory/of/my/projects/mystudy
 datalad siblings add -d . --name gin --url git@gin.g-node.org:/myname/mystudy.git
 ```
 Check the existing siblings with `datalad siblings`.
-The man page for `datalad siblings` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-siblings.html).
+The man page for `datalad siblings` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-siblings.html){:target="_blank"}.
 
 Now you can push your project to its online repo whenever you want to update the version saved in gin.
 ```bash
