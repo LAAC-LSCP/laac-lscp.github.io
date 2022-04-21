@@ -11,9 +11,9 @@ has_toc: false
 
 ## Some paperwork
 
-- [ ] Create an account in mattermost, the system we use for most communication. To do so click [here](https://mattermost.cognitive-ml.fr/signup_user_complete/?id=jmes7xi5obbmtnjw1bnn1o8tnh) and follow the instructions. When you're done creating the account, let Loann know and ask him to add you to the LAAC and LSCP teams.  Depending on your topic, you may also want to ask to be added to the CoML team.
+- [ ] Create an account in mattermost, the system we use for most communication. To do so click [here](https://mattermost.cognitive-ml.fr/signup_user_complete/?id=jmes7xi5obbmtnjw1bnn1o8tnh){:target="_blank"} and follow the instructions. When you're done creating the account, let Loann know and ask him to add you to the LAAC and LSCP teams.  Depending on your topic, you may also want to ask to be added to the CoML team.
 
-- [ ] You will need a [GitHub](https://github.com) account to view the information that we keep private. Create an account if you don't have one and tell your handle to Loann.
+- [ ] You will need a [GitHub](https://github.com){:target="_blank"} account to view the information that we keep private. Create an account if you don't have one and tell your handle to Loann.
 
 - [ ] Get and sign the charte informatique from Michel Dutat.
 
@@ -30,7 +30,7 @@ has_toc: false
 - [ ] Read and complete the [ethics formation](./ethics).
 
 - [ ] Meet people - you can find out their names, emails, & office number in 
-[People in the LSCP](https://docs.google.com/spreadsheets/d/1-e8knsDx-rcT-nSBc66jt5cV6788EMgOjDpw8wzcfe4/edit#gid=0).
+[People in the LSCP](https://docs.google.com/spreadsheets/d/1-e8knsDx-rcT-nSBc66jt5cV6788EMgOjDpw8wzcfe4/edit#gid=0){:target="_blank"}.
 
 ## what's next? select your role:
 

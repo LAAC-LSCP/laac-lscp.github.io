@@ -10,6 +10,6 @@ description: "Publications you may be interested in"
 
 ## Publications of the LSCP
 
-- [Language Acquisition and Evaluation](https://psyarxiv.com/w8trm/download?format=pdf)
+- [Language Acquisition and Evaluation](https://psyarxiv.com/w8trm/download?format=pdf){:target="_blank"}
 
 ## Language acquisition publications by other researchers

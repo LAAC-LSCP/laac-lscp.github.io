@@ -14,7 +14,7 @@ Depending on who is involved, discussion may also be in French sometimes. For ad
 
 ## Mattermost
 
-We use [mattermost](https://mattermost.cognitive-ml.fr/laac/) as a way to discuss in the team on a daily bases. You should have created an account as part of your onboarding. If you do not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
+We use [mattermost](https://mattermost.cognitive-ml.fr/laac/){:target="_blank"} as a way to discuss in the team on a daily bases. You should have created an account as part of your onboarding. If you do not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
 
 ## Meetings
 
@@ -31,18 +31,18 @@ The other Tuesdays, we usually have a team meeting where we discuss various topi
 
 Other teams in the lab, like the CoML team for example, have their own meeting. You may want to attend some of them occasionally.
 
-The LSCP calendar, including all the meetings mentioned above, is available [here.](https://calendar.google.com/calendar/embed?src=vsvnk7q30d9h9lj866g25m98ok%40group.calendar.google.com&ctz=Europe%2FParis)
+The LSCP calendar, including all the meetings mentioned above, is available [here.](https://calendar.google.com/calendar/embed?src=vsvnk7q30d9h9lj866g25m98ok%40group.calendar.google.com&ctz=Europe%2FParis){:target="_blank"}
 
 ---
 
-The department (DEC) is hosting a lot of events and seminars. The DEC calendar is available [here.](https://calendar.google.com/calendar/embed?src=07im0e9urm3sh8tlmoeqde2drk%40group.calendar.google.com&ctz=Europe%2FParis)
+The department (DEC) is hosting a lot of events and seminars. The DEC calendar is available [here.](https://calendar.google.com/calendar/embed?src=07im0e9urm3sh8tlmoeqde2drk%40group.calendar.google.com&ctz=Europe%2FParis){:target="_blank"}
 
 You can easily add those calendar to your personal google agenda by clicking on the button at the bottom right of the page:
 ![add calendars to your google agenda](../ressources/img/add-calendar-google.jpg)
 
 ## When you need something:
 
-- go to the list of key contacts in the [welcome page](https://laac-lscp.github.io/)
+- go to the list of key contacts in the [welcome page](../index.md)
 
 - as much as possible use mattermost, which we check a lot more often than email. Nearly everyone is on it! Use direct messages to individuals for anything super-specific or private. For things related to your project, prioritize using the channel that is created for it. You should also feel free to post general questions in the public channels (at the team or lab level)
 
