@@ -14,3 +14,6 @@ back_to_top_text: "Back to top"
 
 #bottom of page
 footer_content: "Language acquisition across cultures team, LSCP. DEC ENS Paris, PSL university"
+
+plugins:
+  - jekyll-target-blank
