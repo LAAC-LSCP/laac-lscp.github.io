@@ -18,6 +18,8 @@ We use [mattermost](https://mattermost.cognitive-ml.fr/laac/){:target="_blank"} 
 
 ## Meetings
 
+If you are an intern, you'll typically join a weekly meeting with Alex. If you don't already have one scheduled, please remind her via mattermost!
+
 Once you're on the mailing lists, you should receive a schedule of the upcoming meetings every week.
 
 We have group meetings every Tuesday.
