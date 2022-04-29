@@ -77,9 +77,21 @@ Now that your datasets are installed and correctly nested, you will want to acce
 datalad get path/to/retrieve # can be files or entire directories
 datalad get annotations/*/converted # get all the converted annotations from every set
 ```
-If datalad retrieves your files from the wrong target (eg online instead of from the local dataset), use can use the `datalad get --source NAME`to get from a particular sibling.
-The man page for `datalad get` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-get.html){:target="_blank"}.
+If datalad retrieves your files from the wrong target (eg online instead of from the local dataset), you can use the `datalad get --source NAME` to get from a particular sibling.
+The documentation page for `datalad get` can be found [here](http://docs.datalad.org/en/latest/generated/man/datalad-get.html){:target="_blank"}.
 
+-----
+Getting updates of the data used
+{: .label }
+
+This will allow you to get the new version of the dataset that you are using. It will take the most recent version of that data and update it into your project. Be careful if you already launched analysis on the previous data as the analysis will not match the present data anymore.
+If you indeed want to update the dataset, go into the root of the subdataset and use `datalad update`:
+```
+cd datasets/mydata
+datalad update --how=merge
+```
+
+-----
 ### Working on your project
 
 #### Datalad save
@@ -121,7 +133,7 @@ We will be covering the publishment to a [gin](https://gin.g-node.org/){:target=
 First you need to [create a repository on gin](https://gin.g-node.org/repo/create){:target="_blank"}. Go to the + sign and select create new repository
 ![Create your Gin repository](../ressources/img/Gin-create.png)
 
-Go to the root directory of your dataset and add you Gin repository as a sibling
+Go to the root directory of your dataset and add your Gin repository as a sibling
 ```bash
 cd /directory/of/my/projects/mystudy
 datalad siblings add -d . --name gin --url git@gin.g-node.org:/myname/mystudy.git

@@ -1,0 +1,127 @@
+---
+layout: default
+title: running models
+nav_order: 9
+description: "Running model analysis on your data"
+---
+
+# Run models to obtain automated annotations for your project
+
+This guides assume you are using the childproject data structure and that you store you project in the oberon server.
+They are meant to guide you run the models in the cluster to obtain automated annotations, import those new annotations to the childproject dataset and then upload the changes made to the dataset to gin.
+
+## Running the models
+
+Everytime you add new annotations to a dataset, you need to arganize them correctly for childproject. First, they will need to be in the annotations folder from the root of the dataset, then you must choose a name for this set of annotations, the name of the set is there to specify that all the annotations inside are of the same format and were produced together or serve the same purpose.
+
+### Voice type classifier (VTC)
+
+If you want both VTC and ALICE annotations, go directly to the ALICE section as ALICE can run both models in one go.
+{: .label .label-yellow }
+
+VTC is currently being reworked by the CoML team so a new version (and easier way to run the model) should soon replace this tutorial.
+{: .label .label-red }
+
+#### Installation
+
+The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
+```bash
+cd /scratch2/username/modules
+git clone --recurse-submodules https://github.com/MarvinLvn/voice-type-classifier.git
+cd voice-type-classifier
+```
+You now need to create the conda environment that will allow you to run the model and activate it. One easy way to keep everything together is to create that environment in the same directory and name it accordingly, so this is what we will do.
+```bash
+conda create -p ./conda-vtc-env -f vtc.yml
+```
+
+#### Running it
+
+We can't run the model directly on oberon as we need more ressources, so we will launch a [slurm job on oberon](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html){:target="_blank"}.
+You can use on of these script templates as a good starting point that you can then customize to your needs. Save the file in your vtc folder as `job-vtc.sh` for example and modify it for how you want to run vtc.
+You can then submit your job to slurm.
+```bash
+sbatch job-vtc.sh
+```
+Some remarks:
+- Using one GPU is a good idea for running VTC.
+- When using a GPU, only ask for a few cpus (usually 2).
+- don't forget to put a time limit as the default one is 2 hours and this can be too short for long recordings.
+- these templates use an audio_path for where to find audio files, output_path for where to store the results and a path to the ocnda environment to activate, change them accordingly in the script.
+- We assume here that you only want to keep the all.rttm file (which contains the results for all speaker types) and not the speaker specific files. The script just deletes these other files, change the script if you want to keep them.
+
+One output file per audio
+{: .label .label-blue }
+This script will list all .wav files in the audio_path given, run VTC on each of them and move the results into the output_path given, renaming them with the name of the audio file they came from but as a rttm files instead of a wav one. 
+```bash
+#!/bin/bash
+#SBATCH --job-name=vtc-mydata         # Job name
+#SBATCH --partition=gpu               # Take a node from the 'gpu' partition
+#SBATCH --cpus-per-task=2             # Ask for 2 CPU cores
+#SBATCH --gres=gpu:1                  # Ask for 1 gpu
+#SBATCH --time=48:00:00               # Time limit hrs:min:sec
+#SBATCH --output=%x-%j.log            # Standard output and error log
+
+echo "Running job on $(hostname)"
+
+# load conda environment
+source /shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #put your conda env path
+
+# launch your computation
+audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
+output_path="/scratch2/username/datasets/mydata/annotations/vtc/raw/"
+audio_path=${audio_path%/}
+output_path=${output_path%/}
+mkdir -p ${output_path} #create output dir if does not exist
+
+files=($(ls ${audio_path}/*.wav))
+for c in "${!files[@]}"
+do
+  basename=$(basename ${files[$c]%.*})
+  ./apply.sh ${files[$c]} --device=gpu
+  mv output_voice_type_classifier/${basename}/all.rttm ${output_path}/${basename}.rttm #copy all.rttm into the output_path and rename it
+  rm -r output_voice_type_classifier/${basename} #clean up other results for this audio
+  echo "${basename} finished, $((c + 1))/${#files[@]} files"
+done
+```
+
+Only one file for all audio
+{: .label .label-blue }
+This script will run VTC on the directory given in audio_path, this will output a single all.rttm with segments for all the recordings, it is then copied in the ourput_path_given. 
+```bash
+#!/bin/bash
+#SBATCH --job-name=vtc-mydata         # Job name
+#SBATCH --partition=gpu               # Take a node from the 'gpu' partition
+#SBATCH --cpus-per-task=2             # Ask for 2 CPU cores
+#SBATCH --gres=gpu:1                  # Ask for 1 gpu
+#SBATCH --time=48:00:00               # Time limit hrs:min:sec
+#SBATCH --output=%x-%j.log            # Standard output and error log
+
+echo "Running job on $(hostname)"
+
+# load conda environment
+source /shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #put your conda env path
+
+# launch your computation
+audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
+output_path="/scratch2/username/datasets/mydata/annotations/vtc/raw/"
+audio_path=${audio_path%/}
+output_path=${output_path%/}
+mkdir -p ${output_path} #create output dir if does not exist
+
+dirname=$(basename ${audio_path})
+./apply.sh ${audio_path}/ --device=gpu
+mv output_voice_type_classifier/${dirname}/all.rttm ${output_path}/all.rttm #copy all.rttm into the output_path
+```
+
+And that is it, chack in your output_path that it contains your rttm annotations and you are ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
+
+### Automatic LInguistic Unit Count Estimator (ALICE)
+
+### (VCM)
+
+## Importing the new annotations to the dataset
+
+## Publishing changes to the GIN repository
