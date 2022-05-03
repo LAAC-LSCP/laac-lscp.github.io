@@ -37,3 +37,15 @@ The LAAC team is supported mostly by public funding, so we take spending serious
 - If you would like to present your work at conferences, that is great! We want to enable junior researchers to gain that experience and grow their network. However, we typically won't fund overseas travel or very expensive conferences. Discuss with Alex well in advance whether writing up a paper or submitting an abstract is appropriate, and how to go about it. You can see lists of [conferences for child language](https://docs.google.com/spreadsheets/d/11Casx-W9F04knaYF1RVO7BFZFVsOEm-aMc8Bpn-a6es/edit#gid=0) and [for speech tech/machine learning](https://docs.google.com/spreadsheets/d/12Lg-YNKa1aW8J2GHt3S_iAllsrRLXn984imeemjSchQ/edit#gid=0). Deadlines may be past, but you can use this as a guide to find the same conferences in future years.
 
 - If you need pens, notebooks, etc, the lab can provide it! Ask Radhia for them. The same for small tech material, like dongles & connectors -- ask Vireack for them.
+
+<!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
+-->
+<script>
+/*Enables the checkboxes*/
+var inp = document.getElementsByTagName("input");
+for (var i = 0; i < inp.length; i++) {
+    if ( inp[i].type == "checkbox" ) {
+        inp[i].disabled=false;
+    }
+}
+</script>

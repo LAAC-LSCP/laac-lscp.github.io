@@ -121,7 +121,7 @@ And that is it, check the log file of the job to check its progression. When it 
 
 ### Automatic LInguistic Unit Count Estimator (ALICE)
 
-WOrk in progress
+Work in progress
 {: .label .label-red }
 
 #### Installation
