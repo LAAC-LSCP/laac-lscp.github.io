@@ -6,6 +6,16 @@ description: "Creating your own projects and publishing them"
 ---
 
 # Creating your own YODA projects, keeping track of changes and publishing your work
+{: .no_toc }
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ## What is YODA and why you should use it.
 

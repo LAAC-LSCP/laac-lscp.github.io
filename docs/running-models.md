@@ -6,9 +6,19 @@ description: "Running model analysis on your data"
 ---
 
 # Run models to obtain automated annotations for your project
+{: .no_toc }
 
 This guides assume you are using the childproject data structure and that you store you project in the oberon server.
 They are meant to guide you run the models in the cluster to obtain automated annotations, import those new annotations to the childproject dataset and then upload the changes made to the dataset to gin.
+
+<details open markdown="block">
+  <summary>
+    Table of contents
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
 
 ## Running the models
 
