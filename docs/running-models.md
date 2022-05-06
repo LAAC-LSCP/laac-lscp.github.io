@@ -248,7 +248,47 @@ sbatch job-alice.sh
 
 And that is it, check the log file of the job to check its progression. When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
-### (VCM)
+### VoCalisation Maturity (VCM)
+
+Work in progress
+{: .label .label-red }
+
+#### Installation
+
+The code for VCM is stored in [this github repo](https://github.com/LAAC-LSCP/vcm/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
+```bash
+cd /scratch2/username/modules
+git clone https://github.com/LAAC-LSCP/vcm.git
+cd vcm
+```
+
+On oberon, you need to create the conda environment that will allow you to run the model. One easy way to keep everything together is to create that environment in the same directory and name it accordingly, so this is what we will do here.
+We first create an empty environment with only `pip` available, then we install the dependencies needed with `pip`.
+```bash
+conda create -p ./conda-vcm-env pip
+conda activate ./conda-vcm-env
+pip install -r requirements
+```
+
+You will need the SMILExtract binary file to run vcm, download it for example in you current vcm directory:
+```bash
+wget https://github.com/georgepar/opensmile/blob/master/bin/linux_x64_standalone_static/SMILExtract?raw=true -O SMILExtract
+chmod u+x SMILExtract
+```
+
+#### Running it
+
+Like the other modeils, we can't run it directly on oberon as we need more ressources, so we will launch a [slurm job on oberon](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html){:target="_blank"}.
+You can use on of these script templates as a good starting point that you can then customize to your needs. Save the file in your VCM folder as `job-vcm.sh` for example and modify it for how you want to run vcm.
+VCM needs VTC annotations to run, make sure that you have those annotations ready and that the name of the audio file each line points to is the correct one (if you renamed your audios, it will not be able to find back which audio was used).
+
+Some remarks:
+- Depending on the size of the data, you should choose between taking 1 GPU and few CPUs or a bunch of CPUs.
+- don't forget to put a time limit as the default one is 2 hours and this can be too short for long recordings.
+- this template uses :
+    - audio_path for where to find audio files
+    - 
+Change those paths accordingly in the script.
 
 ## Importing the new annotations to the dataset
 

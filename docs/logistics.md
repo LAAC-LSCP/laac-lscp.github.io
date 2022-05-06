@@ -42,7 +42,8 @@ If you would like to get training on topics ranging from statistics, programming
 ## Call rooms and how to book one
 
 At the LSCP, video calls can be made in these three rooms : C401, C404 B and C412 B.
-Each use must be the subject of a prior reservation to schedule via the Google calendars that have been sent to you.
+Each use must be the subject of a prior reservation to schedule via the Google calendars. If you do not have access to those, ask Philippe to send you the link to join them.
+Use the calendar to create an event and associate it with the room's calendar.
 NB : remember to put your name in the reservation. If you don't show up within 5 mins of your start time, someone else can take over the room.
 
 ## Additional literature
