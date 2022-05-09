@@ -75,13 +75,14 @@ echo "Running job on $(hostname)"
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
 conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #put your conda env path
 
-# launch your computation
+# set the paths
 audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
 output_path="/scratch2/username/datasets/mydata/annotations/vtc/raw/"
 audio_path=${audio_path%/}
 output_path=${output_path%/}
 mkdir -p ${output_path} #create output dir if does not exist
 
+# launch your computation
 files=($(ls ${audio_path}/*.wav))
 for c in "${!files[@]}"
 do
@@ -111,13 +112,14 @@ echo "Running job on $(hostname)"
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
 conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #put your conda env path
 
-# launch your computation
+# set the paths
 audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
 output_path="/scratch2/username/datasets/mydata/annotations/vtc/raw/"
 audio_path=${audio_path%/}
 output_path=${output_path%/}
 mkdir -p ${output_path} #create output dir if does not exist
 
+# launch your computation
 dirname=$(basename ${audio_path})
 ./apply.sh ${audio_path}/ --device=gpu
 mv output_voice_type_classifier/${dirname}/all.rttm ${output_path}/all.rttm #copy all.rttm into the output_path
@@ -184,7 +186,7 @@ echo "Running job on $(hostname)"
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
 conda activate /scratch2/username/modules/ALICE/conda-alice-env #put your conda env path
 
-# launch your computation
+# set the paths
 audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
 alice_out_path="/scratch2/username/datasets/mydata/annotations/alice/output/raw/"
 vtc_out_path="/scratch2/username/datasets/mydata/annotations/vtc/raw/"
@@ -197,6 +199,7 @@ mkdir -p ${alice_out_path} #create alice output path if does not exist
 mkdir -p ${vtc_out_path} #create vtc output path if does not exist
 mkdir -p ${aliceSum_out_path} #create alice sum output path if does not exist
 
+# launch your computation
 files=($(ls ${audio_path}/*.wav)) #list wav files in the audio_path
 for c in "${!files[@]}"
 do
@@ -227,7 +230,7 @@ echo "Running job on $(hostname)"
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
 conda activate /scratch2/username/modules/ALICE/conda-alice-env #put your conda env path
 
-# launch your computation
+# set the paths
 audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
 vtc_path="/scratch2/username/datasets/mydata/annotations/vtc/raw"
 alice_out_path="/scratch2/username/datasets/mydata/annotations/alice/output/raw/"
@@ -239,6 +242,7 @@ aliceSum_out_path=${aliceSum_out_path%/}
 mkdir -p ${alice_out_path} #create alice output path if does not exist
 mkdir -p ${aliceSum_out_path} #create alice sum output path if does not exist
 
+# launch computation
 files=($(ls ${audio_path}/*.wav)) #list wav files in the audio_path
 for c in "${!files[@]}"
 do
@@ -288,7 +292,7 @@ chmod u+x SMILExtract
 
 #### Running it
 
-Like the other modeils, we can't run it directly on oberon as we need more ressources, so we will launch a [slurm job on oberon](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html){:target="_blank"}.
+Like the other models, we can't run it directly on oberon as we need more ressources, so we will launch a [slurm job on oberon](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html){:target="_blank"}.
 You can use on of these script templates as a good starting point that you can then customize to your needs. Save the file in your VCM folder as `job-vcm.sh` for example and modify it for how you want to run vcm.
 VCM needs VTC annotations to run, make sure that you have those annotations ready and that the name of the audio file each line points to is the correct one (if you renamed your audios, it will not be able to find back which audio was used).
 
@@ -297,8 +301,51 @@ Some remarks:
 - don't forget to put a time limit as the default one is 2 hours and this can be too short for long recordings.
 - this template uses :
     - audio_path for where to find audio files
-    - 
+    - rttm_path for where to find the rttm files annotating the audio found
+	- smilextract for where to find the SMILExtract binary file we downloaded
+	- out_path for where to store the vcm results
 Change those paths accordingly in the script.
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=VCM         		  # Job name
+#SBATCH --partition=all               # Take a node from the 'cpu' partition
+#SBATCH --cpus-per-task=12            # Ask for CPU cores
+#SBATCH --mem=2048                    # Memory request; MB assumed if unit not specified
+#SBATCH --time=48:00:00               # Time limit hrs:min:sec
+#SBATCH --output=%x-%j.log            # Standard output and error log
+
+echo "Running job on $(hostname)"
+
+# load conda environment
+source /shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate /scratch2/username/modules/vcm/conda-vcm-env
+
+# set the paths
+audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
+rttm_path="/scratch2/username/datasets/mydata/annotations/vtc/raw"
+smilextract="/scratch2/username/modules/vcm/SMILExtract"
+out_path="/scratch2/username/datasets/mydata/annotations/vcm/raw"
+
+mkdir -p ${alice_out_path} #create alice output path if does not exist
+mkdir -p ${aliceSum_out_path} #create alice sum output path if does not exist
+
+# launch your computation
+./vcm.sh -a ${audio_path} -r ${rttm_path} -s ${smilextract} -o ${out_path} -j 12
+```
+You can then submit your job to slurm.
+```bash
+sbatch job-vcm.sh
+```
+-----
+Troubleshooting
+{: .label .label-yellow }
+
+We have encountered problems where VCM jobs would hang and not make progress. We believe running VCM only CPUs in a node that has GPUs triggers that problem, probably because the models sees that the node has gpus available but can't access them because we did not ask for any. If you encounter that problem, either:
+- require a GPU with : `#SBATCH --gres=gpu:1`
+- require a specific node that does not have GPUs : `#SBATCH --nodelist=puck1`
+-----
+
 
 ## Importing the new annotations to the dataset
 
