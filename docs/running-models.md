@@ -344,9 +344,11 @@ Troubleshooting
 We have encountered problems where VCM jobs would hang and not make progress. We believe running VCM only CPUs in a node that has GPUs triggers that problem, probably because the models sees that the node has gpus available but can't access them because we did not ask for any. If you encounter that problem, either:
 - require a GPU with : `#SBATCH --gres=gpu:1`
 - require a specific node that does not have GPUs : `#SBATCH --nodelist=puck1`
+
 -----
 
-
 ## Importing the new annotations to the dataset
+
+Importing annotations to a dataset does the following
 
 ## Publishing changes to the GIN repository
