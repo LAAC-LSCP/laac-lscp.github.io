@@ -42,7 +42,7 @@ cd voice-type-classifier
 ```
 You now need to create the conda environment that will allow you to run the model and activate it. One easy way to keep everything together is to create that environment in the same directory and name it accordingly, so this is what we will do.
 ```bash
-conda create -p ./conda-vtc-env -f vtc.yml
+conda env create -p ./conda-vtc-env -f vtc.yml
 ```
 
 #### Running it
@@ -133,9 +133,6 @@ And that is it, check the log file of the job to check its progression. When it 
 
 ### Automatic LInguistic Unit Count Estimator (ALICE)
 
-Work in progress
-{: .label .label-red }
-
 #### Installation
 
 The code for ALICE can be found in [this github repo](https://github.com/LoannPeurey/ALICE){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
@@ -146,7 +143,7 @@ cd ALICE
 ```
 You now need to create the conda environment that will allow you to run the model and activate it. One easy way to keep everything together is to create that environment in the same directory and name it accordingly, so this is what we will do.
 ```bash
-conda create -p ./conda-alice-env -f ALICE_Linux.yml
+conda env create -p ./conda-alice-env -f ALICE_Linux.yml
 ```
 
 #### Running it
@@ -262,6 +259,26 @@ sbatch job-alice.sh
 
 And that is it, check the log file of the job to check its progression. When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
+-----
+Troubleshooting
+{: .label .label-yellow }
+
+- `ImportError: /lib64/libstdc++.so.6: version `GLIBCXX_3.4.21' not found`. If you run into this error, you will need to update your ligcc version and explicitly add it to the library path of the conda environment.
+To do so, first activate your conda environment and install the libgcc fron conda mirror:
+```bash
+conda activate ./conda-alice-env
+conda install libgcc
+```
+Once you ran the installation, we will explicitly tell when activating the envrironment to use the new libgcc path as a library path. Change the environment activation section by adding a line in your job-alice.sh
+```bash
+# load conda environment
+source /shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate /scratch2/lpeurey/modules/tuto-test-modules/ALICE/conda-alice-env #put your conda env path
+export LD_LIBRARY_PATH=/scratch2/lpeurey/modules/tuto-test-modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH # replace the path with your true conda environment path 
+``` 
+
+-----
+
 ### VoCalisation Maturity (VCM)
 
 Work in progress
@@ -281,7 +298,7 @@ We first create an empty environment with only `pip` available, then we install 
 ```bash
 conda create -p ./conda-vcm-env pip
 conda activate ./conda-vcm-env
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 You will need the SMILExtract binary file to run vcm, download it for example in you current vcm directory:
