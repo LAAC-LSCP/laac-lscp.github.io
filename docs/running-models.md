@@ -212,6 +212,7 @@ done
 Running when vtc annotations already exist
 {: .label .label-blue }
 This script will run ALICE separetly on all the wav files in the directory given in audio_path, it will try to find a rttm file with the same name in vtc_path to use as its VTC reference (and not having to waste time running VTC when it has already been done). It will then output a txt file with all the alice utterances and a summary of the results.
+
 ```bash
 #!/bin/bash
 #SBATCH --job-name=alice-mydata       # Job name
@@ -247,7 +248,7 @@ do
   ./run_ALICE.sh ${files[$c]} --gpu --no-vtc ${vtc_path}/${basename}.rttm
   mv ALICE_output.txt ${aliceSum_out_path}/${basename}_sum.txt
   mv ALICE_output_utterances.txt ${alice_out_path}/${basename}.txt
-  mv diarization_output.rttm ${vtc_out_path}/${basename}.rttm
+  rm diarization_output.rttm
   echo "${basename} finished, $((c + 1))/${#files[@]} files"
 done
 ```
@@ -256,8 +257,44 @@ You can then submit your job to slurm.
 sbatch job-alice.sh
 ```
 
+If you outputed a single rttm file with multiple audios with VTC, you must run ALICE on the same group of files together. Otherwise, ALICE will not understand why some audio files that are present in the rttm file are not available to him and it will cause it to fail. See the following example.
 
-And that is it, check the log file of the job to check its progression. When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
+```bash
+#!/bin/bash
+#SBATCH --job-name=alice-mydata       # Job name
+#SBATCH --partition=gpu               # Take a node from the 'gpu' partition
+#SBATCH --cpus-per-task=2             # Ask for 2 CPU cores
+#SBATCH --gres=gpu:1                  # Ask for 1 gpu
+#SBATCH --time=48:00:00               # Time limit hrs:min:sec
+#SBATCH --output=%x-%j.log            # Standard output and error log
+
+echo "Running job on $(hostname)"
+
+# load conda environment
+source /shared/apps/anaconda3/etc/profile.d/conda.sh
+conda activate /scratch2/username/modules/ALICE/conda-alice-env
+
+# set the paths
+audio_path="/scratch2/username/datasets/mydata/recordings/raw/"
+vtc_path="/scratch2/username/datasets/mydata/annotations/vtc/raw"
+alice_out_path="/scratch2/username/datasets/mydata/annotations/alice/output/raw/"
+aliceSum_out_path="/scratch2/username/datasets/mydata/annotations/alice/output/extra/"
+audio_path=${audio_path%/} #clean up path name (remove /)
+vtc_path=${vtc_path%/}
+alice_out_path=${alice_out_path%/}
+aliceSum_out_path=${aliceSum_out_path%/}
+mkdir -p ${alice_out_path} #create alice output path if does not exist
+mkdir -p ${aliceSum_out_path} #create alice sum output path if does not exist
+
+# launch computation
+./run_ALICE.sh ${audio_path}/ --gpu --no-vtc ${vtc_path}/
+mv ALICE_output.txt ${aliceSum_out_path}/sum_ALICE.txt
+mv ALICE_output_utterances.txt ${alice_out_path}/all.txt
+rm diarization_output.rttm
+```
+
+
+And that is it, check the log file of the job to check its progression and possible errore (see the troubleshooting section right below). When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
 -----
 Troubleshooting
@@ -269,20 +306,18 @@ To do so, first activate your conda environment and install the libgcc fron cond
 conda activate ./conda-alice-env
 conda install libgcc
 ```
-Once you ran the installation, we will explicitly tell when activating the envrironment to use the new libgcc path as a library path. Change the environment activation section by adding a line in your job-alice.sh
+Once you ran the installation, we will explicitly tell when activating the envrironment to use the new libgcc path as a library path. Change the environment activation section by adding the line `export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH` right after the activation of the environment in your job-alice.sh.
+The activation section should look something like this:
 ```bash
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/lpeurey/modules/tuto-test-modules/ALICE/conda-alice-env #put your conda env path
-export LD_LIBRARY_PATH=/scratch2/lpeurey/modules/tuto-test-modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH # replace the path with your true conda environment path 
+conda activate /scratch2/username/modules/ALICE/conda-alice-env #put your conda env path
+export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH # replace the path with your true conda environment path
 ``` 
 
 -----
 
 ### VoCalisation Maturity (VCM)
-
-Work in progress
-{: .label .label-red }
 
 #### Installation
 
@@ -296,12 +331,12 @@ cd vcm
 On oberon, you need to create the conda environment that will allow you to run the model. One easy way to keep everything together is to create that environment in the same directory and name it accordingly, so this is what we will do here.
 We first create an empty environment with only `pip` available, then we install the dependencies needed with `pip`.
 ```bash
-conda create -p ./conda-vcm-env pip
+conda create -p ./conda-vcm-env pip python=3.9
 conda activate ./conda-vcm-env
 pip install -r requirements.txt
 ```
 
-You will need the SMILExtract binary file to run vcm, download it for example in you current vcm directory:
+You will need the SMILExtract binary file to run vcm, download it for example in you current vcm directory and make it executable:
 ```bash
 wget https://github.com/georgepar/opensmile/blob/master/bin/linux_x64_standalone_static/SMILExtract?raw=true -O SMILExtract
 chmod u+x SMILExtract
@@ -326,7 +361,7 @@ Change those paths accordingly in the script.
 ```bash
 #!/bin/bash
 #SBATCH --job-name=VCM         		  # Job name
-#SBATCH --partition=all               # Take a node from the 'cpu' partition
+#SBATCH --partition=all               # Take a node from the 'all' partition
 #SBATCH --cpus-per-task=12            # Ask for CPU cores
 #SBATCH --mem=2048                    # Memory request; MB assumed if unit not specified
 #SBATCH --time=48:00:00               # Time limit hrs:min:sec
