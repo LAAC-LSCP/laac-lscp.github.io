@@ -50,7 +50,10 @@ File Size      : 209k
 Bit Rate       : 256k
 Sample Encoding: 16-bit Signed Integer PCM
 ```
-You can run `p=recordings/raw ; echo  $(ls ${p}/*.wav | wc -l) wav files with $(soxi ${p}/*.wav | grep "Sample Rate    : 16000" | wc -l) of them having a 16kHz Sample Rate` if you change it with the correct path to your recordings folder to see in one go how many files out of the total are sampled in 16kHz.
+You can run
+```
+p=recordings/raw ; echo  $(ls ${p}/*.wav | wc -l) wav files with $(soxi ${p}/*.wav | grep "Sample Rate    : 16000" | wc -l) of them having a 16kHz Sample Rate
+``` if you change it with the correct path to your recordings folder to see in one go how many files out of the total are sampled in 16kHz.
 
 ### Convert audio if necessary
 
@@ -308,10 +311,6 @@ do
   echo "${basename} finished, $((c + 1))/${#files[@]} files"
 done
 ```
-You can then submit your job to slurm.
-```bash
-sbatch job-alice.sh
-```
 
 On a VTC rttm file linked to multiple audios
 {: .label .label-blue }
@@ -353,6 +352,11 @@ rm diarization_output.rttm
 ```
 remarks:
 - these templates use the dataset_path to find and place elements, if you have specific needs regardings paths, for example you want to place those annotations in a different set, modify the script accordingly.
+
+You can then submit your job to slurm.
+```bash
+sbatch job-alice.sh
+```
 
 And that is it, check the log file of the job to check its progression and possible errore (see the troubleshooting section right below). When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
