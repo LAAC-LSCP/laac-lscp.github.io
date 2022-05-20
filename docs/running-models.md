@@ -53,7 +53,8 @@ Sample Encoding: 16-bit Signed Integer PCM
 You can run
 ```
 p=recordings/raw ; echo  $(ls ${p}/*.wav | wc -l) wav files with $(soxi ${p}/*.wav | grep "Sample Rate    : 16000" | wc -l) of them having a 16kHz Sample Rate
-``` if you change it with the correct path to your recordings folder to see in one go how many files out of the total are sampled in 16kHz.
+```
+Change the path to your recordings folder and run the command to see in one go how many files out of the total are sampled in 16kHz.
 
 ### Convert audio if necessary
 
