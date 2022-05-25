@@ -58,4 +58,4 @@ You can easily add those calendar to your personal google agenda by clicking on 
 
 - as much as possible use mattermost, which we check a lot more often than email. Nearly everyone is on it! Use direct messages to individuals for anything super-specific or private. For things related to your project, prioritize using the channel that is created for it. You should also feel free to post general questions in the public channels (at the team or lab level)
 
-- for emergencies, you can also drop by Alex’ office (mezzanine above 406) or call
+- for emergencies, you can also drop by Alex’ office (mezzanine above 406) or call 06 60 63 89 41 -- but please think if you need a response super quickly, or you can wait. The preference is for asynchronous mattermost communication!
