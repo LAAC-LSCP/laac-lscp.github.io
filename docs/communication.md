@@ -24,7 +24,7 @@ Depending on who is involved, discussion may also be in French sometimes. For ad
 
 ## Mattermost
 
-We use [mattermost](https://mattermost.cognitive-ml.fr/laac/){:target="_blank"} as a way to discuss in the team on a daily bases. You should have created an account as part of your onboarding. If you do not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
+We use [mattermost](https://mattermost.cognitive-ml.fr/login/){:target="_blank"} as a way to discuss in the team on a daily bases. You should have created an account as part of your onboarding. If you do not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
 
 ## Meetings
 
