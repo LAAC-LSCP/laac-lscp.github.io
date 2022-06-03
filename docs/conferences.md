@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Communication
+title: Conferences
 nav_order: 3
-description: "Communication basics around the lab"
+description: "Conferences and funding"
 ---
 
-# Communication
+# Conferences
 {: .no_toc }
 
 <details open markdown="block">
@@ -25,11 +25,11 @@ The funding of conferences must imperatively be validated by Alex before any tre
 
 1. Flight, train and hotel booking.
 If you are a PhD student you can do it by your own. If you are a master student, Philippe will do it for you. 
-There is a transport and accommodation market. To book in it, you have to log in, you have to log in to RYDOO: https://travel.rydoo.com/gtms/Approvals. If you are travelling by land abroad, then you should buy the ticket directly and get reimbursed after the mission. Similarly for hotel in foreign countries you should book them directly and get reimbursed after the mission.
+There is a transport and accommodation market. To book in it, you have to log in, you have to log in to [RYDOO](https://travel.rydoo.com/gtms/Approvals){:target="_blank"}. If you are travelling by land abroad, then you should buy the ticket directly and get reimbursed after the mission. Similarly for hotel in foreign countries you should book them directly and get reimbursed after the mission.
 
 2. Creation of the mission on Etamine. 
 Once you have booked your travel, you are ready for the next step. If you are a PhD student you can do it by your own. If you are a master student, Philippe will do it for you.
-At least one month in advance, a mission must be created on the Etamine website : https://e-missions.cnrs.fr/infos.
+At least one month in advance, a mission must be created on the [Etamine website](https://e-missions.cnrs.fr/infos){:target="_blank"}.
 N.B. The title of the mission matters! It should be entered starting with : "Projet EXELANG : conférence ..."
 
 3. Book conference registration. 
