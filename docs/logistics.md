@@ -19,7 +19,13 @@ description: "Administrative and logistic information"
 
 ## Getting in
 
-The lab is open from 9am to 7pm. You can get buzzed in by security through the 24 rue Lhomond entrance; you'll soon get a card (takes a couple of days for your name to pop up in the system).
+Our lab (LSCP) is the only one on the 4th floor of the Jaurès building (29 rue d'ulm). Two ways of getting here:
+
+1. You can come into the ENS through the 24 rue lhomond entrance; there is a buzzer on the right of the door, and a guard will buzz you right in. You can then follow the signs to the bâtiment Jaurès. Once inside Jaurès head up to the 4th floor. You'll see the stairs right away - in fact, you have to go up 5 steps to get to the ground level. If you'd rather not take the stairs up to the 4th floor, you'll find a very slow but effective elevator to the left after you've come up the 5 steps. If you're carrying something heavy or have mobility difficulties, prioritize the second option.
+
+2. Alternatively, you can come in through 29 rue d'Ulm, but you need to wait for someone to open the door for you. You can wait and tell a passerby that you're meeting Dr. Cristia at the LSCP - they'll let you through. Or you can call me & I'll come down to meet you. When you make it in, go through the glass doors straight ahead. The elevator will be on your right, or you can take the stairs up to the 4th floor.
+
+The lab is open from 9am to 7pm. You'll soon get a card (takes a couple of days for your name to pop up in the system).
 
 - you need your card to re-enter the lab after going to the restroom
 
