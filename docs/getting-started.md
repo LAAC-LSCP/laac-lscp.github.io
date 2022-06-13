@@ -36,7 +36,7 @@ has_toc: false
 
 ## what's next? select your role:
 
-- [Annotator](./getting-started/annotators)
+- Annotator : You already what you had to in this handbook, you should now follow your "tableau de bord".
 
 - [Intern or visitor with a technical task (NLP, ML)](./getting-started/interns-tech)
 
