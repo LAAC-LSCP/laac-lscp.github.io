@@ -52,12 +52,14 @@ At this point, a message may ask you if you want to establish a fingerprint; say
 
 Check the installation with `datalad run-procedure --discover`.
 Expected output:
-> cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
+```
+cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
 cfg_yoda (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_yoda.py) [python_script]
 cfg_el1000 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_el1000.py) [python_script]
 cfg_text2git (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_text2git.py) [python_script]
 cfg_metadatatypes (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_metadatatypes.py) [python_script]
 cfg_laac2 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac2.py) [python_script]
+```
 
 If the installation went through, `cfg_laac1`, `cfg_laac2` and `cfg_el1000` should be in the list.
 
@@ -74,8 +76,8 @@ datalad create -c el1000 mydataset
 ```
 
 The output you'll see looks like this:
-
-> [INFO   ] Creating a new annex repo at /scratch2/lpeurey/datasets/mydataset/
+```
+[INFO   ] Creating a new annex repo at /scratch2/lpeurey/datasets/mydataset/
 [INFO   ] Scanning for unlocked files (this may take some time) 
 [INFO   ] Running procedure cfg_el1000 
 [INFO   ] == Command start (output follows) ===== 
@@ -91,8 +93,106 @@ The output you'll see looks like this:
 .: origin(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset.git (git)]
 [INFO   ] == Command exit (modification check follows) ===== 
 create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
+```
 
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
 
-## Populating your dataset
+## Organizing raw data
+
+Your dataset has been created, configured and linked to GIN. But for now,
+it has no contents.
+The next step is thus to add raw data to the dataset in the right place.
+
+There are two possibilites (depending on whether you created a confidential repository or not):
+ 1. Some data are confidential and should only be accessible from `<your-dataset>-confidential`
+ 2. All data can be included in the main version of the dataset
+
+### How confidential data is organized and stored
+
+Here is the rule: every file that is a descendant of a `confidential` folder will be restricted
+to users that have read access to `<your-dataset>-confidential`; any other file will
+be shared with all users who have read access to your dataset.
+
+Here are a few examples:
+
+#### Files that would be confidential
+
+ - `metadata/confidential/whatever.csv`
+ - `annotations/its/confidential/raw/something.its`
+ - `annotations/its/confidential/converted/something.csv`
+ - `annotations/eaf/confidential/raw/some/annotation.eaf`
+
+#### Files that will not be
+
+  - `metadata/somefile.csv`
+  - `annotations/its/raw/something.csv`
+
+It is therefore crucial to organize your data in the right place depending on its level of sensitivity.
+
+### Audio files
+
+TODO : Add information on how to store/convert audio files, best practice, confidentiality.
+
+### Original Metadata
+
+The original metadata is likely to contain sensitive information, so if you have a confidential sibling, it should be restricted to the `confidential` version of the dataset.
+Therefore, most of the time, your original metadata should lie in `metadata/confidential/original`. Otherwise, store it in `metadata/original`.
+
+```bash
+# cd to your dataset
+cd <your-dataset>
+
+# create an empty folder for the original metadata
+mkdir -p metadata/confidential/original
+```
+
+### LENA annotations
+
+.its annotations contain information that may be used to identify the participants (such as their date of birth). So you should consider storing them as confidential if the participants or te be kept private
+
+```bash
+# create an empty folder for the .its
+mkdir -p annotations/its/confidential/raw
+```
+
+Your .its files should be saved at the root of `annotations/its/confidential/raw` or `annotations/its/raw` depending on if they are to be kept confidential or not.
+
+If you stored them as confidentiel, an anonymized version of the .its should be created. This is done with the [ChildProject package](https://childproject.readthedocs.io/en/latest/annotations.html#its-annotations-anonymization):
+
+```bash
+child-project anonymize . --input-set its/confidential --output-set its
+```
+
+This may take some time.
+Once the command has completed, anonymized .its files should be accessible from `annotations/its/raw`:
+
+```bash
+ls annotations/its/raw
+123417-0008.its	123461-0713.its	123505-1620.its	123549-2417.its ...
+```
+
+### Other data
+
+ - VTC annotations (.rttm files) should be moved to `annotations/vtc/raw`
+ - VCM annotations (.rttm files) should be moved to `annotations/vcm/raw`
+ - ALICE annotations (.txt files) should be moved to `annotations/alice/output/raw`
+ - Any other kind of annotation should be moved to `annotations/<location>/raw/`
+ - Other files (documentation, etc.) should be moved to `extra/`
+
+You can create empty folders with `mkdir -p`, e.g. `mkdir -p annotations/vtc/raw`.
+
+### Save and publish
+
+Once all your raw data have been correctly placed in the new dataset, you need to save
+the changes and publish them on GIN :
+
+```bash
+# save the changes locally
+datalad save . -m "message about what changes were made"
+
+# publish
+datalad push
+```
+
+## Link everything : The new metadata
 
