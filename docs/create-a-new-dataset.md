@@ -97,6 +97,15 @@ create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
 
+Once you GIN repository is set up and correctly linked to you local directory, you should always remember to often save and push the modifications you make to the online storage. This is done by using:
+```bash
+# save the changes locally
+datalad save . -m "message about what changes were made"
+
+# publish
+datalad push
+```
+
 ## Organizing raw data
 
 Your dataset has been created, configured and linked to GIN. But for now,
@@ -157,7 +166,7 @@ mkdir -p annotations/its/confidential/raw
 
 Your .its files should be saved at the root of `annotations/its/confidential/raw` or `annotations/its/raw` depending on if they are to be kept confidential or not.
 
-If you stored them as confidentiel, an anonymized version of the .its should be created. This is done with the [ChildProject package](https://childproject.readthedocs.io/en/latest/annotations.html#its-annotations-anonymization):
+If you stored them as confidentiel, an anonymized version of the .its should be created. This is done with the [ChildProject package](https://childproject.readthedocs.io/en/latest/annotations.html#its-annotations-anonymization){:target="_blank"}:
 
 ```bash
 child-project anonymize . --input-set its/confidential --output-set its
@@ -196,3 +205,30 @@ datalad push
 
 ## Link everything : The new metadata
 
+We now need to create the metadata files that childproject uses to link all the files together.
+For an overview of the files needed and their format, head to [ChildProject format](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}
+
+After the creation is finished, don't forget to save and push your changes.
+```bash
+datalad save . -m "message about what changes were made"
+datalad push
+```
+
+### Create the metadata from the its information
+
+One common way to create the metadata is to extract it from the its files you have. This was done in many cases, scripts were save in this [repo](https://gin.g-node.org/EL1000/tools){:target="_blank"} and instructions can be found in this [section](https://gin.g-node.org/EL1000/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
+
+You can explore those scripts but be aware that they will need some degree of adaptation for each dataset.
+
+We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes.
+
+### Example of manual creation
+
+If you can't extract the metadata from .its files, you should find another way of creating the metadata. You should prioritize methods that rely on a script that is saved in your dataset to make sure you keep a trace of where the metadata came from and maybe in the future use a similar script for another dataset.
+You can have a look at this pratical [example](https://childproject.readthedocs.io/en/latest/vandam.html#create-the-metadata){:target="_blank"}. Even though this example is using information found in .its files, it can give you an idea of the steps involved and the way to procede.
+
+## Import the annotations
+
+Once again, like for creating metadata, the importation process can vary quite a bit depending on the annotations available to you and their format.
+
+TODO: add instructions about importing the annotations.

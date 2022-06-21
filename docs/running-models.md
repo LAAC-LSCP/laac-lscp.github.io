@@ -559,7 +559,7 @@ am.import_annotations(input_frame)
 ```
 
 Here are some elements to keep in mind:
-- In this example, we are using automated annotations that were run on the entire audio files, allowing us not to worry too much about the onset and offset parameters as they are just respectively 0 and the duration of the audio in millisecond.
+- In this example, we are using automated annotations that cover the entire audio files, allowing us not to worry too much about the onset and offset parameters as they are just respectively 0 and the duration of the audio in millisecond.
 
 Store your script in your dataset in a script folder (`mkdir scripts` from the root af dataset), give it an informative name (eg import_vtc.py) and edit it for your usage.
 Make sure your childproject environment is activated and run it:
