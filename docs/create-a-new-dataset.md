@@ -26,32 +26,24 @@ In order to follow this guide, you will need to have childproject installed alon
 conda activate childproject
 ```
 
-We use GIN as an online platform for storing our repositories, to publish your dataset, you will need a GIN account that has writing permissions for your dataset.
-You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). To do this, visit the settings of your user account. On the left hand side, select the tab “SSH Keys”, and click the button “Add Key”:
+We use [GIN](https://gin.g-node.org/){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, Loann/Alex should give you writing permissions on a dataset within the LAAC-LSCP organization.
+For every new computer that you will use to push updates to your dataset, You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). You only need to do this once per computer, and it'll be set for all of your datasets & forever. To set SSH access, visit the [settings of your user account](https://gin.g-node.org/user/settings/ssh){:target="_blank"}. In the “SSH Keys” tab, click the button “Add Key”:
 ![Add your SSH key](../ressources/img/gin-add-ssh.png)
 Give the key an informative name that will allow you to remember what computer it belongs to (eg “oberon-lpeurey”).
 
 ## Preparing a GIN repository
 
 We are going to need a new repository on GIN where we will store our dataset and manage people's access to it once it is ready to be shared.
-Inside the lab, we regroup our datasets in the LAAC-LSCP GIN organization, so the dataset should be created there. If you have the permissions necessary to create a new repository for the organization, follow the steps in the attached figure, otherwise, discuss with Alex/Loann of your need of a new repository.
-If you need a confidential version of the repository, create two *empty* repositories in your GIN organization: `<dataset-name>` and `<dataset-name>-confidential`, e.g. `mydataset` and `mydataset-confidential`.
+Inside the lab, we regroup our datasets in the LAAC-LSCP GIN organization, so the dataset should be created there. If you have the permissions necessary to create a new repository for the organization, follow the steps in the attached figure. If you are an intern, discuss with Alex/Loann of your need of a new repository.
+Unless your dataset is public (e.g. from CHILDES), you'll need a confidential version of the repository, create two **empty** repositories in your GIN organization: `<dataset-name>` and `<dataset-name>-confidential`, e.g. `mydataset` and `mydataset-confidential`.
 ![Create your Gin repository](../ressources/img/create-gin-repo.png)
 
 ## Creating the base structure and datalad repository
 
-To create your new dataset, we will borrow some help from the `datalad-procedures` code which was created for this specific pupose. To use it, clone the repo and install it (use python >= 3.6 , if needed call `pip3`, `python3`):
-```bash
-git clone git@github.com:LAAC-LSCP/datalad-procedures.git
-cd datalad-procedures
-pip install -r requirements.txt
-python install.py
-```
+### Installating the procedures
 
-At this point, a message may ask you if you want to establish a fingerprint; say yes.
-
-Check the installation with `datalad run-procedure --discover`.
-Expected output:
+To create your new dataset, we will borrow some help from the `datalad-procedures` code which was created for this specific pupose. If you have already created a dataset in the past, your procedures may already be set up. 
+To check your available templates, run `datalad run-procedure --discover` and explore the outputted list:
 ```
 cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
 cfg_yoda (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_yoda.py) [python_script]
@@ -61,17 +53,30 @@ cfg_metadatatypes (/my/conda/env/lib/python3.6/site-packages/datalad/resources/p
 cfg_laac2 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac2.py) [python_script]
 ```
 
-If the installation went through, `cfg_laac1`, `cfg_laac2` and `cfg_el1000` should be in the list.
+If you spot `cfg_laac1`, `cfg_laac2` and `cfg_el1000` in the list, you are already good to go and can skip to the [next section](#using-templates). If they are not here, we will have to install them. To do so, clone the repo (or navigate to it if you already have it) and launch the installation :
+```bash
+git clone git@github.com:LAAC-LSCP/datalad-procedures.git
+cd datalad-procedures
+pip install -r requirements.txt
+python install.py
+```
+At this point, a message may ask you if you want to establish a fingerprint; say yes.
 
-We will concentrate on using the el1000 template which is the one we will use most of the time. If its configuration does not suit you, you can explore the other templates available in [the repo](https://github.com/LAAC-LSCP/datalad-procedures){:target="_blank"}.
+Check again the available templates with `datalad run-procedure --discover`.
+You should now have `cfg_laac1`, `cfg_laac2` and `cfg_el1000` in the outputted list.
 
-prepare the necessary parameters by setting the GIN organization you will use and wether to create a confidential sibling or not. If you decide to create a confidential sibling, make sure you created 2 repositories on GIN at [the previous step](#preparing-a-gin-repository)
+### Using templates
+
+We will concentrate on using the el1000 template which is the one we will use most of the time. You can read more about that configuration and the other templates available in [the repo](https://github.com/LAAC-LSCP/datalad-procedures){:target="_blank"}.
+
+With the next set of commands, we prepare the necessary parameters by setting the GIN organization you will use and wether to create a confidential sibling or not. If you use a confidential sibling, make sure you created 2 repositories on GIN at [the previous step](#preparing-a-gin-repository)
 ```bash
 export GIN_ORGANIZATION='LAAC-LSCP' # name of the GIN organization
 export CONFIDENTIAL_DATASET=0 # set to 1 if there should be a confidential sibling
 ```
-Now we can create the actual datalad repository, the procedure used will build the file structure according to [ChildProject standards](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}. Replace `mydataset` my the name of your GIN repository.
+Now we can create the actual datalad repository, the procedure used will build the file structure according to [ChildProject standards](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}. First change directory to where you want your new dataset created, then create it. Replace `mydataset` by the name of your GIN repository.
 ```bash
+cd /path/to/a/folder #change directory
 datalad create -c el1000 mydataset
 ```
 
@@ -96,6 +101,13 @@ create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 ```
 
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
+![Explore your GIN repo online](../ressources/img/first-push.png)
+
+The content looks odd?
+{: .label .label-yellow }
+Your default branch may be set to 'git-annex', change this in the settings:
+![Explore your GIN repo online](../ressources/img/default-branch_git-annex.png)
+![Explore your GIN repo online](../ressources/img/change-default-branch.png)
 
 Once you GIN repository is set up and correctly linked to you local directory, you should always remember to often save and push the modifications you make to the online storage. This is done by using:
 ```bash
@@ -157,7 +169,7 @@ mkdir -p metadata/confidential/original
 
 ### LENA annotations
 
-.its annotations contain information that may be used to identify the participants (such as their date of birth). So you should consider storing them as confidential if the participants or te be kept private
+.its annotations contain information that may be used to identify the participants (such as their date of birth). So you should consider storing them as confidential.
 
 ```bash
 # create an empty folder for the .its
