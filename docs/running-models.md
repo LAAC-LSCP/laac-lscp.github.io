@@ -26,6 +26,11 @@ We will be using your personal working directory on oberon a lot. Throughout thi
 
 All the models presented here were built to use audio files with a sampling rate of 16000 Hz. So before you go ahead and launch your computations, you should make sure that the audio files of the dataset have a 16kHz sampling rate or that a converted version of them exists in another audio profile (usually in recordings/converted/standard).
 
+The very first step is to change your working directory to the root of the dataset as we will run most commands from there:
+```bash
+cd /path/to/dataset
+```
+
 ### Check that audio files content is present
 
 First make sure that you have the audio content present locally.
@@ -33,7 +38,7 @@ First make sure that you have the audio content present locally.
 ls recordings/raw # or other profile recordings/converted/standard
 ```
 should show you the audio in a blue color. If they appear red, the audio files are not present locally. Be careful downloading audio can be extremely lengthy and can take a lot of storage space. You should not have to do this for large datasets, you can refer to Loann or Alex in those occasions.
-If you proceed with downloading the files, make sure datalad is available (activate your childproject environment with `conda activate childproject` if it is not) then use `datalad get recordings/raw/rec1.wav` for your files. Probably don't use `datalad get recordings/raw` on the whole folder as that would take forever and you would not be able able to close your connection to the cluster without stopping the command. Alternatively, use an oberon job that will run separately to get all the files.
+If you proceed with downloading the files, make sure datalad is available (activate your childproject environment with `conda activate childproject` if it is not) then use `datalad get recordings/raw/rec1.wav` for your files. Probably don't use `datalad get recordings/raw` on the whole folder as that would take forever and you would not be able able to close your connection to the cluster without stopping the command. Alternatively, use an oberon [job](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html#launching-jobs){:target="_blank"} that will run separately to get all the files.
 
 ### Check the sampling rates (and other info about the audio)
 
@@ -65,21 +70,21 @@ Use the [process command](https://childproject.readthedocs.io/en/latest/processo
 sbatch --mem=64G --time=5:00:00 --cpus-per-task=4 --ntasks=1 -o convert-audio.log child-project process --threads 4 /path/to/dataset standard basic --format=wav --sampling=16000 --codec=pcm_s16le
 ```
 This is a template command that usually is all we will need for conversion, don't forget to change the path to the root of your dataset.
-You can also choose to modify the different options, for example provide a list of the recordings to process with --recordings or change the ressources you are asking for in the cluster. Use the [slurm user guide](https://slurm.schedmd.com/quickstart.html){:target="_blank"} and [childproject documentation](https://childproject.readthedocs.io/en/latest/processors.html#basic-audio-conversion){:target="_blank"} to see the available options.
-*add information about duration of the conversion*
+You can also choose to modify the different options, for example provide a list of the recordings to process with `--recordings` or change the ressources you are asking for in the cluster. Use the [slurm user guide](https://slurm.schedmd.com/quickstart.html){:target="_blank"} and [childproject documentation](https://childproject.readthedocs.io/en/latest/processors.html#basic-audio-conversion){:target="_blank"} to see the available options.
+Depending on the number of audio files you are converting and their durations, launching a conversion can take several minutes.
 
-Once the conversion id done, you will most likely want those converted audio files saved in the dataset and published to the online repositories.
+Once the conversion is done, you will most likely want those converted audio files saved in the dataset and published to the online repositories.
 ```bash
 datalad save -m "converted audio to 16kHz" #to run from the root of the dataset
 datalad push
 ```
 Be aware that:
-- the `save` command can take time because it encodes the audio files. If you have a large amount of data, consider asking for ressources on the cluster to so that.
+- the `save` command can take time because it encodes the audio files. If you have a large amount of data, consider asking for ressources on the cluster to do that.
 - the `push` command will upload the content of the newly created files online, like for downloading, it will require a lot of time, if you want to close your session without interrupting your upload, once again consider using a job on the cluster to take care of it.
 
 ## Running the models
 
-Everytime you add new annotations to a dataset, you need to arganize them correctly for childproject. First, they will need to be in the annotations folder from the root of the dataset, then you must choose a name for this set of annotations, the name of the set is there to specify that all the annotations inside are of the same format and were produced together or serve the same purpose.
+Everytime you add new annotations to a dataset, you need to organize them correctly for childproject. First, they will need to be in the annotations folder from the root of the dataset, then you must choose a name for this set of annotations, the name of the set is there to specify that all the annotations inside are of the same format and were produced together or serve the same purpose.
 
 ### Voice type classifier (VTC)
 
@@ -90,6 +95,8 @@ VTC is currently being reworked by the CoML team so a new version (and easier wa
 {: .label .label-red }
 
 #### Installation
+
+You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
 The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
 We made the choice here to store our VTC in a directory `modules` meant to store the different model repositories. You can create that folder if you want: `mkdir /scratch2/username/modules`.
@@ -103,6 +110,8 @@ You now need to create the conda environment that will allow you to run the mode
 conda env create -p ./conda-vtc-env -f vtc.yml
 ```
 The creation should last a few minutes. It happens more often than not that oberon is slowed down by other users, in that case this could take up to an hour.
+
+You don't even need to activate the environment, the job used will take care of that itself.
 
 #### Running it
 
@@ -199,6 +208,8 @@ And that is it, check the log file of the job to check its progression. When it 
 
 #### Installation
 
+You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
+
 The code for ALICE can be found in [this github repo](https://github.com/LoannPeurey/ALICE){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
 cd /scratch2/username/modules
@@ -210,6 +221,8 @@ You now need to create the conda environment that will allow you to run the mode
 conda env create -p ./conda-alice-env -f ALICE_Linux.yml
 ```
 The creation should last a few minutes. It happens more often than not that oberon is slowed down by other users, in that case this could take up to an hour.
+
+You don't even need to activate the environment, the job used will take care of that itself.
 
 #### Running it
 
@@ -370,7 +383,7 @@ To do so, first activate your conda environment and install the libgcc fron cond
 conda activate ./conda-alice-env
 conda install libgcc
 ```
-Once you ran the installation, we will explicitly tell when activating the envrironment to use the new libgcc path as a library path. Change the environment activation section by adding the line `export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH` right after the activation of the environment in your job-alice.sh.
+Once the installation is complete, we will edit our job script to explicitly use the new libgcc path as a library path. Change the environment activation section by adding in the script the line `export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH` right after the activation of the environment.
 The activation section should look something like this:
 ```bash
 # load conda environment
@@ -384,6 +397,8 @@ export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_
 ### VoCalisation Maturity (VCM)
 
 #### Installation
+
+You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
 The code for VCM is stored in [this github repo](https://github.com/LAAC-LSCP/vcm/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
