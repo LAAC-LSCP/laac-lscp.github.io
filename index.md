@@ -10,7 +10,7 @@ permalink: /
 
 The aim of the [LAAC (Language Acquisition Across Cultures) team](https://lscp.dec.ens.fr/fr/recherche/equipes-du-lscp/lacquisition-du-langage-travers-differentes-cultures){:target="_blank"} is to shed light on the mechanisms and processes involved in early language acquisition in a variety of cultures and language communities. To this end, we use an interdisciplinary approach (ranging from computational modeling to laboratory experiments and advanced data analysis) in the context of open, collaborative and publicly engaged science. We are a small team (< 10 people), with a supportive culture, that is accepting of cultural and individual diversity. You can read our [Mission Statement here](https://docs.google.com/document/d/1gGiq39FsMCwrgFCmi9AXGyVWCE2NafuS3kx4rJkWDng/edit){:target="_blank"}.
 
-The people in LAAC you'll likely interact are:
+The people in LAAC you'll likely interact with are:
 
 - Philippe Dauli, our project manager. Talk to him about administrative matters (getting your convention de stage signed, getting an ENS card, etc.)
 - Loann Peurey, our data manager & software engineer. Talk to him about technical matters (access to the cluster, using ChildProject, etc.)
