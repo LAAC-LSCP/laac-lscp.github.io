@@ -2,7 +2,6 @@
 This script splits the audio files outputted by lena that contains multiple days of recording.
 Based on recordings.csv, splits audio that is linked to the same .its file into separate audio files by using the durations.
 """
-
 from ChildProject.projects import ChildProject 
 from pydub import AudioSegment
 import os

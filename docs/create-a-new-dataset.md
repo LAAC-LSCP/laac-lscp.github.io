@@ -160,8 +160,51 @@ We recommend you use this [script](../ressources/scripts/split_lena_recordings.p
 Warning
 {: .label .label-yellow }
 The script relies on the `metadata/recordings.csv` file to know where to split. You should [create the metadata from the its files](#create-the-metadata-from-the-its-information) **before** splitting the files.
-```python:../ressources/scripts/split_lena_recordings.py
+```python
+"""
+This script splits the audio files outputted by lena that contains multiple days of recording.
+Based on recordings.csv, splits audio that is linked to the same .its file into separate audio files by using the durations.
+"""
+from ChildProject.projects import ChildProject 
+from pydub import AudioSegment
+import os
 
+audio_path = 'recordings/lena_output'
+
+project = ChildProject('.')
+project.read()
+
+#regroup recordings by the original lena output(as the its file)
+for its, recordings in project.recordings.groupby('its_filename'):
+    #print(recordings)
+    #print(session)
+    
+    recordings['position'] = recordings['duration'].cumsum().shift(1, fill_value = 0)
+    
+    input_audio = os.path.join(audio_path, its[:-4] +'.wav')
+    if not os.path.exists(input_audio):
+        #print(f"{input_audio} does not exist")
+        pass
+
+    audio = None
+
+    for recording in recordings.to_dict(orient = 'records'):
+        on = recording['position']
+        off = recording['position']+recording['duration']
+
+        print("audio : {} -> {} - {} -> {}".format(input_audio, on, off,recording['recording_filename']))
+    
+        if audio is None:
+            audio = AudioSegment.from_file(input_audio)
+        
+        try:
+            audio[on:off].set_sample_width(2).export(
+                project.get_recording_path(recording['recording_filename']),
+                format = 'wav',
+                bitrate = '16k'
+            )
+        except Exception as e:
+           print("failed to extract {}: {}", recording['recording_filename'], str(e))
 ```
 
 Saving and publishing audio files
@@ -312,9 +355,35 @@ set | recording_filename| time_seek | range_onset | range_offset | raw_filename 
 |its|e20051112_123456_654321_2.wav|-21472350|0|15671570|e20051112_123456_654321.its|its|
 |its|e20051112_123456_654321_3.wav|-37143920|0|6187130|e20051112_123456_654321.its|its|
 
-This can be achieved by a simple script like this one who does the data preparation and then runs the importation:
-```python:../ressources/scripts/import_its.py
+This can be achieved by a simple script like [this one](../ressources/scripts/import_its.py){:target="_blank"} who does the data preparation and then runs the importation:
+```python
+"""
+This script uses metadata/recordings.csv to import its annotations. It assumes recordings.csv contains columns 'its_filename' and 'duration' to run the importation
+"""
+import pandas as pd
+from ChildProject.projects import ChildProject
+from ChildProject.annotations import AnnotationManager
 
+dataset_path = "."
+
+#load the project and annotation manager
+project = ChildProject(dataset_path)
+am = AnnotationManager(project)
+
+# we take a copy of the recordings.csv file of the dataset, that suits us because we have one importation per recording, as is usually the case with automated annotations
+input_frame = pd.DataFrame.copy(project.recordings)
+input_frame = input_frame.sort_values(['its_filename', 'recording_filename'])
+
+#make sure that the duration for the recordings is set in recordings.csv, it should be imported with the metadata of the its
+input_frame["raw_filename"]= input_frame['its_filename']
+input_frame["set"] = 'its'
+input_frame["range_onset"] = "0" #from the start of the audio...
+input_frame["range_offset"]= input_frame["duration"] # ...to the end
+
+for its, df in input_frame.groupby('its_filename'):
+    input_frame.loc[df.index,'time_seek'] = - df['duration'].cumsum().shift(1, fill_value = 0)
+
+am.import_annotations(input_frame)
 ```
 
 #### Automated : VTC, ALICE, VCM
