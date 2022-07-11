@@ -109,16 +109,9 @@ Your default branch may be set to 'git-annex', change this in the settings:
 ![Explore your GIN repo online](../ressources/img/default-branch_git-annex.png)
 ![Explore your GIN repo online](../ressources/img/change-default-branch.png)
 
-Once you GIN repository is set up and correctly linked to you local directory, you should always remember to often save and push the modifications you make to the online storage. This is done by using:
-```bash
-# save the changes locally
-datalad save . -m "message about what changes were made"
-
-# publish
-datalad push
-```
-
 ## Organizing raw data
+
+go into your new dataset : `cd mydataset`
 
 Your dataset has been created, configured and linked to GIN. But for now,
 it has no contents.
@@ -152,7 +145,32 @@ It is therefore crucial to organize your data in the right place depending on it
 
 ### Audio files
 
-TODO : Add information on how to store/convert audio files, best practice, confidentiality.
+#### Original recordings
+
+Your original audio files should always be stored under `recordings/raw`.
+You will likely want derived versions of them, depending on the format, codec, sampling rate, number of channels used for those files. We use wav files sampled at 16kHz mono channel with codec pcm_s16le as our standard. This is to make sure we can apply our usual models to them and read their content correctly.
+You are strongly encouraged to do that [conversion using childproject](https://childproject.readthedocs.io/en/latest/processors.html#basic-audio-conversion){:target="_blank"} **once you have finished creating the dataset** as the automatic conversion relies on the dataset already being organized and passing the childproject validation.
+
+#### Splitting LENA recordings
+
+the LENA software outputs audio files that can sometimes contain multiple *sessions*. This means that in a single audio file, you will find that the recording is sometimes stopped and restarted at a different hour.
+ChildProject is built on the assumption that every audio file is a single continuous recording with a single starting time. If you have lena audios that contain multiple sessions, you will have to split them into different files. This should be done directly in `recordings/raw` and before any audio conversion because that will change the number of audio files and subsequently the recordings index in `metadata/recordings.csv` which needs to be unique. You can however store the original lena files in a different folder such as `recordings/lena_output` for the sole purpose of keeping your original data.
+
+We recommend you use this [script](../ressources/scripts/split_lena_recordings.py){:target="_blank"} to split the recordings. Run it from the root of the dataset.
+Warning
+{: .label .label-yellow }
+The script relies on the `metadata/recordings.csv` file to know where to split. You should [create the metadata from the its files](#create-the-metadata-from-the-its-information) **before** splitting the files.
+```python:../ressources/scripts/split_lena_recordings.py
+
+```
+
+Saving and publishing audio files
+{: .label .label-yellow }
+After preparing correctly your audio files, it is time to save your changes again with
+```bash
+datalad save -m 'audio data'
+```
+However be cautious with pushing your changes online because the audio data can be extremely large and the uploading really long. If you have access to a cluster/server running continually, consider doing the upload from there with a job, allowing you to log out while the upload continues. Otherwise, you can choose to run the push bits by bits by running the command `datalad push recordings/raw/rec1.wav` on your different audio files one by one.
 
 ### Original Metadata
 
@@ -197,7 +215,7 @@ ls annotations/its/raw
  - VTC annotations (.rttm files) should be moved to `annotations/vtc/raw`
  - VCM annotations (.rttm files) should be moved to `annotations/vcm/raw`
  - ALICE annotations (.txt files) should be moved to `annotations/alice/output/raw`
- - Any other kind of annotation should be moved to `annotations/<location>/raw/`
+ - Any other kind of annotation should be moved to `annotations/<set>/raw/` e.g. `annotations/cha/raw/` for cha files, `annotations/eaf/CD/raw/` for eaf annotated by an annotator identified by the 'CD' tag.
  - Other files (documentation, etc.) should be moved to `extra/`
 
 You can create empty folders with `mkdir -p`, e.g. `mkdir -p annotations/vtc/raw`.
@@ -228,19 +246,102 @@ datalad push
 
 ### Create the metadata from the its information
 
-One common way to create the metadata is to extract it from the its files you have. This was done in many cases, scripts were save in this [repo](https://gin.g-node.org/EL1000/tools){:target="_blank"} and instructions can be found in this [section](https://gin.g-node.org/EL1000/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
+One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/EL1000/tools){:target="_blank"} was created to help in this process. You can install the package or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
+Be aware that each dataset will need some degree of adaptation in the code.
+We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes before running it. An example can be found in this [section](https://gin.g-node.org/EL1000/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
 
-You can explore those scripts but be aware that they will need some degree of adaptation for each dataset.
-
-We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes.
+Warning
+{: .label .label-yellow }
+If your lena audio files contain multiple recordings, the metadata importation will create one line for each 'session' even if they are contained in a single audio file. Once `metadata/recordings.csv` is created, it should contain the columns `its_filename` and `duration` necessary to correctly split the recordings. You should now run the [script to split the recordings](#splitting-lena-recordings).
 
 ### Example of manual creation
 
 If you can't extract the metadata from .its files, you should find another way of creating the metadata. You should prioritize methods that rely on a script that is saved in your dataset to make sure you keep a trace of where the metadata came from and maybe in the future use a similar script for another dataset.
 You can have a look at this pratical [example](https://childproject.readthedocs.io/en/latest/vandam.html#create-the-metadata){:target="_blank"}. Even though this example is using information found in .its files, it can give you an idea of the steps involved and the way to procede.
 
+### Dataset validation
+
+To verify the content and organization of your dataset, use the childproject validation command:
+```bash
+cd path/to/mydataset
+child-project validate .
+```
+Read through the output to see if the validation was successful. If not, fix the errors and re-run the validation until it passes.
+
 ## Import the annotations
 
-Once again, like for creating metadata, the importation process can vary quite a bit depending on the annotations available to you and their format.
+### General aspects
 
-TODO: add instructions about importing the annotations.
+Once again, like for creating metadata, the importation process can vary significantly depending on the annotations available to you and their format. For the initial creation of the dataset, it can often be easier to include the raw annotations in your dataset and worry about importing them at a later stage.
+
+When ready to procede, use the child-project import annotations [command](https://childproject.readthedocs.io/en/latest/annotations.html#importation){:target="_blank"} or [API call](https://childproject.readthedocs.io/en/latest/annotations.html#importation){:target="_blank"}.
+Information necessary is listed below
+
+|Name | Description | Required? | Format|
+|--- | --- | --- | ---|
+|set | name of the annotation set (e.g. VTC, annotator1, etc.) | required | |
+|recording_filename | recording filename as specified in the recordings index | required | |
+|time_seek | shift between the timestamps in the raw input annotations and the actual corresponding timestamps in the recordings (in milliseconds) | required | (\-?)([0-9]+)|
+|range_onset | covered range onset timestamp in milliseconds (since the start of the recording) | required | [0-9]+|
+|range_offset | covered range offset timestamp in milliseconds (since the start of the recording) | required | [0-9]+|
+|raw_filename | annotation input filename location, relative to annotations/<set>/raw | required | True|
+|format | input annotation format | optional | csv, vtc_rttm, vcm_rttm, alice, its, TextGrid, eaf, cha, NA|
+|filter | source file to target. this field is dedicated to rttm and ALICE annotations that may combine annotations from several recordings into one same text file. | optional | |
+
+### Specific formats
+
+We don't provide specific instructions for each format because even with the same format, the way to procede and the annotation content can have a lot of variety. In this section you will find indications on what aspects and parameters you should be cautious when importing.
+
+#### LENA its
+
+Importing LENA its files is usually straight forward because they cover the whole files and the information they contain is consistent. The only particularity is when you happen to have recordings that were split (see [above](#splitting-lena-recordings)). In this case, the timestamps need to be shifted by the duration of previous audios extracted from the same lena file. This shift is used as your negative <time-seek>.
+
+Example:
+We have the following `metadata/recordings.csv` file generated using information from the its files
+|recording_filename | duration | date_iso | start_time | session_id | child_id | its_filename | recording_device_type | experiment|
+|--- | --- | --- | --- | --- | --- | --- | --- | ---|
+|e20051112_123456_654321_1.wav|21472350|2005-11-12|07:10|e20051112_123456_654321_1|AA|e20051112_123456_654321.its|lena|test|
+|e20051112_123456_654321_2.wav|15671570|2005-11-12|16:43|e20051112_123456_654321_1|AA|e20051112_123456_654321.its|lena|test|
+|e20051112_123456_654321_3.wav|6187130|2005-11-13|10:57|e20051112_123456_654321_2|AA|e20051112_123456_654321.its|lena|test|
+
+You can see that those 3 files are linked to the same its file, so they were extracted from a single original lena audio file. To import the its annotations, we will need to shift the timestamps to have the following importation table:
+
+set | recording_filename| time_seek | range_onset | range_offset | raw_filename | format
+|--- | --- | --- | --- | --- | --- | ---|
+|its|e20051112_123456_654321_1.wav|0|0|21472350|e20051112_123456_654321.its|its|
+|its|e20051112_123456_654321_2.wav|-21472350|0|15671570|e20051112_123456_654321.its|its|
+|its|e20051112_123456_654321_3.wav|-37143920|0|6187130|e20051112_123456_654321.its|its|
+
+This can be achieved by a simple script like this one who does the data preparation and then runs the importation:
+```python:../ressources/scripts/import_its.py
+
+```
+
+#### Automated : VTC, ALICE, VCM
+
+Those models are almost always run on the entire files and are quite easy to import. You should check out our guide for running and importing automated annotations [here](./running-models.md/#importing-the-new-annotations-to-the-dataset){:target="_blank"}
+
+#### Human : cha, TextGrid, eaf
+
+Human annotations are treaky to handle because they have a lot of variety in what is annotated and how. It is not unsual to encounter oddities and errors in them which can result in a difficult importation process.
+
+As for every other importation, you will need to build a dataframe that has the required info. For human annotations, you will often have multiple short annotation segments to import for each audio (e.g. 8 segments of 5min per audio file). So you should generate this importation dataframe (and keep track somewhere of how this was generated) and launch the importation.
+
+If the importation fails, try to identify what part of the conversion is causing issues. You can try using a script parsing the files to find where they may have errors.
+
+If the importation went through **always check** the resulting converted files to make sur all the information got correctly imported (e.g. the importation has taken all annotated segments and speaker type but omitted transcriptions).
+
+After going through those steps, if you did not manage to get the set imported correctly, either because of errors encountered or because some information is not properly imported, you can turn to custom importation.
+Custom importation allows you to define your file converter yourself, defining how the original file should be handled and what information inside should be kept and stored into the resulting annotations.
+Head to [this page](https://childproject.readthedocs.io/en/latest/api-annotations.html#custom-converter){:target="_blank"}.
+
+## Save and push
+
+Once again, after carrying out changes to the dataset, we need to save its current state and push modifications online
+```bash
+# save the changes locally
+datalad save . -m "message about what changes were made"
+
+# publish
+datalad push
+```
