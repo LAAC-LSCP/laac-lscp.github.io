@@ -341,6 +341,7 @@ Importing LENA its files is usually straight forward because they cover the whol
 
 Example:
 We have the following `metadata/recordings.csv` file generated using information from the its files
+
 |recording_filename | duration | date_iso | start_time | session_id | child_id | its_filename | recording_device_type | experiment|
 |--- | --- | --- | --- | --- | --- | --- | --- | ---|
 |e20051112_123456_654321_1.wav|21472350|2005-11-12|07:10|e20051112_123456_654321_1|AA|e20051112_123456_654321.its|lena|test|
