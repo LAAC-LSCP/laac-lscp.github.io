@@ -340,7 +340,7 @@ We don't provide specific instructions for each format because even with the sam
 Importing LENA its files is usually straight forward because they cover the whole files and the information they contain is consistent. The only particularity is when you happen to have recordings that were split (see [above](#splitting-lena-recordings)). In this case, the timestamps need to be shifted by the duration of previous audios extracted from the same lena file. This shift is used as your negative <time-seek>.
 
 Example:
-We have the following `metadata/recordings.csv` file generated using information from the its files
+We have the following `metadata/recordings.csv` file generated using information from the its files.
 
 |recording_filename | duration | date_iso | start_time | session_id | child_id | its_filename | recording_device_type | experiment|
 |--- | --- | --- | --- | --- | --- | --- | --- | ---|
@@ -350,7 +350,7 @@ We have the following `metadata/recordings.csv` file generated using information
 
 You can see that those 3 files are linked to the same its file, so they were extracted from a single original lena audio file. To import the its annotations, we will need to shift the timestamps to have the following importation table:
 
-set | recording_filename| time_seek | range_onset | range_offset | raw_filename | format
+|set | recording_filename| time_seek | range_onset | range_offset | raw_filename | format
 |--- | --- | --- | --- | --- | --- | ---|
 |its|e20051112_123456_654321_1.wav|0|0|21472350|e20051112_123456_654321.its|its|
 |its|e20051112_123456_654321_2.wav|-21472350|0|15671570|e20051112_123456_654321.its|its|
