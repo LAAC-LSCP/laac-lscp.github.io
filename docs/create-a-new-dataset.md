@@ -35,13 +35,13 @@ Give the key an informative name that will allow you to remember what computer i
 
 We are going to need a new repository on GIN where we will store our dataset and manage people's access to it once it is ready to be shared.
 Inside the lab, we regroup our datasets in the LAAC-LSCP GIN organization, so the dataset should be created there. If you have the permissions necessary to create a new repository for the organization, follow the steps in the attached figure. If you are an intern, discuss with Alex/Loann of your need of a new repository.
-Unless your dataset is public (e.g. from CHILDES), you'll need confidential and public versions of the repository.
-This is to create 3 levels of access:
+Unless your dataset is public (e.g. from CHILDES), you'll need 3 levels of access:
 - confidential => data that is never shared, usually personal information that is not useful anyway for analysis (e.g. names)
 - collaborators => data that is shared with collaborators when we grant them access to the data, usually under NDA (e.g. recordings, transcriptions)
 - public => data that can be accessed by anybody, completely anonymous so no audio, no transcription, no personal metadata (e.g. converted automated annotations).
 
-Except if you don't want those 3 levels of access, create 3 empty **empty** repositories in your GIN organization: `<dataset-name>` , `<dataset-name>-public` and `<dataset-name>-confidential`, e.g. `mydataset` , `mydataset-public` and `mydataset-confidential`.
+To create those levels of access, create 3 **empty** repositories in your GIN organization: `<dataset-name>` , `<dataset-name>-public` and `<dataset-name>-confidential`, e.g. `mydataset` , `mydataset-public` and `mydataset-confidential`.
+If your dataset is public, then you can create a single repository that will be public.
 ![Create your Gin repository](../ressources/img/create-gin-repo.png)
 
 ## Creating the base structure and datalad repository
