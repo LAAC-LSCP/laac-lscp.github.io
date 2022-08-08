@@ -16,8 +16,157 @@ This page is here to help you create a new Dataset following the ChildProject st
   </summary>
   {: .text-delta }
 1. TOC
-{:toc}
+{:toc .toc_levels=1..2}
 </details>
+
+## First time users
+
+### Environment
+
+This guide is intended mainly to help collaborators in the LSCP lab. If you are part of the LSCP, you should have access to the [oberon server](./oberon.md){:target="_blank"}. You should do all of the dataset creation on the server directly. Oberon is running a linux system.
+
+Throughout this page, you will need to have access to a terminal (for MacOS or linux) or a command prompt (for Windows). So open your 'terminal' or 'cmd' programm to enter text commands. To use oberon, log in using an [ssh access](https://wiki.cognitive-ml.fr/servers/ssh.html){:target="_blank"} (Use the credentials provided to you by the CoML team).
+
+If you are a Windows user and are not using the oberon server, be aware that most of the software we use has been developped and tested for linux and MacOS systems. We expect it to run on Windows but no automated tests are performed. We will nor provide specific instructions for Windows systems. We recommend you use the [windows subsystem for linux](https://docs.microsoft.com/fr-fr/windows/wsl/install){:target="_blank"} which will allow you to easily run a linux system embedded into your Windows.
+
+### ChildProject
+
+You will need the [ChildProject](./childproject.md){:target="_blank"} software. The default installation requires anaconda. It is available on oberon. If you are not sure you have conda installed, please do `conda --version` in your terminal. If you don't have it, please refer to the instructions [here](https://docs.anaconda.com/anaconda/install/index.html){:target="_blank"}.
+
+#### Linux Users
+
+```bash
+# download the conda environment
+wget https://raw.githubusercontent.com/LAAC-LSCP/ChildProject/master/env_linux.yml -O env.yml
+
+# create the conda environment
+conda env create -f env.yml
+
+# activate the environment (this should be done systematically to use our package)
+conda activate childproject
+```
+
+#### MacOS users
+
+```bash
+# download the conda environment
+curl https://raw.githubusercontent.com/LAAC-LSCP/ChildProject/master/env_macos.yml -o env.yml
+
+# create the conda environment
+conda env create -f env.yml
+
+# activate the environment (this should be done systematically to use our package)
+conda activate childproject
+
+# install git-annex from brew
+brew install git-annex
+```
+
+#### Check the setup
+
+You can now make sure the packages have been successfully installed:
+
+```bash
+child-project --version
+```
+
+### Datalad procedures
+
+To facilitate the dataset creation, we use templates that you need to install. First navigate your working folder (e.g. `cd /scratch2/<username>` replace username with your actual username). Enter the following command lines to clone the repo and launch the installation :
+```bash
+cd /scratch2/username #change the path to a working directory
+
+# copy the code into a new folder
+git clone https://github.com/LAAC-LSCP/datalad-procedures.git
+
+# go into the newly created folder
+cd datalad-procedures
+
+# install the required dependencies
+pip install -r requirements.txt
+
+# install the templates into datalad
+python install.py
+```
+The command will produce a lot of output text. To check its success, we will list the available procedures:
+```bash
+# list available procedures
+datalad run-procedure --discover
+```
+A list will be printed somewhat similar to :
+```bash
+cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
+cfg_yoda (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_yoda.py) [python_script]
+cfg_el1000 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_el1000.py) [python_script]
+cfg_text2git (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_text2git.py) [python_script]
+cfg_metadatatypes (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_metadatatypes.py) [python_script]
+cfg_laac2 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac2.py) [python_script]
+cfg_laac (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac.py) [python_script]
+```
+Look for the `cfg_laac` entry in the list, it is the one we want to use. You are good to go if it is there.
+
+### GIN account
+
+We use [GIN](https://gin.g-node.org/G-Node/info/wiki){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, ask Loann/Alex should give you writing permissions on a dataset within the [LAAC-LSCP organization](https://gin.g-node.org/LAAC-LSCP/).
+
+For every new computer that you will use to push updates to your dataset, You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). You only need to do this once per computer, and it'll be set for all of your datasets & forever. To set SSH access, visit the [settings of your user account](https://gin.g-node.org/user/settings/ssh){:target="_blank"}. In the “SSH Keys” tab, click the button “Add Key”:
+![Add your SSH key](../ressources/img/gin-add-ssh.png)
+
+- In the "Key Name" field, give an informative name that will allow you to remember what computer it belongs to (eg “oberon-lscp”).
+- In the "Content" field, copy the content of your public key. In oberon, and in most systems, the key is by default the file `~/.ssh/id_rsa.pub`. You can print it with the command `cat ~/.ssh/id_rsa.pub`, then copy **all** the output into the field.
+
+Confirm the addition of the key.
+
+![confirm addition](../ressources/img/gin-confirm-ssh.png)
+
+## It has been a long time since I have done this:
+
+This section lists the checks you should carry out before using the guide, knowing that you went through it before and you should not need to install new programms or register to new websites. If it does not work out, go back to the relevant [first use section](#first-time-users).
+
+### Environment
+
+You should connect to oberon. If you did set up your connection in the past following the [CoML wiki](https://wiki.cognitive-ml.fr/servers/ssh.html){:target="_blank"}, you should run:
+```bash
+ssh oberon
+ssh foberon #if the first command failed
+```
+You should now be connected to oberon.
+
+### ChildProject
+
+You will need to have [childproject](./childproject.md){:target="_blank"} activated. If you installed it as instructed, run:
+```bash
+conda activate childproject
+```
+If the activate succeeded, the terminal should display `(childproject)` before your username and path, looking like:
+```bash
+(childproject) [lpeurey@oberon lpeurey]$
+```
+If the activation fails, make sure you did not install it elsewhere or with another name before going through the [installation](#childproject)
+
+### Datalad procedures
+
+You must check the available procedures with:
+```bash
+# list available procedures
+datalad run-procedure --discover
+```
+A list will be printed somewhat similar to :
+```bash
+cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
+cfg_yoda (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_yoda.py) [python_script]
+cfg_el1000 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_el1000.py) [python_script]
+cfg_text2git (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_text2git.py) [python_script]
+cfg_metadatatypes (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_metadatatypes.py) [python_script]
+cfg_laac2 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac2.py) [python_script]
+cfg_laac (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac.py) [python_script]
+```
+Look for the `cfg_laac` entry in the list, it is the one we want to use. You are good to go if it is there.
+
+### GIN account
+
+If you did that in the past, you should already have a GIN account. [Sign in](https://gin.g-node.org/user/login?redirect_to=){:target="_blank"} to your GIN account.
+You should check that the computer you are working from has a linked ssh key to GIN. Go to your account's [ssh settings](https://gin.g-node.org/user/settings/ssh){:target="_blank"} and search in the list for the key associated to the machine you are working with (most likely oberon). If you can't find it, you may need to [add it](#gin-account).
 
 ## Prerequisites
 
@@ -26,7 +175,7 @@ In order to follow this guide, you will need to have childproject installed alon
 conda activate childproject
 ```
 
-We use [GIN](https://gin.g-node.org/){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, Loann/Alex should give you writing permissions on a dataset within the LAAC-LSCP organization.
+We use [GIN](https://gin.g-node.org/G-Node/info/wiki){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, Loann/Alex should give you writing permissions on a dataset within the [LAAC-LSCP organization](https://gin.g-node.org/LAAC-LSCP/).
 For every new computer that you will use to push updates to your dataset, You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). You only need to do this once per computer, and it'll be set for all of your datasets & forever. To set SSH access, visit the [settings of your user account](https://gin.g-node.org/user/settings/ssh){:target="_blank"}. In the “SSH Keys” tab, click the button “Add Key”:
 ![Add your SSH key](../ressources/img/gin-add-ssh.png)
 Give the key an informative name that will allow you to remember what computer it belongs to (eg “oberon-lpeurey”).
@@ -62,12 +211,11 @@ cfg_laac (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures
 
 If you spot `cfg_laac1`, `cfg_laac2`, `cfg_laac` and `cfg_el1000` in the list, you are already good to go and can skip to the [next section](#using-templates). If they are not here, we will have to install them. To do so, clone the repo (or navigate to it if you already have it) and launch the installation :
 ```bash
-git clone git@github.com:LAAC-LSCP/datalad-procedures.git
+git clone https://github.com/LAAC-LSCP/datalad-procedures.git
 cd datalad-procedures
 pip install -r requirements.txt
 python install.py
 ```
-At this point, a message may ask you if you want to establish a fingerprint; say yes.
 
 Check again the available templates with `datalad run-procedure --discover`.
 You should now have `cfg_laac1`, `cfg_laac2`, `cfg_laac` and `cfg_el1000` in the outputted list.
@@ -188,8 +336,10 @@ the LENA software outputs audio files that can sometimes contain multiple *sessi
 ChildProject is built on the assumption that every audio file is a single continuous recording with a single starting time. If you have lena audios that contain multiple sessions, you will have to split them into different files. This should be done directly in `recordings/raw` and before any audio conversion because that will change the number of audio files and subsequently the recordings index in `metadata/recordings.csv` which needs to be unique. You can however store the original lena files in a different folder such as `recordings/lena_output` for the sole purpose of keeping your original data.
 
 We recommend you use this [script](../ressources/scripts/split_lena_recordings.py){:target="_blank"} to split the recordings. Run it from the root of the dataset.
+
 Warning
 {: .label .label-yellow }
+
 The script relies on the `metadata/recordings.csv` file to know where to split. You should [create the metadata from the its files](#create-the-metadata-from-the-its-information) **before** splitting the files.
 ```python
 """
@@ -238,8 +388,8 @@ for its, recordings in project.recordings.groupby('its_filename'):
            print("failed to extract {}: {}", recording['recording_filename'], str(e))
 ```
 
-Saving and publishing audio files
-{: .label .label-yellow }
+#### Saving and publishing audio files
+
 After preparing correctly your audio files, it is time to save your changes again with
 ```bash
 datalad save -m 'audio data'
@@ -320,7 +470,7 @@ datalad push
 
 ### Create the metadata from the its information
 
-One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/EL1000/tools){:target="_blank"} was created to help in this process. You can install the package or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
+One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/EL1000/tools){:target="_blank"} was created to help in this process. You [can install the package](https://gin.g-node.org/EL1000/tools){:target="_blank"} or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
 Be aware that each dataset will need some degree of adaptation in the code.
 We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes before running it. An example can be found in this [section](https://gin.g-node.org/EL1000/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
 

@@ -98,7 +98,7 @@ VTC is currently being reworked by the CoML team so a new version (and easier wa
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
-The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
+The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `/scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
 We made the choice here to store our VTC in a directory `modules` meant to store the different model repositories. You can create that folder if you want: `mkdir /scratch2/username/modules`.
 ```bash
 cd /scratch2/username/modules
@@ -372,7 +372,8 @@ You can then submit your job to slurm.
 sbatch job-alice.sh
 ```
 
-And that is it, check the log file of the job to check its progression and possible errore (see the troubleshooting section right below). When it is over, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
+And that is it, check the log file of the job to check its progression and possible errors (see the troubleshooting section right below). The log file is named `alice-XX.log` where XX is the id of the job and it should be created in the folder where you launched it.
+Check the status of the job with `squeue`. When it finishes, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
 
 #### Troubleshooting
