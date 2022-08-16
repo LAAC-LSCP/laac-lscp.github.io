@@ -74,9 +74,9 @@ child-project --version
 
 To facilitate the dataset creation, we use templates that you need to install. First navigate your working folder (e.g. `cd /scratch2/<username>` replace username with your actual username). Enter the following command lines to clone the repo and launch the installation :
 ```bash
-cd /scratch2/username #change the path to a working directory
+cd /scratch2/username #change the path to a working directory where we create a new folder for the installation
 
-# copy the code into a new folder
+# copy the code into a new folder named datalad-procedures
 git clone https://github.com/LAAC-LSCP/datalad-procedures.git
 
 # go into the newly created folder
@@ -119,7 +119,7 @@ Confirm the addition of the key.
 
 ![confirm addition](../ressources/img/gin-confirm-ssh.png)
 
-## It has been a long time since I have done this:
+## I have done this before, get me back on track:
 
 This section lists the checks you should carry out before using the guide, knowing that you went through it before and you should not need to install new programms or register to new websites. If it does not work out, go back to the relevant [first use section](#first-time-users).
 
@@ -163,24 +163,14 @@ cfg_laac (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures
 ```
 Look for the `cfg_laac` entry in the list, it is the one we want to use. You are good to go if it is there.
 
+Otherwise, refer to the [installation section](#datalad-procedures).
+
 ### GIN account
 
 If you did that in the past, you should already have a GIN account. [Sign in](https://gin.g-node.org/user/login?redirect_to=){:target="_blank"} to your GIN account.
 You should check that the computer you are working from has a linked ssh key to GIN. Go to your account's [ssh settings](https://gin.g-node.org/user/settings/ssh){:target="_blank"} and search in the list for the key associated to the machine you are working with (most likely oberon). If you can't find it, you may need to [add it](#gin-account).
 
-## Prerequisites
-
-In order to follow this guide, you will need to have childproject installed along with datalad and git-annex. If that is not the case, follow the [installation instructions](https://childproject.readthedocs.io/en/latest/install.html#installation){:target="_blank"}. You most likely will run it in a conda environment, so make sure it is activated:
-```bash
-conda activate childproject
-```
-
-We use [GIN](https://gin.g-node.org/G-Node/info/wiki){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, Loann/Alex should give you writing permissions on a dataset within the [LAAC-LSCP organization](https://gin.g-node.org/LAAC-LSCP/).
-For every new computer that you will use to push updates to your dataset, You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). You only need to do this once per computer, and it'll be set for all of your datasets & forever. To set SSH access, visit the [settings of your user account](https://gin.g-node.org/user/settings/ssh){:target="_blank"}. In the “SSH Keys” tab, click the button “Add Key”:
-![Add your SSH key](../ressources/img/gin-add-ssh.png)
-Give the key an informative name that will allow you to remember what computer it belongs to (eg “oberon-lpeurey”).
-
-## Preparing a GIN repository
+## 1. Preparing GIN repositories (5min)
 
 We are going to need a new repository on GIN where we will store our dataset and manage people's access to it once it is ready to be shared.
 Inside the lab, we regroup our datasets in the LAAC-LSCP GIN organization, so the dataset should be created there. If you have the permissions necessary to create a new repository for the organization, follow the steps in the attached figure. If you are an intern, discuss with Alex/Loann of your need of a new repository.
@@ -189,46 +179,23 @@ Unless your dataset is public (e.g. from CHILDES), you'll need 3 levels of acces
 - collaborators => data that is shared with collaborators when we grant them access to the data, usually under NDA (e.g. recordings, transcriptions)
 - public => data that can be accessed by anybody, completely anonymous so no audio, no transcription, no personal metadata (e.g. converted automated annotations).
 
-To create those levels of access, create 3 **empty** repositories in your GIN organization: `<dataset-name>` , `<dataset-name>-public` and `<dataset-name>-confidential`, e.g. `mydataset` , `mydataset-public` and `mydataset-confidential`.
-If your dataset is public, then you can create a single repository that will be public.
+If you are the one creating the repos (most likely Loann will have to create them for you), use the [creating a repo](https://gin.g-node.org/repo/create){:target="_blank"} page **3 times** in your GIN organization and create the **empty** reposotories named: 
+- `<dataset-name>` (e.g. `mydataset`)
+- `<dataset-name>-public` (e.g. `mydataset-public`)
+- `<dataset-name>-confidential` (e.g. `mydataset-confidential`)
+
+If your dataset is public, you will create a single repository that will be public.
 ![Create your Gin repository](../ressources/img/create-gin-repo.png)
 
-## Creating the base structure and datalad repository
+## 2. Creating the base structure and datalad repository (10min)
 
-### Installating the procedures
+Here we will only use the laac template which is the one we will use most of the time. If you want, you can read more about that configuration and the other templates available in [the repo](https://github.com/LAAC-LSCP/datalad-procedures){:target="_blank"}.
 
-To create your new dataset, we will borrow some help from the `datalad-procedures` code which was created for this specific pupose. If you have already created a dataset in the past, your procedures may already be set up. 
-To check your available templates, run `datalad run-procedure --discover` and explore the outputted list:
-```
-cfg_laac1 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac1.py) [python_script]
-cfg_yoda (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_yoda.py) [python_script]
-cfg_el1000 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_el1000.py) [python_script]
-cfg_text2git (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_text2git.py) [python_script]
-cfg_metadatatypes (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_metadatatypes.py) [python_script]
-cfg_laac2 (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac2.py) [python_script]
-cfg_laac (/my/conda/env/lib/python3.6/site-packages/datalad/resources/procedures/cfg_laac.py) [python_script]
-```
-
-If you spot `cfg_laac1`, `cfg_laac2`, `cfg_laac` and `cfg_el1000` in the list, you are already good to go and can skip to the [next section](#using-templates). If they are not here, we will have to install them. To do so, clone the repo (or navigate to it if you already have it) and launch the installation :
-```bash
-git clone https://github.com/LAAC-LSCP/datalad-procedures.git
-cd datalad-procedures
-pip install -r requirements.txt
-python install.py
-```
-
-Check again the available templates with `datalad run-procedure --discover`.
-You should now have `cfg_laac1`, `cfg_laac2`, `cfg_laac` and `cfg_el1000` in the outputted list.
-
-### Using templates
-
-We will concentrate on using the laac template which is the one we will use most of the time. You can read more about that configuration and the other templates available in [the repo](https://github.com/LAAC-LSCP/datalad-procedures){:target="_blank"}.
-
-With the next set of commands, we prepare the necessary parameters by setting the GIN organization you will use and wether to create a confidential and public sibling or not. If you use a confidential sibling, make sure you created 2 repositories on GIN at [the previous step](#preparing-a-gin-repository)
+The next set of commands must be run to set the parameters
 ```bash
 export GIN_ORGANIZATION='LAAC-LSCP' # name of the GIN organization
-export CONFIDENTIAL_DATASET=1 # set to 0 if there should not be a confidential sibling
-export PUBLIC_DATASET=1 # set to 0 if there should not be a confidential sibling
+export CONFIDENTIAL_DATASET=1 # set to 0 if there should not be a confidential repository
+export PUBLIC_DATASET=1 # set to 0 if there should not be a confidential repository
 ```
 Now we can create the actual datalad repository, the procedure used will build the file structure according to [ChildProject standards](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}. First change directory to where you want your new dataset created, then create it. Replace `mydataset` by the name of your GIN repository.
 ```bash
@@ -236,7 +203,7 @@ cd /path/to/a/folder #change directory
 datalad create -c laac mydataset
 ```
 
-The output you'll see looks something like this:
+The output you get will resemble this (but can have some differences):
 ```
 [INFO   ] Creating a new annex repo at /scratch2/lpeurey/datasets/mydataset/
 [INFO   ] Scanning for unlocked files (this may take some time) 
@@ -252,6 +219,12 @@ The output you'll see looks something like this:
 .: confidential(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset-confidential.git (git)]    
 [INFO   ] Configure additional publication dependency on "confidential"         
 .: origin(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset.git (git)]
+[INFO   ] Could not enable annex remote public. This is expected if public is a pure Git remote, or happens if it is not accessible. 
+[WARNING] Could not detect whether public carries an annex. If public is a pure Git remote, this is expected.  
+.: public(-) [git@gin.g-node.org:/LAAC-LSCP/mydataset-public.git (git)]
+.: public(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset-public.git (git)]    
+[INFO   ] Configure additional publication dependency on "public"         
+.: origin(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset.git (git)]
 [INFO   ] == Command exit (modification check follows) ===== 
 create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 ```
@@ -265,7 +238,7 @@ Your default branch may be set to 'git-annex', change this in the settings:
 ![Explore your GIN repo online](../ressources/img/default-branch_git-annex.png)
 ![Explore your GIN repo online](../ressources/img/change-default-branch.png)
 
-## Organizing raw data
+## 3. Organizing raw data (2 hours)
 
 go into your new dataset : `cd mydataset`
 
@@ -457,7 +430,7 @@ datalad save . -m "message about what changes were made"
 datalad push
 ```
 
-## Link everything : The new metadata
+## 4. Link everything : The new metadata (1 hour)
 
 We now need to create the metadata files that childproject uses to link all the files together.
 For an overview of the files needed and their format, head to [ChildProject format](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}
@@ -492,7 +465,7 @@ child-project validate .
 ```
 Read through the output to see if the validation was successful. If not, fix the errors and re-run the validation until it passes.
 
-## Import the annotations
+## 5. Import the annotations (2 hours)
 
 ### General aspects
 
@@ -586,7 +559,7 @@ After going through those steps, if you did not manage to get the set imported c
 Custom importation allows you to define your file converter yourself, defining how the original file should be handled and what information inside should be kept and stored into the resulting annotations.
 Head to [this page](https://childproject.readthedocs.io/en/latest/api-annotations.html#custom-converter){:target="_blank"}.
 
-## Save and push
+### Save and push
 
 Once again, after carrying out changes to the dataset, we need to save its current state and push modifications online
 ```bash
