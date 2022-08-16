@@ -508,9 +508,9 @@ from ChildProject.annotations import AnnotationManager
 
 dataset_path = "."
 ### !!!! EDIT THIS SECTION !!!! ###
-#annot_type = {"set":"vtc","file_extension":".rttm"} # UNCOMMENT FOR VTC ANNOTATIONS
-#annot_type = {"set":"alice/output","file_extension":".txt"} # UNCOMMENT FOR ALICE ANNOTATIONS
-#annot_type = {"set":"vcm","file_extension":".vcm"} # UNCOMMENT FOR VCM ANNOTATIONS
+#annot_type = {"set":"vtc","file_extension":".rttm","format":"vtc_rttm"} # UNCOMMENT FOR VTC ANNOTATIONS
+#annot_type = {"set":"alice/output","file_extension":".txt","format":"alice"} # UNCOMMENT FOR ALICE ANNOTATIONS
+#annot_type = {"set":"vcm","file_extension":".vcm","format":"vcm_rttm"} # UNCOMMENT FOR VCM ANNOTATIONS
 ###################################
 
 #load the project
@@ -528,6 +528,7 @@ input_frame.drop(['experiment', 'child_id', 'date_iso', 'start_time', 'recording
 
 input_frame["raw_filename"]= input_frame.apply(lambda row: os.path.splitext(row["recording_filename"])[0] + annot_type["file_extension"], axis=1) #take the name of the audio and add extension of the annotation (so this assumes the annotation file has the same name as the audio appart from extension)
 input_frame["set"] = annot_type["set"] #set to import to
+input_frame["format"] = annot_type["format"] #format of the annotation
 input_frame["time_seek"] = "0" # timestamps in the file don't need to be shifted
 input_frame["range_onset"] = "0" #from the start of the audio              ...
 input_frame["range_offset"]= input_frame["duration"] # ...to the end
@@ -547,8 +548,8 @@ from ChildProject.annotations import AnnotationManager
 
 dataset_path = "."
 ### !!!! EDIT THIS SECTION !!!! ###
-#annot_type = {"set":"vtc","file":"all.rttm"} # UNCOMMENT FOR VTC ANNOTATIONS
-#annot_type = {"set":"alice/output","file":"all.txt"} # UNCOMMENT FOR ALICE ANNOTATIONS
+#annot_type = {"set":"vtc","file":"all.rttm","format":"vtc_rttm"} # UNCOMMENT FOR VTC ANNOTATIONS
+#annot_type = {"set":"alice/output","file":"all.txt","format":"alice"} # UNCOMMENT FOR ALICE ANNOTATIONS
 ###################################
 
 #load the project
@@ -566,6 +567,7 @@ input_frame.drop(['experiment', 'child_id', 'date_iso', 'start_time', 'recording
 
 input_frame["raw_filename"]= annot_type["file"] #name of the annotation file
 input_frame["set"] = annot_type["set"] #set to import to
+input_frame["format"] = annot_type["format"] #format of the annotation
 input_frame["time_seek"] = "0" # timestamps in the file don't need to be shifted
 input_frame["range_onset"] = "0" #from the start of the audio              ...
 input_frame["range_offset"]= input_frame["duration"] # ...to the end
