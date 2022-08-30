@@ -198,7 +198,7 @@ If your dataset is public, you will create a single repository that will be publ
 
 Here we will only use the laac template which is the one we will use most of the time. If you want, you can read more about that configuration and the other templates available in [the repo](https://github.com/LAAC-LSCP/datalad-procedures){:target="_blank"}.
 
-The next set of commands must be run to set the parameters
+The next list of commands must be run to set the parameters
 ```bash
 export GIN_ORGANIZATION='LAAC-LSCP' # name of the GIN organization
 export CONFIDENTIAL_DATASET=1 # set to 0 if there should not be a confidential repository
@@ -239,11 +239,13 @@ create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
 ![Explore your GIN repo online](../ressources/img/first-push.png)
 
-The content looks odd?
+The online content does not have the same structure and folders?
 {: .label .label-yellow }
-Your default branch may be set to 'git-annex', change this in the settings:
+Your default branch may be set to 'git-annex', change this in the settings for all the GIN datasets:
 ![Explore your GIN repo online](../ressources/img/default-branch_git-annex.png)
 ![Explore your GIN repo online](../ressources/img/change-default-branch.png)
+
+Congratulations, you just created a structured and ready to be uses repository for your dataset !! Your next step is to populate it with your data.
 
 ## 3. Organizing raw data (2 hours)
 
@@ -256,6 +258,39 @@ The next step is thus to add raw data to the dataset in the right place.
 There are two possibilites (depending on whether you created a confidential repository or not):
  1. Some data are confidential and should only be accessible from `<your-dataset>-confidential`
  2. All data can be included in the main version of the dataset
+
+As a reminder, the childproject structure is organized around the following structure:
+>   project
+>   │   
+>   │
+>   └───metadata
+>   │   │   children.csv
+>   │   │   recordings.csv
+>   │   │   annotations.csv
+>   |
+>   └───recordings
+>   │   └───raw
+>   │   │   │   recording1.wav
+>   │
+>   └───annotations
+>   │   └───vtc
+>   │   │   └───raw
+>   │   │   │   │   child1.rttm
+>   │   └───annotator1
+>   │   │   └───raw
+>   │   │   │   │   child1_3600.TextGrid
+>   │
+>   └───scripts (*)
+>   │   │   import-vtc.py
+>   │
+>   └───extra
+>       │   notes.txt
+
+- the `recordings` folder is dedicated to storing the audio files of the dataset
+- the `metadata` keeps any kinf of metadata, more specifically the list of recordings and information about them, the list of children and their information and finally, the list of annotations file and what they are linked to. Any other kinf of metadata can also be stored here.
+- the `annotations` folder contains what we call sets. Sets are folders grouping together multiple annotation files (usually by type and annotator). For example, we usually have a `vtc` set containing all the annotations given by the [voice-type-claddifier](./running-models.md/#voice-type-classifier-vtc){:target="_blank"} and a human annotation set produced by an annotation campaign (e.g. `eaf2022`).
+- the `scripts` folder contains scripts that were used in the dataset (it is optional to have this folder)
+- the `extra` folder contains any other additional file useful in the dataset. That could be csv files storing a list of audio segments selected by the [sampler pipeline](https://childproject.readthedocs.io/en/latest/samplers.html){:target="_blank"} for example
 
 ### How confidential data is organized and stored
 
@@ -378,7 +413,7 @@ However be cautious with pushing your changes online because the audio data can 
 
 ### Original Metadata
 
-The original metadata is likely to contain sensitive information, so if you have a confidential sibling, it should be restricted to the `confidential` version of the dataset.
+The original metadata is likely to contain sensitive information, so if you have a confidential dataset, it should be restricted to the `confidential` version of the dataset.
 Therefore, most of the time, your original metadata should lie in `metadata/confidential/original`. Otherwise, store it in `metadata/original`.
 
 ```bash
