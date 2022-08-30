@@ -260,31 +260,33 @@ There are two possibilites (depending on whether you created a confidential repo
  2. All data can be included in the main version of the dataset
 
 As a reminder, the childproject structure is organized around the following structure:
->   project
->   │   
->   │
->   └───metadata
->   │   │   children.csv
->   │   │   recordings.csv
->   │   │   annotations.csv
->   |
->   └───recordings
->   │   └───raw
->   │   │   │   recording1.wav
->   │
->   └───annotations
->   │   └───vtc
->   │   │   └───raw
->   │   │   │   │   child1.rttm
->   │   └───annotator1
->   │   │   └───raw
->   │   │   │   │   child1_3600.TextGrid
->   │
->   └───scripts (*)
->   │   │   import-vtc.py
->   │
->   └───extra
->       │   notes.txt
+```bash
+   project
+   │   
+   │
+   └───metadata
+   │   │   children.csv
+   │   │   recordings.csv
+   │   │   annotations.csv
+   |
+   └───recordings
+   │   └───raw
+   │   │   │   recording1.wav
+   │
+   └───annotations
+   │   └───vtc
+   │   │   └───raw
+   │   │   │   │   child1.rttm
+   │   └───annotator1
+   │   │   └───raw
+   │   │   │   │   child1_3600.TextGrid
+   │
+   └───scripts (*)
+   │   │   import-vtc.py
+   │
+   └───extra
+       │   notes.txt
+```
 
 - the `recordings` folder is dedicated to storing the audio files of the dataset
 - the `metadata` keeps any kinf of metadata, more specifically the list of recordings and information about them, the list of children and their information and finally, the list of annotations file and what they are linked to. Any other kinf of metadata can also be stored here.
