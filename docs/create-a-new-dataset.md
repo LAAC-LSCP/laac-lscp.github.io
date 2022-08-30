@@ -262,7 +262,6 @@ There are two possibilites (depending on whether you created a confidential repo
 As a reminder, the childproject structure is organized around the following structure:
 ```bash
    project
-   │   
    │
    └───metadata
    │   │   children.csv
@@ -343,7 +342,8 @@ By default, we only consider automated converted annotation files to be public. 
 
 #### Original recordings
 
-Your original audio files should always be stored under `recordings/raw`.
+Your original audio files should always be stored under `recordings/raw`. **Copy your audio files** in this folder. That way, you keep all originals before any conversion.
+
 You will likely want derived versions of them, depending on the format, codec, sampling rate, number of channels used for those files. We use wav files sampled at 16kHz mono channel with codec pcm_s16le as our standard. This is to make sure we can apply our usual models to them and read their content correctly.
 You are strongly encouraged to do that [conversion using childproject](https://childproject.readthedocs.io/en/latest/processors.html#basic-audio-conversion){:target="_blank"} **once you have finished creating the dataset** as the automatic conversion relies on the dataset already being organized and passing the childproject validation.
 
@@ -352,57 +352,16 @@ You are strongly encouraged to do that [conversion using childproject](https://c
 the LENA software outputs audio files that can sometimes contain multiple *sessions*. This means that in a single audio file, you will find that the recording is sometimes stopped and restarted at a different hour.
 ChildProject is built on the assumption that every audio file is a single continuous recording with a single starting time. If you have lena audios that contain multiple sessions, you will have to split them into different files. This should be done directly in `recordings/raw` and before any audio conversion because that will change the number of audio files and subsequently the recordings index in `metadata/recordings.csv` which needs to be unique. You can however store the original lena files in a different folder such as `recordings/lena_output` for the sole purpose of keeping your original data.
 
-We recommend you use this [script](../ressources/scripts/split_lena_recordings.py){:target="_blank"} to split the recordings. Run it from the root of the dataset.
-
-Warning
-{: .label .label-yellow }
-
-The script relies on the `metadata/recordings.csv` file to know where to split. You should [create the metadata from the its files](#create-the-metadata-from-the-its-information) **before** splitting the files.
-```python
-"""
-This script splits the audio files outputted by lena that contains multiple days of recording.
-Based on recordings.csv, splits audio that is linked to the same .its file into separate audio files by using the durations.
-"""
-from ChildProject.projects import ChildProject 
-from pydub import AudioSegment
-import os
-
-audio_path = 'recordings/lena_output'
-
-project = ChildProject('.')
-project.read()
-
-#regroup recordings by the original lena output(as the its file)
-for its, recordings in project.recordings.groupby('its_filename'):
-    #print(recordings)
-    #print(session)
-    
-    recordings['position'] = recordings['duration'].cumsum().shift(1, fill_value = 0)
-    
-    input_audio = os.path.join(audio_path, its[:-4] +'.wav')
-    if not os.path.exists(input_audio):
-        #print(f"{input_audio} does not exist")
-        pass
-
-    audio = None
-
-    for recording in recordings.to_dict(orient = 'records'):
-        on = recording['position']
-        off = recording['position']+recording['duration']
-
-        print("audio : {} -> {} - {} -> {}".format(input_audio, on, off,recording['recording_filename']))
-    
-        if audio is None:
-            audio = AudioSegment.from_file(input_audio)
-        
-        try:
-            audio[on:off].set_sample_width(2).export(
-                project.get_recording_path(recording['recording_filename']),
-                format = 'wav',
-                bitrate = '16k'
-            )
-        except Exception as e:
-           print("failed to extract {}: {}", recording['recording_filename'], str(e))
+If you already moved your audio files into `recordings/raw`, you should now rename the `raw` folder to `lena_output` (use `mv recordings/raw recordings/lena_output` for example). Then we recommand running our scripts:
+1. copy the 2 script files into your `scripts` folder :
+   - [script for creating the recording metadata](../ressources/scripts/lena_create_rec_metadata.py)
+   - [script for splitting the recordings](../ressources/scripts/split_lena_recordings.py)
+2. run the commands to first create the recording index and then split the recordings. Run it from the base folder of the dataset (e.g. `/scratch2/lpeurey/mydataset`):
+```bash
+python scripts/lena_create_rec_metadata.py
+# you should now have the file metadata/recordings.csv in the dataset
+python scripts/split_lena_recordings
+# you should now have the split recordings in recordings/raw
 ```
 
 #### Saving and publishing audio files
@@ -435,7 +394,7 @@ mkdir -p metadata/confidential/original
 mkdir -p annotations/its/confidential/raw
 ```
 
-Your .its files should be saved at the root of `annotations/its/confidential/raw` or `annotations/its/raw` depending on if they are to be kept confidential or not.
+Your .its files should be saved in the folder `annotations/its/confidential/raw` or `annotations/its/raw` depending on if they are to be kept confidential or not.
 
 If you stored them as confidentiel, an anonymized version of the .its should be created. This is done with the [ChildProject package](https://childproject.readthedocs.io/en/latest/annotations.html#its-annotations-anonymization){:target="_blank"}:
 
