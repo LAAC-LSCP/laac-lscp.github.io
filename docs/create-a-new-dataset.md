@@ -144,6 +144,13 @@ If the activate succeeded, the terminal should display `(childproject)` before y
 ```
 If the activation fails, make sure you did not install it elsewhere or with another name before going through the [installation](#childproject)
 
+For this specific guide, we need datalad to be at version 0.17.3 or more (due to a bug fix). So once your environment is activated, check your datalad version and upgrade it if necessary:
+```bash
+(childproject) [lpeurey@oberon lpeurey]$ datalad --version
+datalad 0.15.4
+(childproject) [lpeurey@oberon lpeurey]$ pip install -U datalad #upgrade because the version printed is not 0.17.3 or more
+```
+
 ### Datalad procedures
 
 You must check the available procedures with:
