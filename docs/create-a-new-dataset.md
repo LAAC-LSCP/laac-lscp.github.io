@@ -446,9 +446,9 @@ datalad push
 
 ### Create the metadata from the its information
 
-One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/EL1000/tools){:target="_blank"} was created to help in this process. You [can install the package](https://gin.g-node.org/EL1000/tools){:target="_blank"} or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
+One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} was created to help in this process. You [can install the package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
 Be aware that each dataset will need some degree of adaptation in the code.
-We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes before running it. An example can be found in this [section](https://gin.g-node.org/EL1000/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
+We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes before running it. An example can be found in this [section](https://gin.g-node.org/LAAC-LSCP/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
 
 Warning
 {: .label .label-yellow }
