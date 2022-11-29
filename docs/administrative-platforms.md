@@ -21,13 +21,11 @@ The platform you will be using is different if you are affiliated with CNRS or E
 - permanent members (managers) are affiliated to CNRS.
 - postdocs, doctoral students and interns are usually affiliated to ENS.
 
-## Platforms {.tabset}
-
-### CNRS
+## CNRS
 
 To access CNRS platforms, you will need 'sesame' credentials. If this is your first connection, go [here](https://sesame.cnrs.fr/){:target="_blank"}, this assumes your email address has already been recorded by the human ressources team.
 
-#### Record your work time
+### Record your work time
 
 At the end of every month (before the 7th of the next month), you will need to record your worked and absence days. You should be reminded of that task by an email when the time comes.
 You need to use the [tempo](https://tempo.cnrs.fr){:target="_blank"} website. Log in using your sesame credentials.
@@ -38,7 +36,7 @@ You need to use the [tempo](https://tempo.cnrs.fr){:target="_blank"} website. Lo
 
 ![record work time tempo](../ressources/img/tempo-enter.png)
 
-#### Request leave (both missions/personal time off/others)
+### Request leave (both missions/personal time off/others)
 
 The CNRS uses the [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} platform. Log in with your sesame credentials.
 You can see your balance of paid leave in the 'Compteur(s)' tab.
@@ -51,7 +49,7 @@ To send a new request:
 
 ![record work time tempo](../ressources/img/tempo-enter.png)
 
-#### Teleworking
+### Teleworking
 
 Teleworking involves two steps
 
@@ -63,7 +61,7 @@ Teleworking involves two steps
 
 ![declare-telework](../ressources/img/declare-telework.png)
 
-### ENS
+## ENS
 
 ENS uses the HAMAC platform, to access it, go to the 'environnement numérique de travail' of the ENS [here](http://ent.ens.fr){:target="_blank"}. Click the 'Connexion' button on the right of the page and enter your ENS credentials.
 Then in the 'Services' tab, click on 'Hamac'.
@@ -72,7 +70,7 @@ Then in the 'Services' tab, click on 'Hamac'.
 
 ![Access Hamac service](../ressources/img/access-hamac.png)
 
-#### Define schedule
+### Define schedule
 
 In order to ask for leave days, you first need to have a schedule defined and validated by your superior.
 
@@ -98,7 +96,7 @@ You can now send your schedule for validation to your superior, to ask for valid
 
 You will be able to ask for leave days when the schedule is validated.
 
-#### Leave days
+### Leave days
 
 Please note that to ask for leave days, you first need to have a [validated schedule](#define-schedule).
 
@@ -110,6 +108,6 @@ Please note that to ask for leave days, you first need to have a [validated sche
 
 ![request leave](../ressources/img/request-leave.png)
 
-#### Additional resources
+### Additional resources
 
 You can read the 'quite old and only in french' excel version of how to use hamac for more detailed information [here](../ressources/misc/guide-pratique-hamac.xls)
