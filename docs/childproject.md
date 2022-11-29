@@ -21,6 +21,19 @@ Childproject provides two ways of interacting with your dataset:
 
 Childproject is based on a specific file structure to organize and save your dataset. This structure is detailed [here](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}. Once all your files are saved accordingly and your metadata files are ready, you can start running commands and writing your scripts with the API.
 
+## Use it on oberon
+
+In oberon, we provide a ready to use conda environment with childproject. You will likely use childproject a lot on the server when working with datasets.
+To activate it, run:
+```bash
+conda activate /scratch2/lpeurey/conda/childproject
+```
+From there, you will be able able to run all the childproject features without further installs.
+
+Please do not edit this environment (i.e. do not run `pip install` or `conda install` commands inside the environment). If you have specific needs for your project, [build a personal environment](./oberon.md#conda-environments){:target="_blank"}, if you think additional libraries should be installed in this shared environment (e.g. for bug fix, additional features), tell Loann about it.
+
+You may want to automatically activate the childproject environment on login, to do so, refer to [this section](./oberon.md#helpful-configurations){:target="_blank"}
+
 ## Some literature:
 
 - [Managing, storing, and sharing long-form recordings and their annotations. Language Resources and Evaluation.](https://psyarxiv.com/w8trm/download?format=pdf){:target="_blank"}(Gautheron, L., Rochat, N., & Cristia, A. (2021))

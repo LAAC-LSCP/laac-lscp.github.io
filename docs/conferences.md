@@ -53,3 +53,7 @@ Things we don't know about yet:
 ### If you are NOT currently a LAAC member
 
 Book all travel, hotel, and register for the conference, keeping all receipts. After the conference is over, provide all receipts to get reimbursed. 
+
+### After coming back from the conference
+
+Scan or take photos of all receipts. Send them via email to Philippe (PhilippeDauli@gmail.com). Then bring the originals with you to the lab and give them to Philippe.

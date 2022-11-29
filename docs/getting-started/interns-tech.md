@@ -15,7 +15,7 @@ nav_order: 1
 - [ ] Sign up on [GIN](https://gin.g-node.org/){:target="_blank"} and [OSF](https://osf.io){:target="_blank"} and give your handle to Loann.
 - [ ] Set up your access to [oberon](../oberon) and learn the way it operates.
 - [ ] Learn how to create and use [YODA repos](../yoda-projects.md).
-- [ ] Install [ChildProject](../childproject) and make sure you understand how to use it.
+- [ ] On oberon, activate your conda [ChildProject](../childproject) environment and make sure you understand how to use it.
 
 <!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
 -->
