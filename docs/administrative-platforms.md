@@ -31,10 +31,12 @@ At the end of every month (before the 7th of the next month), you will need to r
 You need to use the [tempo](https://tempo.cnrs.fr){:target="_blank"} website. Log in using your sesame credentials.
 
 - Click on the corresponding month
-- Select your activity for each month (there is a field at the bottom of the page to affect all selected rows and save you some time).
+- Select your activity for each day (there is a field at the bottom of the page to affect all selected rows and save you some time).
 - Send for validation with the 'Signer et envoyer pour validation' button. Make sure the information is correct before sending it!
 
-![record work time tempo](../ressources/img/tempo-enter.png)
+![record work time tempo top](../ressources/img/top-tempo-enter.png)
+
+![record work time tempo bottom](../ressources/img/bot-tempo-enter.png)
 
 ### Request leave (both missions/personal time off/others)
 
@@ -42,12 +44,13 @@ The CNRS uses the [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} p
 You can see your balance of paid leave in the 'Compteur(s)' tab.
 
 To send a new request:
+- In the 'Absences' section
 - select the 'Nouvelle demande' tab
 - choose the motive ('mission' or 'formation' time will not be deducted from yout balance)
 - Enter the dates (morning and afternoons are counted, so for examle if you only take full days, in the start date select morning and in the end date select afternoon)
 - Validate with 'Enregistrer'
 
-![record work time tempo](../ressources/img/tempo-enter.png)
+![agate tempo leave](../ressources/img/agate-tempo-leave.png)
 
 ### Teleworking
 
@@ -57,7 +60,7 @@ Teleworking involves two steps
 
 ![first-request-telework](../ressources/img/first-request-telework.png)
 
-2. Declare your teleworked days using [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} (woth sesame credentials). In the 'Télétravail' tab, select 'Nouvelle demande'. Then enter the start and end date and validate (you can select 'periodique' for recurring telework days).
+2. Declare your teleworked days using [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} (woth sesame credentials). In the 'Absences'section, click the 'Télétravail' tab, select 'Nouvelle demande'. Then enter the start and end date and validate (you can select 'periodique' for recurring telework days).
 
 ![declare-telework](../ressources/img/declare-telework.png)
 
