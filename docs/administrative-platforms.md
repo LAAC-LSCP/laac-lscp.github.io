@@ -84,7 +84,9 @@ In order to ask for leave days, you first need to have a schedule defined and va
 - Enter your worked time for each day of the week. We advise to give a length of 3h45 for worked hours in mornings and afternoons and 7h30 each worked day to avoid taking only fractions of days/half-days when asking for leave time (as Hamac calculates leave time based on 1day=7h30 and 1/2day=3h45).
 - Save the schedule (bottom left corner)
 
-![Create a schedule](../ressources/img/new-schedule.png)
+![Create a schedule 1](../ressources/img/new-schedule-1.png)
+
+![Create a schedule 2](../ressources/img/new-schedule-2.png)
 
 Now that you have a schedule created, you need to tell the system to use it for the duration of your work here:
 - Select the 'planning' category
@@ -105,11 +107,13 @@ Please note that to ask for leave days, you first need to have a [validated sche
 
 - In the Hamac platform, click 'mon planning'
 - Click on the day your leave starts
-- Choose a motive for your request (personal leave is 'occupation', for justified leave, choose the reason in the drop-down list, the validation process will usually need proof to be accepted)
+- Choose a motive for your request (personal leave is 'congé annuel', for justified leave, choose the reason in the drop-down list, the validation process will usually need proof to be accepted)
 - Select the end date (if it is different of the start date)
 - Validate your request
 
-![request leave](../ressources/img/request-leave.png)
+![request leave](../ressources/img/hamac-leave-1.png)
+
+![request leave](../ressources/img/hamac-leave-2.png)
 
 ### Additional resources
 
