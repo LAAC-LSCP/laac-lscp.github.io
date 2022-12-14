@@ -27,6 +27,8 @@ To access CNRS platforms, you will need 'sesame' credentials. If this is your fi
 
 ### Record your work time
 
+Depending on the nature of your contract, you may have to record your work time or not. Ask Philippe or Radhia if you need to do this.
+
 At the end of every month (before the 7th of the next month), you will need to record your worked and absence days. You should be reminded of that task by an email when the time comes.
 You need to use the [tempo](https://tempo.cnrs.fr){:target="_blank"} website. Log in using your sesame credentials.
 
@@ -56,7 +58,7 @@ To send a new request:
 
 Teleworking involves two steps
 
-1. Get a teleworking permission. This requires some paperwork and can be quite long to be accepted. You have to log into the [ariane](ariane.cnrs.fr/){:target="_blank"} website (with sesame credentials). Then the request is made [here](https://cnrs.employee.eu.people-doc.com/request-forms/premiere-demande-d-autorisation-de-teletravail-copie-1){:target="_blank"}. A lot of information and some paperwork is needed so please talk this through with Alex.
+1. Get a teleworking permission. This requires some paperwork and can be quite long to be accepted. You have to log into the [ariane](https://ariane.cnrs.fr/){:target="_blank"} website (with sesame credentials). Then the request is made [here](https://cnrs.employee.eu.people-doc.com/request-forms/premiere-demande-d-autorisation-de-teletravail-copie-1){:target="_blank"}. A lot of information and some paperwork is needed so please talk this through with Alex.
 
 ![first-request-telework](../ressources/img/first-request-telework.png)
 
