@@ -73,7 +73,7 @@ datalad subdatasets -d . --set-property datalad-url git@gin.g-node.org:/LAAC-LSC
 Outside the lab or if the dataset is not present locally
 {: .label }
 
-When there is no local dataset storing the data you want, you can directly clone the dataset from an online repo. Just remember that `datalad get` will have to doanload the content and that can be time consuming.
+When there is no local dataset storing the data you want, you can directly clone the dataset from an online repo. Just remember that `datalad get` will have to download the content and that can be time consuming.
 ```bash
 mkdir datasets
 cd datasets
