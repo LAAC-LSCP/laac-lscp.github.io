@@ -459,9 +459,6 @@ rttm_path=${dataset_path}/annotations/vtc/raw
 out_path=${dataset_path}/annotations/vcm/raw
 smilextract="."
 
-mkdir -p ${alice_out_path} #create alice output path if does not exist
-mkdir -p ${aliceSum_out_path} #create alice sum output path if does not exist
-
 # launch your computation
 ./vcm.sh -a ${audio_path} -r ${rttm_path} -s ${smilextract} -o ${out_path} -j 12 #12 jobs, put your number of cpu cores
 ```
