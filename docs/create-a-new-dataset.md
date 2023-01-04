@@ -110,14 +110,14 @@ Look for the `cfg_laac` entry in the list, it is the one we want to use. You are
 We use [GIN](https://gin.g-node.org/G-Node/info/wiki){:target="_blank"} as an online platform for storing our repositories. To publish your dataset, you will need a GIN account that has writing permissions for your dataset. You should have created an account already, if not do it [here](https://gin.g-node.org/user/sign_up){:target="_blank"}. Once you have an account, ask Loann/Alex should give you writing permissions on a dataset within the [LAAC-LSCP organization](https://gin.g-node.org/LAAC-LSCP/).
 
 For every new computer that you will use to push updates to your dataset, You have to register an SSH key to allow SSH access (you can find an explanation of what SSH keys are and how you can create one in this [tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/about-ssh){:target="_blank"}). You only need to do this once per computer, and it'll be set for all of your datasets & forever. To set SSH access, visit the [settings of your user account](https://gin.g-node.org/user/settings/ssh){:target="_blank"}. In the “SSH Keys” tab, click the button “Add Key”:
-![Add your SSH key](../ressources/img/gin-add-ssh.png)
+![GIN website, inside the settings page: add an ssh key by selecting the 'SSH keys' tab then click on the 'Add key' button on the top right corner.](../ressources/img/gin-add-ssh.png)
 
 - In the "Key Name" field, give an informative name that will allow you to remember what computer it belongs to (eg “oberon-lscp”).
 - In the "Content" field, copy the content of your public key. In oberon, and in most systems, the key is by default the file `~/.ssh/id_rsa.pub`. You can print it with the command `cat ~/.ssh/id_rsa.pub`, then copy **all** the output into the field.
 
 Confirm the addition of the key.
 
-![confirm addition](../ressources/img/gin-confirm-ssh.png)
+![GIN website, inside the adding an ssh key page: give the key an informative name in the 'Key name' box, put the content of the key in the 'Content' box, validate by clicking the 'Add key' button](../ressources/img/gin-confirm-ssh.png)
 
 ## I have done this before, get me back on track:
 
@@ -192,7 +192,7 @@ If you are the one creating the repos (most likely Loann will have to create the
 - `<dataset-name>-confidential` (e.g. `mydataset-confidential`)
 
 If your dataset is public, you will create a single repository that will be public.
-![Create your Gin repository](../ressources/img/create-gin-repo.png)
+![Gin webiste: create a new repo by clicking on the '+' button and selecting 'new repository'. Choose the owner, name the repo and give a description, unckeck the 'Initialize this repository with selected files and template' checkbox, then confirm the creation with the 'Create Repository' button.](../ressources/img/create-gin-repo.png)
 
 ## 2. Creating the base structure and datalad repository (10min)
 
@@ -237,13 +237,13 @@ create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 ```
 
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
-![Explore your GIN repo online](../ressources/img/first-push.png)
+![GIN website, page of the new repo: Displays the content of the newly pushed repo.](../ressources/img/first-push.png)
 
 The online content does not have the same structure and folders?
 {: .label .label-yellow }
 Your default branch may be set to 'git-annex', change this in the settings for all the GIN datasets:
-![Explore your GIN repo online](../ressources/img/default-branch_git-annex.png)
-![Explore your GIN repo online](../ressources/img/change-default-branch.png)
+![GIN website, page of the new repo: if the page displays 'Branch:git-annex' at the top, change the default branch by going in the settings menu at the top right.](../ressources/img/default-branch_git-annex.png)
+![GIN website, settings of the new repo: select the 'Branches' tab, in the 'Default branch' section, choose 'main' in the drop down menu, validate with the 'Update' button](../ressources/img/change-default-branch.png)
 
 Congratulations, you just created a structured and ready to be uses repository for your dataset !! Your next step is to populate it with your data.
 

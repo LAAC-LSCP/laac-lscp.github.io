@@ -50,7 +50,7 @@ The LSCP calendar, including all the meetings mentioned above, is available [her
 The department (DEC) is hosting a lot of events and seminars. The DEC calendar is available [here.](https://calendar.google.com/calendar/embed?src=07im0e9urm3sh8tlmoeqde2drk%40group.calendar.google.com&ctz=Europe%2FParis){:target="_blank"}
 
 You can easily add those calendar to your personal google agenda by clicking on the button at the bottom right of the page:
-![add calendars to your google agenda](../ressources/img/add-calendar-google.jpg)
+![add calendars to your google agenda by clicking on the bottom right corner on the '+ Google calendar' button.](../ressources/img/add-calendar-google.jpg)
 
 ## When you need something:
 
