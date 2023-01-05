@@ -15,7 +15,8 @@ Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cogn
 
 ## Directories and usage
 
-Read how [data storage](https://wiki.cognitive-ml.fr/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone. If you are familiar with linux permissions, restrict the access to anyone not in the laac group. If not, ask Loann.
+Read how [data storage](https://wiki.cognitive-ml.fr/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
+You must organize your directory in different folders with suitable permissions: see [recommended set up](#recommended-set-up-for-personal-directory)
 
 Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and get the datasets you need from there but you should not have to edit them.
 
@@ -48,3 +49,61 @@ To facilitate using those different principles, here are some operations you can
   ```bash
   echo -e "\n#activate childproject environment when logging in\nconda activate /scratch2/lpeurey/conda/childproject" >>~/.bashrc
   ```
+
+## Recommended set up for personal directory
+
+### Structure
+
+At the root of the directory, we have 3 folders with different permissions for different use:
+- `personal` will contain anything that should not be shared with anyone.
+- `laac` is accessible by the laac users who have been granted access to the data. You can store private data here.
+- `shared` is accessible by everybody on the cluster. You can use it for non sensitive projects.
+
+You can also create folders for other teams if you work with them and should restrict the access to only their members.
+
+```bash
+[username@oberon username]$ ls -l
+total 4
+drwxr-s--- 14 username laac     4096 Nov 28 14:02 laac
+drwx------  4 username bootphon   90 Oct 13 15:19 personal
+drwxr-xr-x  3 username bootphon   34 Oct 26 11:47 shared
+```
+
+### Creating it
+
+Replace \<username\> by your actual username in all the commands.
+
+First navigate to your working directory:
+```bash
+[username@oberon ~]$ cd /scratch2/username
+[username@oberon username]$
+```
+
+Create the 3 directories:
+```bash
+[username@oberon username]$ mkdir personal laac shared
+[username@oberon username]$ ls
+laac  personal  shared
+```
+
+Set the permissions for each of them:
+```bash
+[username@oberon username]$ chown :laac laac
+[username@oberon username]$ chmod 750 laac
+[username@oberon username]$ chmod g+s laac
+[username@oberon username]$ chmod 700 personal
+[username@oberon username]$ chmod 755 shared
+```
+
+Check the new permissions:
+```bash
+[username@oberon username]$ ls -la
+total 8
+drwxr-xr-x  5 username bootphon   64 Sep 23 13:28 .
+drwxr-xr-x 62 root     root     4096 Jan  3 10:58 ..
+drwxr-s--- 14 username laac     4096 Nov 28 14:02 laac
+drwx------  4 username bootphon   90 Oct 13 15:19 personal
+drwxr-xr-x  3 username bootphon   34 Oct 26 11:47 shared
+```
+
+The permissions listed in the left should be the same for each directory
