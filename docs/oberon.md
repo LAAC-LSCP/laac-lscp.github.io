@@ -61,14 +61,6 @@ At the root of the directory, we have 3 folders with different permissions for d
 
 You can also create folders for other teams if you work with them and should restrict the access to only their members.
 
-```bash
-[username@oberon username]$ ls -l
-total 4
-drwxr-s--- 14 username laac     4096 Nov 28 14:02 laac
-drwx------  4 username bootphon   90 Oct 13 15:19 personal
-drwxr-xr-x  3 username bootphon   34 Oct 26 11:47 shared
-```
-
 ### Creating it
 
 Replace \<username\> by your actual username in all the commands.
@@ -106,4 +98,6 @@ drwx------  4 username bootphon   90 Oct 13 15:19 personal
 drwxr-xr-x  3 username bootphon   34 Oct 26 11:47 shared
 ```
 
-The permissions listed in the left should be the same for each directory
+The permissions listed in the left should be the same for each directory.
+
+You now have a ready to use structure to organize and store your projects and data :)
