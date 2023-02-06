@@ -1,7 +1,7 @@
 ---
 layout: default
 title: New Dataset
-nav_order: 10
+nav_order: 11
 description: "Create a new dataset to be published to GIN"
 ---
 
