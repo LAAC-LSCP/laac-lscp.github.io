@@ -10,7 +10,7 @@ nav_order: 1
 ## Getting down to business
 
 - [ ] talk to Alex about a weekly meeting, typically 30min
-- [ ] Loann should ask Gwendal/Nick to add you on oberon and in the laac group. This will allow you to connect to the server and to the [ComL wiki](https://wiki.cognitive-ml.fr/){:target="_blank"}.
+- [ ] Loann should ask Nick to add you on oberon and in the laac group. This will allow you to connect to the server and to the [ComL wiki](https://wiki.cognitive-ml.fr/){:target="_blank"}.
 - [ ] If you're not going to use your own, then get a team's computer
 - [ ] Sign up on [GIN](https://gin.g-node.org/){:target="_blank"} and [OSF](https://osf.io){:target="_blank"} and give your handle to Loann.
 - [ ] Set up your access to [oberon](../oberon) and learn the way it operates.
