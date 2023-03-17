@@ -91,9 +91,6 @@ Everytime you add new annotations to a dataset, you need to organize them correc
 If you want both VTC and ALICE annotations, go directly to the ALICE section as ALICE can run both models in one go.
 {: .label .label-yellow }
 
-VTC is currently being reworked by the CoML team so a new version (and easier way to run the model) should soon replace this tutorial.
-{: .label .label-red }
-
 #### Installation
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
@@ -124,8 +121,10 @@ You can use on of these script templates as a good starting point that you can t
 - dataset_path : give the path to the root of your dataset
 - profile : if had to convert your audios, put `converted/standard` or the name of the profile to use, otherwise keep the default `raw`
 
-One output file per audio
-{: .label .label-blue }
+#### Scripts {.tabset}
+
+##### One output file per audio
+
 This script will list all .wav files in the audio_path given, run VTC on each of them and move the results into the vtc/raw folder as default, renaming them with the name of the audio file they came from but as a rttm files instead of a wav one. 
 ```bash
 #!/bin/bash
@@ -162,8 +161,8 @@ do
 done
 ```
 
-Only one file for all audio
-{: .label .label-blue }
+##### OOnly one file for all audio
+
 This script will run VTC on the directory given in audio_path, this will output a single all.rttm with segments for all the recordings, it is then copied in the ourput_path given. 
 ```bash
 #!/bin/bash
