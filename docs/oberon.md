@@ -18,7 +18,7 @@ Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cogn
 Read how [data storage](https://wiki.cognitive-ml.fr/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
 You must organize your directory in different folders with suitable permissions: see [recommended set up](#recommended-set-up-for-personal-directory)
 
-Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and get the datasets you need from there but you should not have to edit them.
+Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and use the datasets as needed but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
 
 Your main working directory is `/scratch2/username`, you should store your ongoing projects there. We use [datalad](https://handbook.datalad.org/){:target="_blank"} and [childproject](https://childproject.readthedocs.io/en/latest/introduction.html){:target="_blank"} to interact with the datasets we utilize. We want you to create a datalad directory (in appliance with the [YODA principles](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html){:target="_blank"} : ie dataset nesting) for each project you lead. This will allow you to keep a record of the evolution of your project and to publish it easily to an online repository. To create your projects, you can follow the [YODA projects](./yoda-projects) instructions.
 
