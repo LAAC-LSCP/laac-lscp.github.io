@@ -24,7 +24,11 @@ Depending on who is involved, discussion may also be in French sometimes. For ad
 
 ## Mattermost
 
-We use [mattermost](https://mattermost.cognitive-ml.fr/login/){:target="_blank"} as a way to discuss in the team on a daily bases. You should have created an account as part of your onboarding. If you do not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
+We use **mattermost** as a way to discuss in the team on a daily bases. The registration and addition to the team's channels requires an invite link. Ask Loann for an invite link if you need one. If you can log in succesfully but can not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
+
+Mattermost is a messaging service where we can interact with all the members of the LAAC and CoML teams. It is very similar to slack, you can use direct messages as well as subject specific channels shared inside a project for example.
+
+We also use it to have an index of members and a calendar of away dates. To access them, use the 'boards' button on the top right of the 'town square' channel, you can access and edit the 'LAAC members' and 'away calendar' boards where you should create your page and enter leave days when necessary.
 
 ## Meetings
 

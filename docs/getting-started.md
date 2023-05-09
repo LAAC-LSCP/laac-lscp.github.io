@@ -11,7 +11,7 @@ has_toc: false
 
 ## Some paperwork
 
-- [ ] Create an account in mattermost, the system we use for most communication. To do so click [here](https://mattermost.cognitive-ml.fr/signup_user_complete){:target="_blank"} and follow the instructions. When you're done creating the account, let Loann know and ask him to add you to the LAAC and LSCP teams.  Depending on your topic, you may also want to ask to be added to the CoML team.
+- [ ] Create an account in [mattermost](./communication.md#mattermost){:target="_blank"}, the system we use for most communication. To do so, ask Loann for an invite link, this will allow you to create an account and access the LAAC base channels.
 - [ ] You will need a [GitHub](https://github.com){:target="_blank"} account to view the information that we keep private. Create an account if you don't have one and tell your handle to Loann via mattermost.
 - [ ] Send Philippe & Alex a message via mattermost with this information: Your name, email, start & end date, phone number
 - [ ] Write a message in mattermost in the LAAC town square channel to introduce yourself to the team. Include your name, position, work subject and a funny/unsual/interesting fact about you.
