@@ -23,7 +23,7 @@ description: "Good practices and standardized way of codes in the team"
 4. Make code simpler, more readable, and easier to maintain.
 5. Boost programmer efficiency and generate faster results.
 
-# Good prcatices
+# Good practices
 
 ## Focus on code readability
 1. Readable code is easy to follow, optimizes space and time. Here are a few ways to achieve that:
@@ -96,7 +96,7 @@ Portability is a key aspect that ensures functionality of your program. If your 
 
 In order to tackle this, you would have to ‘parametrize’ variables and configure them before running your software in different environments. This can be controlled with property files, databases, or application servers.
 
--can provide exmaple of shutil package-
+-can provide example of shutil package-
  
 ## Writing your codes in a reusable and scalable way
 
