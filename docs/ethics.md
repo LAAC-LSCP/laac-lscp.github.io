@@ -2,7 +2,7 @@
 layout: default
 title: Ethics
 nav_order: 5
-description: "Ethics of confidential data, authorship, and expenditures"
+description: "Ethics of confidential data, authorship, expenditures and acknowledgements"
 ---
 
 # Ethics and confidential data
@@ -37,6 +37,20 @@ The LAAC team is supported mostly by public funding, so we take spending serious
 - If you would like to present your work at conferences, that is great! We want to enable junior researchers to gain that experience and grow their network. However, we typically won't fund overseas travel or very expensive conferences. Discuss with Alex well in advance whether writing up a paper or submitting an abstract is appropriate, and how to go about it. You can see lists of [conferences for child language](https://docs.google.com/spreadsheets/d/11Casx-W9F04knaYF1RVO7BFZFVsOEm-aMc8Bpn-a6es/edit#gid=0) and [for speech tech/machine learning](https://docs.google.com/spreadsheets/d/12Lg-YNKa1aW8J2GHt3S_iAllsrRLXn984imeemjSchQ/edit#gid=0). Deadlines may be past, but you can use this as a guide to find the same conferences in future years.
 
 - If you need pens, notebooks, etc, the lab can provide it! Ask Radhia for them. The same for small tech material, like dongles & connectors -- ask Vireack for them.
+
+# Ethics and acknowledgements
+
+The team is supported by numerous organizations, would it be by financing our research or providing services. When you broadcast results or work that was done by team, the support of the following organizations should be mentioned, depending on the context:
+
+- All work => "the J. S. McDonnell Foundation Understanding Human Cognition Scholar Award; European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (ExELang, Grant agreement No. 101001095)."
+
+- Anything strongly relying on ACLEW work => "Agence Nationale de la Recherche (ANR-16-DATA-0004 ACLEW)."
+
+- Anything using Jean-Zay, GENCI => "This work was performed using HPC resources from GENCI–IDRIS (Grant 2021-AD011013145)."
+
+- Anything with zooniverse => "This publication uses data generated via the Zooniverse.org platform, development of which is funded by generous support, including a Global Impact Award from Google, and by a grant from the Alfred P. Sloan Foundation. The funders had no impact on this study. -Anything crucially (ie not simple citation) relying on VTC: This work used the Extreme Science and Engineering Discovery Environment (XSEDE), which is supported by National Science Foundation grant number OCI-1053575. Specifically, it used the Bridges system, which is supported by NSF award number ACI-1445606, at the Pittsburgh Supercomputing Center (PSC). "
+
+- Anything crucially (ie not simple citation) relying on ALICE => "CSC – IT Center for Science"
 
 <!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
 -->
