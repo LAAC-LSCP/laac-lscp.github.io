@@ -46,7 +46,8 @@ The team is supported by numerous organizations, would it be by financing our re
 
 - Anything strongly relying on ACLEW work => "Agence Nationale de la Recherche (ANR-16-DATA-0004 ACLEW)."
 
-- Anything using Jean-Zay, GENCI => "This work was performed using HPC resources from GENCI–IDRIS (Grant 2021-AD011013145)."
+- Anything using Jean-Zay, GENCI => (long) : "This work was granted access to the HPC resources of IDRIS under the allocation 20XX-[project number] made by GENCI."
+(short) : "This work was performed using HPC resources from GENCI–IDRIS (Grant 20XX-[project number])."
 
 - Anything with zooniverse => "This publication uses data generated via the Zooniverse.org platform, development of which is funded by generous support, including a Global Impact Award from Google, and by a grant from the Alfred P. Sloan Foundation. The funders had no impact on this study. -Anything crucially (ie not simple citation) relying on VTC: This work used the Extreme Science and Engineering Discovery Environment (XSEDE), which is supported by National Science Foundation grant number OCI-1053575. Specifically, it used the Bridges system, which is supported by NSF award number ACI-1445606, at the Pittsburgh Supercomputing Center (PSC). "
 
