@@ -9,7 +9,7 @@ nav_order: 2
 
 ## Getting down to business
 
-- [ ] talk to Alex about a weekly meeting, typically 30min
+- [ ] talk to your supervisor about a weekly meeting, typically 30min
 - [ ] If you are not using your own, get your team's computer
 
 <!--- Scripts that are required for this specific page. It won't be displayed. Keep that section after all markdown.
