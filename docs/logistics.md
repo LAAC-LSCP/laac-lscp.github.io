@@ -17,6 +17,13 @@ description: "Administrative and logistic information"
 {:toc}
 </details>
 
+## Getting to Paris
+
+If you arrive to the airports, do NOT take taxis from people who approach you. This is illegal, and these people may be dangerous. Just say "no" firmly. You can walk to a taxi stand by following the signs; take an uber or bold; or follow the signs to get to Paris by train or bus.
+
+
+
+
 ## Getting in
 
 Our lab (LSCP) is the only one on the 4th floor of the Jaurès building (29 rue d'ulm). Two ways of getting here:
@@ -25,7 +32,7 @@ Our lab (LSCP) is the only one on the 4th floor of the Jaurès building (29 rue 
 
 2. Alternatively, you can come in through 29 rue d'Ulm, but you need to wait for someone to open the door for you. You can wait and tell a passerby that you're meeting Dr. Cristia at the LSCP - they'll let you through. Or you can call me & I'll come down to meet you. When you make it in, go through the glass doors straight ahead. The elevator will be on your right, or you can take the stairs up to the 4th floor.
 
-The lab is open from 9am to 7pm. You'll soon get a card (takes a couple of days for your name to pop up in the system).
+The lab is open from 9am to 7pm. 
 
 - you need your card to re-enter the lab after going to the restroom
 
@@ -46,9 +53,9 @@ If there are issues that would make it better for you to work from elsewhere you
 - The kitchen is free for use, you can use the fridge & coffee machine but please read the instructions posted in the kitchen. Note you'll be expected to pitch in for cleaning if you do use the kitchen…
 - There is also a coffee machine in the main hall downstairs, which is mug adaptable
 
-## Equipement
+## Equipment
 
-- If you are missing computer hardware (cables, peripherals), you can ask Michel or Vireack.
+- If you are missing computer hardware (cables, peripherals), you can ask Vireack.
 - If you are missing pens, notebooks, etc - ask Radhia.
 
 ## Training opportunities

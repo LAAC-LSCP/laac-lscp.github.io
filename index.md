@@ -15,6 +15,9 @@ The people in LAAC you'll likely interact with are:
 - Philippe Dauli, our project manager. Talk to him about administrative matters (getting your convention de stage signed, getting an ENS card, etc.)
 - Loann Peurey, our data manager & software engineer. Talk to him about technical matters (access to the cluster, using ChildProject, etc.) 
 - Shuvayanti Das, our machine learning engineer. Talk to her about technical matters pertaining to VTC and our other ML models 
+- If you are missing computer hardware (cables, peripherals), you can ask Vireack Ul.
+- If you are missing pens, notebooks, etc - ask Radhia Achheb.
+
 
 
 We are part of a bigger lab (~ 70 people): The [Cognitive Sciences and Psycholinguistics Lab (LSCP)](https://lscp.dec.ens.fr/){:target="_blank"} is a joint research unit of the School of Advanced Studies in the Social Sciences (EHESS, École des Hautes Études en Sciences Sociales), the Ecole Normale Supérieure, and the National Centre for Scientific Research (CNRS, Centre National de la Recherche Scientifique). The aim of the research at LSCP is to understand the psychological mechanisms underlying the acquisition and functioning of typical human cognitive functions, such as language, social cognition, and consciousness. Here's the "organigramme" of the LSCP:
