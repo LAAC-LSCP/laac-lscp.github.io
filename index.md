@@ -13,11 +13,13 @@ The aim of the [LAAC (Language Acquisition Across Cultures) team](https://lscp.d
 The people in LAAC you'll likely interact with are:
 
 - Philippe Dauli, our project manager. Talk to him about administrative matters (getting your convention de stage signed, getting an ENS card, etc.)
-- Loann Peurey, our data manager & software engineer. Talk to him about technical matters (access to the cluster, using ChildProject, etc.) - loannpeurey@gmail.com
+- Loann Peurey, our data manager & software engineer. Talk to him about technical matters (access to the cluster, using ChildProject, etc.) 
+- Shuvayanti Das, our machine learning engineer. Talk to her about technical matters pertaining to VTC and our other ML models 
+
 
 We are part of a bigger lab (~ 70 people): The [Cognitive Sciences and Psycholinguistics Lab (LSCP)](https://lscp.dec.ens.fr/){:target="_blank"} is a joint research unit of the School of Advanced Studies in the Social Sciences (EHESS, École des Hautes Études en Sciences Sociales), the Ecole Normale Supérieure, and the National Centre for Scientific Research (CNRS, Centre National de la Recherche Scientifique). The aim of the research at LSCP is to understand the psychological mechanisms underlying the acquisition and functioning of typical human cognitive functions, such as language, social cognition, and consciousness. Here's the "organigramme" of the LSCP:
 
-<object data="ressources/misc/Organigramme_LSCP-AVR2022-CNRS.pdf" width="1000" height="850" type='application/pdf'></object>
+<object data="ressources/misc/Organigramme_LSCP-AVR2022-CNRS.jpg" width="1000" height="850" type='application/pdf'></object>
 
 Within the LSCP, our team works closely with the [Cognitive Machine Learning (CoML) team](https://cognitive-ml.fr/){:target="_blank"}. They are the largest team in the LSCP (~25 people) and are physically in a different place (45 rue d'ulm). Echolalia is a work group within CoML, and they produce the babylogger. 
 
