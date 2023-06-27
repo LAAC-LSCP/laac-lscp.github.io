@@ -27,6 +27,10 @@ has_toc: false
 
 - [ ] If you are not getting any emails from the team, the lab, or the department ask Philippe -- we may have forgotten to put you in the relevant mailing lists. We normally do not add to mailing lists short-term interns. 
 - [ ] We keep the codes for the copying machine/printer and keys private. You will need a [GitHub](https://github.com){:target="_blank"} account to view the information that we keep private. Create an account if you don't have one and tell your handle to Loann via mattermost.
+- [ ] At the LSCP, video calls can be made in these three rooms : C401, C404 B, and Michel Dutat.
+Each use must be the subject of a prior reservation to schedule via the Google calendars. If you do not have access to those, ask Philippe to send you the link to join them.
+Use the calendar to create an event and associate it with the room's calendar.
+NB : remember to put your name in the reservation. If you don't show up within 5 mins of your start time, someone else can take over the room.
 
 
 ## The lab environment
