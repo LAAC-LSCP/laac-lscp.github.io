@@ -20,23 +20,21 @@ description: "Communication basics around the lab"
 ## Language
 
 Lab language is English (including scientific meetings).
-Depending on who is involved, discussion may also be in French sometimes. For administrative matters involving Isabelle Brunet, Anne-Caroline Fiévet, or Radhia Achheb, they'll prefer being spoken to in French. For technical matters involving Vireack Ul or Michel Dutat, they'll also prefer French. Everyone understands English though!
+Depending on who is involved, discussion may also be in French sometimes. For administrative matters involving Isabelle Brunet, Anne-Caroline Fiévet, or Radhia Achheb, they'll prefer being spoken to in French. For technical matters involving Vireack Ul, he'll also prefer French. Everyone understands English though!
 
 ## Mattermost
 
-We use **mattermost** as a way to discuss in the team on a daily bases. The registration and addition to the team's channels requires an invite link. Ask Loann for an invite link if you need one. If you can log in succesfully but can not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
-
-Mattermost is a messaging service where we can interact with all the members of the LAAC and CoML teams. It is very similar to slack, you can use direct messages as well as subject specific channels shared inside a project for example.
+Mattermost is a messaging service where we can interact with all the members of the LAAC and CoML teams on a daily basis. It is very similar to slack, you can use direct messages as well as subject specific channels shared inside a project for example. If you can log in successfully but can not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
 
 We also use it to have an index of members and a calendar of away dates. To access them, use the 'boards' button on the top right of the 'town square' channel, you can access and edit the 'LAAC members' and 'away calendar' boards where you should create your page and enter leave days when necessary.
 
 ## Meetings
 
-If you are an intern, you'll typically join a weekly meeting with Alex. If you don't already have one scheduled, please remind her via mattermost!
+If you are an intern, you'll typically join a weekly meeting with your supervisor. If you don't already have one scheduled, please remind them via mattermost!
 
 Once you're on the mailing lists, you should receive a schedule of the upcoming meetings every week.
 
-We have group meetings every Tuesday.
+We have group meetings almost every Tuesday.
 
 Typically on the first Tuesday of each month, a plenary meeting for the whole lab takes place, 2-3:30 (including social time).
 
