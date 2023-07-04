@@ -100,6 +100,9 @@ In order to tackle this, you would have to ‘parametrize’ variables and confi
  
 ## Writing your codes in a reusable and scalable way
 
+<a href="/images/myw3schoolsimage.jpg" download>
+  <img src="/images/myw3schoolsimage.jpg" alt="W3Schools">
+</a>
 In coding, reusability is an essential design goal.
 Because if modules and components have been tested already, a lot of time can be saved by reusing them. By reusing existing software components and modules, you can cut down on development time and resources.
 Another key aspect to pay attention to is the ‘scalability’ of code. New features and improvements can be easily added to your code and other projects can be built upon it. Therefore, the ability to incorporate updates is an essential part of the software design process.
