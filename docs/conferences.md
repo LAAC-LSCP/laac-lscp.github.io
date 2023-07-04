@@ -32,7 +32,8 @@ The funding of conferences must imperatively be validated by Alex before any tre
 
 **Exception**: If you don't find the right travel options (e.g., you want to book a train or bus in a foreign country), or the right accommodation (e.g., none in the area), then you can pay for them directly and get reimbursed after the mission. You can also ask Philippe if he can get it bought for you, so that you don't have to disburse the money in advance.
 
-2. Creation of the mission on Etamine. 
+2. Creation of the mission. 
+If your salary is paid by CNRS, you can do this by yourself. Otherwise, then talk to Philippe, as you cannot do it on your own. 
 Once you have booked your travel, you are ready for the next step. If you are a PhD student you can do it by your own. If you are a master student, Philippe will do it for you.
 At least one month in advance, a mission must be created on the [Etamine website](https://e-missions.cnrs.fr/infos){:target="_blank"}.
 N.B. The title of the mission matters! It should be entered starting with : "Projet EXELANG : conférence ..."
