@@ -19,13 +19,18 @@ description: "Conferences and funding"
 
 ## How to handle expenses for conference travel
 
-The funding of conferences must imperatively be validated by Alex before any treatment. To this end, talk to Alex about it, as she needs to decide on which budget line the expenses will be charge on and e-mail Philippe and Radhia about this, with you in cc. This should happen at least 6-8 weeks before the conference to allow all the processes mentioned below.
+The funding of conferences must imperatively be validated by Alex before any treatment. To this end, talk to Alex about it, as she needs to decide on which budget line (and therefore, which host institution -- see below) the expenses will be charge on and e-mail Philippe and Radhia about this, with you in cc. This should happen at least 6-8 weeks before the conference to allow all the processes mentioned below.
 
 ### If you are currently a LAAC member
 
 1. Flight, train and hotel booking.
-If you are a PhD student you can do it by your own. If you are a master student, Philippe will do it for you. 
-There is a transport and accommodation market. To book in it, you have to log in, you have to log in to [RYDOO](https://travel.rydoo.com/gtms/Approvals){:target="_blank"}. If you are travelling by land abroad, then you should buy the ticket directly and get reimbursed after the mission. Similarly for hotel in foreign countries you should book them directly and get reimbursed after the mission.
+**Who** If you are a PhD student you can do it on your own. If you are a master student, Philippe will do it for you. 
+**How** There is a transport and accommodation market, which depends on whether your travel will be paid by a budget line that is hosted by CNRS (ERC) or ENS (all others). 
+- CNRS: To book both travel and accommodation, you have to register in [Goelett](https://accounts.goelett.com/login?signin=869d08e0ed98af3e978b4a87abab8108){:target="_blank"} to create an account with them. Then, log in, and do your search. When you have decided, click to book, and Radhia will be notified and she'll complete the booking and pay for it.
+- ENS: ENS also uses the same market, but you have to access it using your ENS email address and [this link](https://grp-ens-psl-marche-cnrs-amue.hellofcm.com/profiles/sign_in){:target="_blank"}. The rest of the process is as for CNRS.
+
+
+**Exception**: If you don't find the right travel options (e.g., you want to book a train or bus in a foreign country), or the right accommodation (e.g., none in the area), then you can pay for them directly and get reimbursed after the mission. You can also ask Philippe if he can get it bought for you, so that you don't have to disburse the money in advance.
 
 2. Creation of the mission on Etamine. 
 Once you have booked your travel, you are ready for the next step. If you are a PhD student you can do it by your own. If you are a master student, Philippe will do it for you.
