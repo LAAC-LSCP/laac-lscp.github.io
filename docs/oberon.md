@@ -11,7 +11,7 @@ description: "Working on the lab server: Oberon"
 
 Oberon is used to give everybody a server to work on, store ongoing projects and access the lab's datasets. The server runs a linux system (centOS), which means that the usual way of using it is via the command line. 
 
-Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/servers/ssh.html){:target="_blank"} (you will need your oberon username and password).
+Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/resources/cluster/ssh.html){:target="_blank"} (you will need your oberon username and password).
 
 ## Directories and usage
 
