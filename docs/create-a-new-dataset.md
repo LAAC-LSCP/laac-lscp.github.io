@@ -202,7 +202,7 @@ The next list of commands must be run to set the parameters
 ```bash
 export GIN_ORGANIZATION='LAAC-LSCP' # name of the GIN organization
 export CONFIDENTIAL_DATASET=1 # set to 0 if there should not be a confidential repository
-export PUBLIC_DATASET=1 # set to 0 if there should not be a confidential repository
+export PUBLIC_DATASET=1 # set to 0 if there should not be a public repository
 ```
 Now we can create the actual datalad repository, the procedure used will build the file structure according to [ChildProject standards](https://childproject.readthedocs.io/en/latest/format.html){:target="_blank"}. First change directory to where you want your new dataset created, then create it. Replace `mydataset` by the name of your GIN repository.
 ```bash
