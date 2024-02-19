@@ -17,9 +17,9 @@ description: "platforms used to conduct administrative requests (e.g. leave days
 {:toc}
 </details>
 
-The platform you will be using is different if you are affiliated with CNRS or ENS. If you don't know exactly, you can ask Philippe but here are some general rules (however, there might be exceptions to those):
-- permanent members (managers) are affiliated to CNRS.
-- postdocs, doctoral students and interns are usually affiliated to ENS.
+The platform you will be using is different if you are affiliated with CNRS or ENS. If you don't know exactly, you can ask Radhia but here are some general rules (however, there might be exceptions to those):
+- more permanent members (manager, engineers, postdoc, phd) are affiliated to CNRS.
+- interns are usually affiliated to ENS.
 
 ## CNRS
 
@@ -27,7 +27,7 @@ To access CNRS platforms, you will need 'sesame' credentials. If this is your fi
 
 ### Record your work time
 
-Depending on the nature of your contract, you may have to record your work time or not. Ask Philippe or Radhia if you need to do this.
+Depending on the nature of your contract, you may have to record your work time or not. Ask Radhia if you need to do this.
 
 At the end of every month (before the 7th of the next month), you will need to record your worked and absence days. You should be reminded of that task by an email when the time comes.
 You need to use the [tempo](https://tempo.cnrs.fr){:target="_blank"} website. Log in using your sesame credentials.
