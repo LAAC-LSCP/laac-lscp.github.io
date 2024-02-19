@@ -36,7 +36,7 @@ Once you're on the mailing lists, you should receive:
 1) A schedule of the upcoming meetings in the LSCP every week, typically delivered on Fridays
 2) Emails from the department, tagged with [IEC], or from the ENS
 
-If you don't, please talk to Philippe.
+If you don't, please talk to Radhia.
 
 We typically have group meetings every Tuesday, which are mandatory. Typically on the first Tuesday of each month, it is a plenary meeting for the whole LSCP, which takes place 2-3:30 (including social time). The other Tuesdays, we usually have a team meeting where we discuss various topics and where people can present their work (11am-12pm). This is the perfect place to share news (did you get an abstract accepted somewhere? did you apply for a PhD program? etc) and ask general questions (what are some good books on the topic to read?).
 
