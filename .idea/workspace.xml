@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0aacf264-0129-4599-8e60-80bf2bbe40af" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/docs/administrative-platforms.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/administrative-platforms.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/childproject.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/childproject.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/communication.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/communication.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/conferences.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/conferences.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/create-a-new-dataset.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/create-a-new-dataset.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/ethics.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/ethics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/getting-started.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/getting-started.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/oberon.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/oberon.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/running-models.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/running-models.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/writing-python-code.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/writing-python-code.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/yoda-projects.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/yoda-projects.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2cx75SVUANj4182dZPIguVKUtFo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;codereview&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-5a2391486177-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.13763.11" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0aacf264-0129-4599-8e60-80bf2bbe40af" name="Changes" comment="" />
+      <created>1709041193201</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1709041193201</updated>
+    </task>
+    <servers />
+  </component>
+</project>
