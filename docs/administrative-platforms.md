@@ -62,7 +62,7 @@ Teleworking involves two steps
 
 ![cnrs arian website, page for first request of telework](../ressources/img/first-request-telework.png)
 
-2. Declare your teleworked days using [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} (woth sesame credentials). In the 'Absences'section, click the 'Télétravail' tab, select 'Nouvelle demande'. Then enter the start and end date and validate (you can select 'periodique' for recurring telework days).
+2. Declare your teleworked days using [agate-tempo](https://agate-tempo.cnrs.fr){:target="_blank"} (with sesame credentials). In the 'Absences'section, click the 'Télétravail' tab, select 'Nouvelle demande'. Then enter the start and end date and validate (you can select 'periodique' for recurring telework days).
 
 ![cnrs agate tempo website, 'Absences' tab, 'Télétravail' and enter information to ask for teleworked time. 'Valider' to send your request](../ressources/img/declare-telework.png)
 
@@ -119,4 +119,4 @@ Please note that to ask for leave days, you first need to have a [validated sche
 
 ### Additional resources
 
-You can read the 'quite old and only in french' excel version of how to use hamac for more detailed information [here](../ressources/misc/guide-pratique-hamac.xls)
+You can read the 'quite old and only in French' excel version of how to use hamac for more detailed information [here](../ressources/misc/guide-pratique-hamac.xls)

@@ -38,7 +38,7 @@ First make sure that you have the audio content present locally.
 ls recordings/raw # or other profile recordings/converted/standard
 ```
 should show you the audio in a blue color. If they appear red, the audio files are not present locally. Be careful downloading audio can be extremely lengthy and can take a lot of storage space. You should not have to do this for large datasets, you can refer to Loann or Alex in those occasions.
-If you proceed with downloading the files, make sure datalad is available (activate your childproject environment with `conda activate childproject` if it is not) then use `datalad get recordings/raw/rec1.wav` for your files. Probably don't use `datalad get recordings/raw` on the whole folder as that would take forever and you would not be able able to close your connection to the cluster without stopping the command. Alternatively, use an oberon [job](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html#launching-jobs){:target="_blank"} that will run separately to get all the files.
+If you proceed with downloading the files, make sure datalad is available (activate your childproject environment with `conda activate childproject` if it is not) then use `datalad get recordings/raw/rec1.wav` for your files. Probably don't use `datalad get recordings/raw` on the whole folder as that would take forever, and you would not be able to close your connection to the cluster without stopping the command. Alternatively, use an oberon [job](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html#launching-jobs){:target="_blank"} that will run separately to get all the files.
 
 ### Check the sampling rates (and other info about the audio)
 
@@ -95,7 +95,7 @@ If you want both VTC and ALICE annotations, go directly to the ALICE section as 
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
-The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `/scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
+The code for VTC is stored in [this GitHub repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `/scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
 We made the choice here to store our VTC in a directory `modules` meant to store the different model repositories. You can create that folder if you want: `mkdir /scratch2/username/modules`.
 ```bash
 cd /scratch2/username/modules
@@ -209,7 +209,7 @@ And that is it, check the log file of the job to check its progression. When it 
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
-The code for ALICE can be found in [this github repo](https://github.com/LoannPeurey/ALICE){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
+The code for ALICE can be found in [this GitHub repo](https://github.com/LoannPeurey/ALICE){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
 cd /scratch2/username/modules
 git clone --recurse-submodules https://github.com/LoannPeurey/ALICE.git #should take a dozens of seconds
@@ -327,7 +327,7 @@ done
 
 On a VTC rttm file linked to multiple audios
 {: .label .label-blue }
-If you outputed a single rttm file with multiple audios with VTC, you must run ALICE on the same group of files together. Otherwise, ALICE will not understand why some audio files that are present in the rttm file are not available to him and it will cause it to fail. See the following example.
+If you outputed a single rttm file with multiple audios with VTC, you must run ALICE on the same group of files together. Otherwise, ALICE will not understand why some audio files that are present in the .rttm file are not available to him and it will cause it to fail. See the following example.
 
 ```bash
 #!/bin/bash
@@ -371,7 +371,7 @@ You can then submit your job to slurm.
 sbatch job-alice.sh
 ```
 
-And that is it, check the log file of the job to check its progression and possible errors (see the troubleshooting section right below). The log file is named `alice-XX.log` where XX is the id of the job and it should be created in the folder where you launched it.
+And that is it, check the log file of the job to check its progression and possible errors (see the troubleshooting section right below). The log file is named `alice-XX.log` where XX is the id of the job, and it should be created in the folder where you launched it.
 Check the status of the job with `squeue`. When it finishes, find in your output_path your alice annotations. You are now ready to procede to [importation](#importing-the-new-annotations-to-the-dataset).
 
 
@@ -400,7 +400,7 @@ export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
-The code for VCM is stored in [this github repo](https://github.com/LAAC-LSCP/vcm/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
+The code for VCM is stored in [this GitHub repo](https://github.com/LAAC-LSCP/vcm/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
 cd /scratch2/username/modules
 git clone https://github.com/LAAC-LSCP/vcm.git
@@ -481,7 +481,7 @@ We have encountered problems where VCM jobs would hang and not make progress. We
 ## Importing the new annotations to the dataset
 
 Importing annotations to a dataset does the following:
-- convert the given annotation files into the childproject standard format (csv) and nomenclature (ie using unified labels such as CHI / FEM / MAL / OCH etc).
+- convert the given annotation files into the childproject standard format (csv) and nomenclature (ie using unified labels such as CHI / FEM / MAL / OCH etc.).
 - store information about each annotation file such as the recording it is linked to, the onset offset in the audio and so on ([see the documentation](https://childproject.readthedocs.io/en/latest/format.html#annotations-index){:target="_blank"}) in the annotation index.
 
 This can be done with the command line or with the python API. Here we will use the API as it will be easier to just call one python script doing all the work.
@@ -575,7 +575,7 @@ am.import_annotations(input_frame)
 Here are some elements to keep in mind:
 - In this example, we are using automated annotations that cover the entire audio files, allowing us not to worry too much about the onset and offset parameters as they are just respectively 0 and the duration of the audio in millisecond.
 
-Store your script in your dataset in a script folder (`mkdir scripts` from the root af dataset), give it an informative name (eg import_vtc.py) and edit it for your usage.
+Store your script in your dataset in a script folder (`mkdir scripts` from the root af dataset), give it an informative name (e.g., import_vtc.py) and edit it for your usage.
 Make sure your childproject environment is activated and run it:
 ```bash
 python scripts/import_vtc.py
@@ -590,7 +590,7 @@ Our annotations are now correctly structured and imported into the dataset, our 
 Go to the root of your dataset and check that your childproject environment is activated.
 Check your remote url with `git config --get remote.origin.url`, this is the url where your data will be pushed (If the url is not the one you expected, you can see siblings with `datalad siblings`).
 
-You should have a look at all the changes you made with `datalad status`. This will list the new files and the modified one, check that everything makes sense and you did not modify what you were not supposed to.
+You should have a look at all the changes you made with `datalad status`. This will list the new files and the modified one, check that everything makes sense, and you did not modify what you were not supposed to.
 
 If everything looks good, you can save the state of your dataset:
 ```bash

@@ -28,7 +28,7 @@ To activate it, run:
 ```bash
 conda activate /scratch2/lpeurey/conda/childproject
 ```
-From there, you will be able able to run all the childproject features without further installs.
+From there, you will be able to run all the childproject features without further installs.
 
 Please do not edit this environment (i.e. do not run `pip install` or `conda install` commands inside the environment). If you have specific needs for your project, [build a personal environment](./oberon.md#conda-environments){:target="_blank"}, if you think additional libraries should be installed in this shared environment (e.g. for bug fix, additional features), tell Loann about it.
 

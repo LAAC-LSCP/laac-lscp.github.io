@@ -54,7 +54,7 @@ Ascribe a name to each variable that clearly describes its purpose. Naturally, a
 
 ### Naming your file
 
-The naming of the file matters as it is supposed to give a hint on what the script does but cannot be too long or explanatory. You scripts shoud be stored under a `code` or `scripts` folder. 
+The naming of the file matters as it is supposed to give a hint on what the script does but cannot be too long or explanatory. Your scripts should be stored under a `code` or `scripts` folder. 
 Use a verb in the name to characterize the action of the script. You should try to limit the length 
 of the names to 5 words max.
 
@@ -65,7 +65,7 @@ extension.
 
 ## Turn daily backups into an instinct
 
-Multiple events can trigger data loss – system crash, dead battery, software glitch, hardware damage, etc. To prevent this, save code daily, and after every modification, no matter how minuscule it may be. Backup everything on github/Gin.
+Multiple events can trigger data loss – system crash, dead battery, software glitch, hardware damage, etc. To prevent this, save code daily, and after every modification, no matter how minuscule it may be. Backup everything on GitHub/Gin.
 
 ## Leave comments and prioritize documentation
 

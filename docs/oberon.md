@@ -11,20 +11,20 @@ description: "Working on the lab server: Oberon"
 
 Oberon is used to give everybody a server to work on, store ongoing projects and access the lab's datasets. The server runs a linux system (centOS), which means that the usual way of using it is via the command line. 
 
-Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/resources/cluster/ssh.html){:target="_blank"} (you will need your oberon username and password).
+Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/resources/ssh.html){:target="_blank"} (you will need your oberon username and password).
 
 ## Directories and usage
 
-Read how [data storage](https://wiki.cognitive-ml.fr/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
+Read how [data storage](https://wiki.cognitive-ml.fr/resources/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
 You must organize your directory in different folders with suitable permissions: see [recommended set up](#recommended-set-up-for-personal-directory)
 
-Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and use the datasets as needed but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
+Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and use the datasets as needed, but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
 
 Your main working directory is `/scratch2/username`, you should store your ongoing projects there. We use [datalad](https://handbook.datalad.org/){:target="_blank"} and [childproject](https://childproject.readthedocs.io/en/latest/introduction.html){:target="_blank"} to interact with the datasets we utilize. We want you to create a datalad directory (in appliance with the [YODA principles](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html){:target="_blank"} : ie dataset nesting) for each project you lead. This will allow you to keep a record of the evolution of your project and to publish it easily to an online repository. To create your projects, you can follow the [YODA projects](./yoda-projects) instructions.
 
 Storage space is not infinite, when you finished working on a project, clean you directories and [unload the datasets (or large files)](http://docs.datalad.org/en/latest/generated/man/datalad-drop.html){:target="_blank"} you don’t need anymore.
 
-When working on your personal computer, it is advised most of the time to work on oberon through a ssh connection. However, if you have to work locally with non public datasets, you must have permission and store them on an encrypted drive. You should avoid carrying it around and the data should be deleted as soon as your work is finished.
+When working on your personal computer, it is advised most of the time to work on oberon through an ssh connection. However, if you have to work locally with non-public datasets, you must have permission and store them on an encrypted drive. You should avoid carrying it around and the data should be deleted as soon as your work is finished.
 
 ## Conda environments
 
@@ -42,7 +42,7 @@ If you are unsure of what you’re doing, Loann can help.
 
 To facilitate using those different principles, here are some operations you can conduct to configure your workspace.
 
-- Landing in your working directory (`/scratch2/username`) when logging in oberon (dont forget to change <username> by your actual oberon username):
+- Landing in your working directory (`/scratch2/username`) when logging in oberon (don't forget to change <username> by your actual oberon username):
   ```bash
   echo -e "\n#land in your working directory when logging in\ncd /scratch2/username" >>~/.bashrc
   ```
@@ -58,7 +58,7 @@ To facilitate using those different principles, here are some operations you can
 At the root of the directory, we have 3 folders with different permissions for different use:
 - `personal` will contain anything that should not be shared with anyone.
 - `laac` is accessible by the laac users who have been granted access to the data. You can store private data here.
-- `shared` is accessible by everybody on the cluster. You can use it for non sensitive projects.
+- `shared` is accessible by everybody on the cluster. You can use it for non-sensitive projects.
 
 You can also create folders for other teams if you work with them and should restrict the access to only their members.
 

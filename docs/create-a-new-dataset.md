@@ -23,15 +23,15 @@ This page is here to help you create a new Dataset following the ChildProject st
 
 ### Environment
 
-This guide is intended mainly to help collaborators in the LSCP lab. If you are part of the LSCP, you should have access to the [oberon server](./oberon.md){:target="_blank"}. You should do all of the dataset creation on the server directly. Oberon is running a linux system.
+This guide is intended mainly to help collaborators in the LSCP lab. If you are part of the LSCP, you should have access to the [oberon server](./oberon.md){:target="_blank"}. You should do all the dataset creation on the server directly. Oberon is running a linux system.
 
-Throughout this page, you will need to have access to a terminal (for MacOS or linux) or a command prompt (for Windows). So open your 'terminal' or 'cmd' programm to enter text commands. To use oberon, log in using an [ssh access](https://wiki.cognitive-ml.fr/servers/ssh.html){:target="_blank"} (Use the credentials provided to you by the CoML team).
+Throughout this page, you will need to have access to a terminal (for macOS or linux) or a command prompt (for Windows). So open your 'terminal' or 'cmd' program to enter text commands. To use oberon, log in using an [ssh access](https://wiki.cognitive-ml.fr/servers/ssh.html){:target="_blank"} (Use the credentials provided to you by the CoML team).
 
-If you are a Windows user and are not using the oberon server, be aware that most of the software we use has been developped and tested for linux and MacOS systems. We expect it to run on Windows but no automated tests are performed. We will nor provide specific instructions for Windows systems. We recommend you use the [windows subsystem for linux](https://docs.microsoft.com/fr-fr/windows/wsl/install){:target="_blank"} which will allow you to easily run a linux system embedded into your Windows.
+If you are a Windows user and are not using the oberon server, be aware that most of the software we use has been developped and tested for linux and macOS systems. We expect it to run on Windows but no automated tests are performed. We will nor provide specific instructions for Windows systems. We recommend you use the [Windows subsystem for linux](https://docs.microsoft.com/fr-fr/windows/wsl/install){:target="_blank"} which will allow you to easily run a linux system embedded into your Windows.
 
 ### ChildProject
 
-You will need the [ChildProject](./childproject.md){:target="_blank"} software. The default installation requires anaconda. It is available on oberon. If you are not sure you have conda installed, please do `conda --version` in your terminal. If you don't have it, please refer to the instructions [here](https://docs.anaconda.com/anaconda/install/index.html){:target="_blank"}.
+You will need the [ChildProject](./childproject.md){:target="_blank"} software. The default installation requires anaconda. It is available on oberon. If you are not sure that you have conda installed, please do `conda --version` in your terminal. If you don't have it, please refer to the instructions [here](https://docs.anaconda.com/anaconda/install/index.html){:target="_blank"}.
 
 #### Linux Users
 
@@ -121,7 +121,7 @@ Confirm the addition of the key.
 
 ## I have done this before, get me back on track:
 
-This section lists the checks you should carry out before using the guide, knowing that you went through it before and you should not need to install new programms or register to new websites. If it does not work out, go back to the relevant [first use section](#first-time-users).
+This section lists the checks you should carry out before using the guide, knowing that you went through it before, and you should not need to install new programs or register to new websites. If it does not work out, go back to the relevant [first use section](#first-time-users).
 
 ### Environment
 
@@ -236,7 +236,7 @@ The output you get will resemble this (but can have some differences):
 create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
 ```
 
-The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
+The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (e.g., https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
 ![GIN website, page of the new repo: Displays the content of the newly pushed repo.](../ressources/img/first-push.png)
 
 The online content does not have the same structure and folders?
@@ -370,7 +370,7 @@ After preparing correctly your audio files, it is time to save your changes agai
 ```bash
 datalad save -m 'audio data'
 ```
-However be cautious with pushing your changes online because the audio data can be extremely large and the uploading really long. If you have access to a cluster/server running continually, consider doing the upload from there with a job, allowing you to log out while the upload continues. Otherwise, you can choose to run the push bits by bits by running the command `datalad push recordings/raw/rec1.wav` on your different audio files one by one.
+However, be cautious with pushing your changes online because the audio data can be extremely large and the uploading really long. If you have access to a cluster/server running continually, consider doing the upload from there with a job, allowing you to log out while the upload continues. Otherwise, you can choose to run the push bit by bit by running the command `datalad push recordings/raw/rec1.wav` on your different audio files one by one.
 
 ### Original Metadata
 
@@ -444,9 +444,9 @@ datalad save . -m "message about what changes were made"
 datalad push
 ```
 
-### Create the metadata from the its information
+### Create the metadata from the .its information
 
-One common way to create the metadata is to extract it from the its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} was created to help in this process. You [can install the package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
+One common way to create the metadata is to extract it from the .its files you have. This was done in many cases and the [EL1000 package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} was created to help in this process. You [can install the package](https://gin.g-node.org/LAAC-LSCP/tools){:target="_blank"} or just copy the `metadata.py` script. You should use the `MetadataImporter` class to process the files and create you metadata.
 Be aware that each dataset will need some degree of adaptation in the code.
 We recommend that you copy an example from a dataset which original data look like yours, and save it to scripts/metadata.py. Then you can make all necessary changes before running it. An example can be found in this [section](https://gin.g-node.org/LAAC-LSCP/tools/src/master/HOWTO.md#importing-the-metadata){:target="_blank"}
 
@@ -497,7 +497,7 @@ We don't provide specific instructions for each format because even with the sam
 Importing LENA its files is usually straight forward because they cover the whole files and the information they contain is consistent. The only particularity is when you happen to have recordings that were split (see [above](#splitting-lena-recordings)). In this case, the timestamps need to be shifted by the duration of previous audios extracted from the same lena file. This shift is used as your negative <time-seek>.
 
 Example:
-We have the following `metadata/recordings.csv` file generated using information from the its files.
+We have the following `metadata/recordings.csv` file generated using information from the .its files.
 
 |recording_filename | duration | date_iso | start_time | session_id | child_id | its_filename | recording_device_type | experiment|
 |--- | --- | --- | --- | --- | --- | --- | --- | ---|
@@ -505,7 +505,7 @@ We have the following `metadata/recordings.csv` file generated using information
 |e20051112_123456_654321_2.wav|15671570|2005-11-12|16:43|e20051112_123456_654321_1|AA|e20051112_123456_654321.its|lena|test|
 |e20051112_123456_654321_3.wav|6187130|2005-11-13|10:57|e20051112_123456_654321_2|AA|e20051112_123456_654321.its|lena|test|
 
-You can see that those 3 files are linked to the same its file, so they were extracted from a single original lena audio file. To import the its annotations, we will need to shift the timestamps to have the following importation table:
+You can see that those 3 files are linked to the same its file, so they were extracted from a single original lena audio file. To import the .its annotations, we will need to shift the timestamps to have the following importation table:
 
 |set | recording_filename| time_seek | range_onset | range_offset | raw_filename | format
 |--- | --- | --- | --- | --- | --- | ---|
@@ -532,7 +532,7 @@ am = AnnotationManager(project)
 input_frame = pd.DataFrame.copy(project.recordings)
 input_frame = input_frame.sort_values(['its_filename', 'recording_filename'])
 
-#make sure that the duration for the recordings is set in recordings.csv, it should be imported with the metadata of the its
+#make sure that the duration for the recordings is set in recordings.csv, it should be imported with the metadata of the .its
 input_frame["raw_filename"]= input_frame['its_filename']
 input_frame["set"] = 'its'
 input_frame["range_onset"] = "0" #from the start of the audio...

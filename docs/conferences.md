@@ -39,7 +39,7 @@ At least one month in advance, a mission must be created on the [Etamine website
 N.B. The title of the mission matters! It should be entered starting with : "Projet EXELANG : conférence ..."
 
 3. Book conference registration. 
-Try to book as early as possible in order to benefit from "early bird" rates. To book the conference registration, you need to handle all of the procedure (create an account, fill in all forms, etc.) then give Radhia the link to the registration website, your username and password, so that Radhia can make the payment. If there is just a registration page, arrange with Radhia to fill in the whole registration page and come to see her so she can pay with the lab card.
+Try to book as early as possible in order to benefit from "early bird" rates. To book the conference registration, you need to handle all the procedure (create an account, fill in all forms, etc.) then give Radhia the link to the registration website, your username and password, so that Radhia can make the payment. If there is just a registration page, arrange with Radhia to fill in the whole registration page and come to see her, so she can pay with the lab card.
 
 4. Printing a poster.
 If you need to printing a poster, at least a week before the conference, you should do the following:

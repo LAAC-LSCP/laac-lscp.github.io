@@ -38,7 +38,7 @@ Once you're on the mailing lists, you should receive:
 
 If you don't, please talk to Radhia.
 
-We typically have group meetings every Tuesday, which are mandatory. Typically on the first Tuesday of each month, it is a plenary meeting for the whole LSCP, which takes place 2-3:30 (including social time). The other Tuesdays, we usually have a team meeting where we discuss various topics and where people can present their work (11am-12pm). This is the perfect place to share news (did you get an abstract accepted somewhere? did you apply for a PhD program? etc) and ask general questions (what are some good books on the topic to read?).
+We typically have group meetings every Tuesday, which are mandatory. Typically on the first Tuesday of each month, it is a plenary meeting for the whole LSCP, which takes place 2-3:30 (including social time). The other Tuesdays, we usually have a team meeting where we discuss various topics and where people can present their work (11am-12pm). This is the perfect place to share news (did you get an abstract accepted somewhere? did you apply for a PhD program? etc.) and ask general questions (what are some good books on the topic to read?).
 
 Other teams in the lab, like the CoML team for example, have their own meeting. You may want to attend some of them occasionally.
 
@@ -55,6 +55,6 @@ You can easily add those calendar to your personal google agenda by clicking on 
 
 - go to the list of key contacts in the [welcome page](../index.md)
 
-- as much as possible use mattermost, which we check a lot more often than email. Nearly everyone is on it! Use direct messages to individuals for anything super-specific or private. For things related to projects, prioritize creating a channel and adding everyone who is relevant, so that they are up to date. You should also feel free to post general questions in the public channels (at the team or lab level)
+- as much as possible use mattermost, which we check a lot more often than email. Nearly everyone is on it! Use direct messages to individuals for anything super-specific or private. For things related to projects, prioritize creating a channel and adding everyone who is relevant, so that they are up-to-date. You should also feel free to post general questions in the public channels (at the team or lab level)
 
-- for emergencies, you can also drop by Alex’ office (mezzanine above 406) or call 06 60 63 89 41 -- but please think if you need a response super quickly, or you can wait. The preference is for asynchronous mattermost communication!
+- for emergencies, you can also drop by Alex’s office (mezzanine above 406) or call 06 60 63 89 41 -- but please think if you need a response super quickly, or you can wait. The preference is for asynchronous mattermost communication!
