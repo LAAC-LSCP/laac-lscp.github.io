@@ -23,20 +23,19 @@ The funding of conferences must imperatively be validated by Alex before any tre
 
 ### If you are currently a LAAC member
 
-1. Flight, train and hotel booking.
+1. Creation of the mission. 
+**Who** If your salary is paid by CNRS, you can do this by yourself. Otherwise, talk to Radhia, as you cannot do it on your own. 
+**How** At least one month in advance, a mission must be created on the [Etamine website](https://etamine-connecte.cnrs.fr/infos){:target="_blank"}. You can only do the next step if you've done this one, and it has been approved.
+
+N.B. The title of the mission matters! It should be entered starting with : "Projet EXELANG : conférence ..."
+
+2. Flight, train and hotel booking.
 **Who** If you are a PhD student you can do it on your own. If you are a master student, Radhia will do it for you. 
 **How** There is a transport and accommodation market, which depends on whether your travel will be paid by a budget line that is hosted by CNRS (ERC) or ENS (all others). 
 - CNRS: To book both travel and accommodation, you have to register in [Goelett](https://accounts.goelett.com/login?signin=869d08e0ed98af3e978b4a87abab8108){:target="_blank"} to create an account with them. Then, log in, and do your search. When you have decided, click to book, and Radhia will be notified and she'll complete the booking and pay for it.
 - ENS: ENS also uses the same market, but you have to access it using your ENS email address and [this link](https://grp-ens-psl-marche-cnrs-amue.hellofcm.com/profiles/sign_in){:target="_blank"}. The rest of the process is as for CNRS.
 
-
 **Exception**: If you don't find the right travel options (e.g., you want to book a train or bus in a foreign country), or the right accommodation (e.g., none in the area), then you can pay for them directly and get reimbursed after the mission. You can also ask Radhia if he can get it bought for you, so that you don't have to disburse the money in advance.
-
-2. Creation of the mission. 
-If your salary is paid by CNRS, you can do this by yourself. Otherwise, then talk to Radhia, as you cannot do it on your own. 
-Once you have booked your travel, you are ready for the next step. If you are a PhD student you can do it by your own. If you are a master student, Radhia will do it for you.
-At least one month in advance, a mission must be created on the [Etamine website](https://e-missions.cnrs.fr/infos){:target="_blank"}.
-N.B. The title of the mission matters! It should be entered starting with : "Projet EXELANG : conférence ..."
 
 3. Book conference registration. 
 Try to book as early as possible in order to benefit from "early bird" rates. To book the conference registration, you need to handle all of the procedure (create an account, fill in all forms, etc.) then give Radhia the link to the registration website, your username and password, so that Radhia can make the payment. If there is just a registration page, arrange with Radhia to fill in the whole registration page and come to see her so she can pay with the lab card.
