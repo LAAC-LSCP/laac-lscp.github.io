@@ -11,11 +11,11 @@ description: "Working on the lab server: Oberon"
 
 Oberon is used to give everybody a server to work on, store ongoing projects and access the lab's datasets. The server runs a linux system (centOS), which means that the usual way of using it is via the command line. 
 
-Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/resources/ssh.html){:target="_blank"} (you will need your oberon username and password).
+Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cognitive-ml.fr/resources/ssh.html#ssh-configuration-file){:target="_blank"} (you will need your oberon username and password).
 
 ## Directories and usage
 
-Read how [data storage](https://wiki.cognitive-ml.fr/cluster/architecture.html#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
+Read how [data storage](https://wiki.cognitive-ml.fr/resources/cluster/architecture.html?highlight=storage#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
 You must organize your directory in different folders with suitable permissions: see [recommended set up](#recommended-set-up-for-personal-directory)
 
 Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and use the datasets as needed but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
@@ -35,7 +35,7 @@ For specific projects and when you need specific packages, you may need to set u
 
 ## Jobs
 
-Read [how jobs are managed](https://wiki.cognitive-ml.fr/cluster/launching_jobs.html){:target="_blank"} on oberon (ie programs that require a lot of resources). Once a job is launched, it will continue running even if you close your connection to oberon. This is a good way to launch computation for times you are not able to be connected.
+Read [how jobs are managed](https://wiki.cognitive-ml.fr/resources/cluster/launching_jobs.html){:target="_blank"} on oberon (ie programs that require a lot of resources). Once a job is launched, it will continue running even if you close your connection to oberon. This is a good way to launch computation for times you are not able to be connected.
 If you are unsure of what you’re doing, Loann can help.
 
 ## Helpful configurations
