@@ -21,6 +21,8 @@ description: "Conferences and funding"
 
 The funding of conferences must imperatively be validated by Alex before any treatment. To this end, talk to Alex about it, as she needs to decide on which budget line (and therefore, which host institution -- see below) the expenses will be charged on and e-mail Radhia about this, with you in cc. This should happen at least 6-8 weeks before the conference to allow all the processes mentioned below.
 
+Update HERE
+
 ### If you are currently a LAAC member
 
 1. Creation of the mission. 
