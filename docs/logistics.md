@@ -40,7 +40,7 @@ The lab is open from 9am to 7pm.
 
 ## Teleworking
 
-teleworking 40% is allowed (but needs to be declared on a platform -- ask Radhia).
+teleworking 40% is allowed, but needs to be declared. For CNRS employed people, follow this [link](../administrative-platforms.md#teleworking), for ENS, ask Radhia
 
 Most people are around on Tuesdays (Mondays, Thursdays).
 
