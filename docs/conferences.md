@@ -61,7 +61,9 @@ Things we don't know about yet:
 Please ensure that you « Validate » your mission (Green Saving Icon) then « Transmit » to Management.
 Once Validated by the HR Department (this might take a up to a couple of days), you can now move onto the next website to manage your expenses. 
 No rush!
-#### _**After coming back from the conference**_
+
+_**After coming back from the conference**_
+
 **[NOTILUS](https://esr-cnrs.notilus-inone.fr/#/Dashboard) —** Managing Expenses (Justifying Transactions & Requesting Reimbursement).
 
 > On the top right of the page, select your Profile. Fill in your information in « My Data» with your personal details, including your phone number and address.
@@ -93,6 +95,6 @@ _Additional Information:_
 
 Book all travel, hotel, and register for the conference, keeping all receipts. After the conference is over, provide all receipts to get reimbursed. 
 
-#### _**After coming back from the conference**_
+_**After coming back from the conference**_
 
 Scan or take photos of all receipts. Send them via email to Radhia. Then bring the originals with you to the lab and give them to Radhia.
