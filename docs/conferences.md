@@ -93,8 +93,8 @@ _Additional Information:_
 
 ### If you are NOT currently a LAAC member
 
-Book all travel, hotel, and register for the conference, keeping all receipts. After the conference is over, provide all receipts to get reimbursed. 
+Book all travel, hotel, and register for the conference, keeping all receipts.
 
 _**After coming back from the conference**_
 
-Scan or take photos of all receipts. Send them via email to Radhia. Then bring the originals with you to the lab and give them to Radhia.
+Scan or take photos of all receipts. Send them via email to Radhia. Then bring the originals with you to the lab and give them to Radhia to get reimbursed.
