@@ -21,7 +21,7 @@ description: "Conferences and funding"
 
 The funding of conferences must imperatively be validated by Alex before any treatment. To this end, talk to Alex about it, as she needs to decide on which budget line (and therefore, which host institution -- see below) the expenses will be charged on and e-mail Radhia about this, with you in cc. This should happen at least 6-8 weeks before the conference to allow all the processes mentioned below.
 
-Update HERE
+
 
 ### If you are currently a LAAC member
 
@@ -56,11 +56,46 @@ Things we don't know about yet:
 - whether you are allowed to take taxis. It used to be that you can only take a taxi if arriving after midnight.
 - whether you are allowed to book airbnb?
 
+6. Logistics
+
+6.1 **[ETAMINE](https://etamine-connecte.cnrs.fr/infos) —** Creating a Mission (Declaring Occasion, Transportation & Accommodation).
+
+> On the top-right of the home page, select « New Mission » to declare your event. Fill out all the necessary information (Title, Subject, Departure & Arrival times). You can always come back to this page to edit it later.
+Please ensure that you « Validate » your mission (Green Saving Icon) then « Transmit » to Management.
+Once Validated by the HR Department (this might take a up to a couple of days), you can now move onto the next website to manage your expenses. 
+No rush!
+#### _**After coming back from the conference**_
+6.2 **[NOTILUS](https://esr-cnrs.notilus-inone.fr/#/Dashboard) —** Managing Expenses (Justifying Transactions & Requesting Reimbursement).
+
+> On the top right of the page, select your Profile. Fill in your information in « My Data» with your personal details, including your phone number and address.
+
+> Your mission, previously declared on ETAMINE, will now appear on your dashboard « Mission Orders ». Once you select it, pick the tab « Costs » and when a second row  « Costs » appears, select it too.
+
+> If you’d like to insert additional refunds, choose an empty row.
+Select the « + » button : fill in the purpose of the bill in « Remark », the total amount in « Sum » (in the corresponding currency indicated on the receipt) and add the necessary documents in «Attachement ». Submit your request by saving it.
+
+> The red rows represent the missing information that needs to be filled out.
+Select one but leave « Saisie » empty, it will however allow you to confirm your budget for the transaction you’re reclaiming.
+Select « Attachement » and upload a scan or digital document of your receipt. Make sure to save when you’re done.
+
+> Once your rows are full, find the column on the bottom right of the page and select the save icon before closing the page.
+
+At this stage, Radhia takes over to validate your requests.
+
+_Additional Information:_
+* If you’d like to delete a row, simply select it and pick « Delete ».
+* Every document should contain a single receipt.
+* For a taxi trip, insert every way of your ride on a separate row.
+* Include in the refunds: any subscription costs, other activities, etc.
+* Excluded from the refunds: Coffee breaks, activities that are unrelated to the purpose of the trip, etc.
+
+-----------------------
+
 
 ### If you are NOT currently a LAAC member
 
 Book all travel, hotel, and register for the conference, keeping all receipts. After the conference is over, provide all receipts to get reimbursed. 
 
-### After coming back from the conference
+#### _**After coming back from the conference**_
 
 Scan or take photos of all receipts. Send them via email to Radhia. Then bring the originals with you to the lab and give them to Radhia.
