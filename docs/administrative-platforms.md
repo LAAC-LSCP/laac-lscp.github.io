@@ -58,7 +58,10 @@ To send a new request:
 
 Teleworking involves two steps
 
-1. Get a teleworking permission. This requires some paperwork and can be quite long to be accepted. You have to log into the [ariane](https://ariane.cnrs.fr/){:target="_blank"} website (with sesame credentials). Then the request is made [here](https://cnrs.employee.eu.people-doc.com/request-forms/premiere-demande-d-autorisation-de-teletravail-copie-1){:target="_blank"}. A lot of information and some paperwork is needed so please talk this through with Alex.
+1. Get a teleworking permission. This requires some paperwork and can be quite long to be accepted. You have to log into the [ariane](https://ariane.cnrs.fr/){:target="_blank"} website (with sesame credentials). Then the request is made [here](https://cnrs.employee.eu.people-doc.com/request-forms/premiere-demande-d-autorisation-de-teletravail-copie-1){:target="_blank"}. You will need:
+  - A teleworking authorization from your home insurance company
+  - A computer equipment validity [form](https://apis.eu.people-doc.com/api/v2/employee/article_documents/attestation-conformite-equipement-ntic){:target="_blank"} signed by the lab's IT representative (Vireack Ul)
+   Fill the rest of the forn the best you can and check with your supervisor before sending the request. The requests may take multiple months to be processed and approved.
 
 ![cnrs arian website, page for first request of telework](../ressources/img/first-request-telework.png)
 
