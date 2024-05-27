@@ -21,7 +21,8 @@ The people in LAAC you'll likely interact with are:
 
 We are part of a bigger lab (~ 70 people): The [Cognitive Sciences and Psycholinguistics Lab (LSCP)](https://lscp.dec.ens.fr/){:target="_blank"} is a joint research unit of the School of Advanced Studies in the Social Sciences (EHESS, École des Hautes Études en Sciences Sociales), the [Ecole Normale Supérieure (ENS)](https://intranet.ens.psl.eu/fr/je-travaille/je-suis-un-agent-biatss-personnel-administratif-et-technique-de-lens/accueil-dun){:target="_blank"}, and the [National Centre for Scientific Research](https://intranet.cnrs.fr/Cnrs_pratique/recruter/recrutement/Pages/bienvenue.aspx) (CNRS, Centre National de la Recherche Scientifique). The aim of the research at LSCP is to understand the psychological mechanisms underlying the acquisition and functioning of typical human cognitive functions, such as language, social cognition, and consciousness. Here's a slightly outdated "organigramme" of the LSCP:
 
-<object data="ressources/misc/Organigramme_LSCP-AVR2022-CNRS.jpg" width="1000" height="850" type='application/pdf'></object>
+<img src="ressources/misc/Organigramme_LSCP-AVR2022-CNRS.jpg" alt="Organigramme LSCP">
+
 
 Within the LSCP, our team works closely with the [Cognitive Machine Learning (CoML) team](https://cognitive-ml.fr/){:target="_blank"}. They are physically in a different place (45 rue d'ulm). 
 
