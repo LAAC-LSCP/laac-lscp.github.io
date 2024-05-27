@@ -40,7 +40,7 @@ The lab is open from 9am to 7pm.
 
 ## Teleworking
 
-teleworking 40% is allowed, but needs to be declared. For CNRS employed people, follow this [link](../administrative-platforms.md#teleworking), for ENS, ask Radhia
+teleworking 40% is allowed, but needs to be declared. For CNRS employed people, follow this [link](https://laac-lscp.github.io/docs/administrative-platforms.html#teleworking), for ENS, ask Radhia
 
 Most people are around on Tuesdays (Mondays, Thursdays).
 
@@ -67,5 +67,5 @@ If you would like to get training on topics ranging from statistics, programming
 ## Additional literature
 
 - règlement intérieur
-- livret accueil DEC
+- [livret accueil DEC](https://cognition.ens.fr/system/files/2019-07/Welcomebooklet2019-2020.pdf){:target="_blank"}
 - [organigram lab](../index.md#welcome-to-the-laac-team){:target="_blank"}
