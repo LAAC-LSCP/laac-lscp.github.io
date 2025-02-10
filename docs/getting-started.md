@@ -14,7 +14,7 @@ has_toc: false
 - [ ] Create an account in [mattermost](./communication.md#mattermost){:target="_blank"}, the system we use for most communication. To do so, ask Loann for an invite link, this will allow you to create an account and access the LAAC base channels.
 - [ ] Send Alex a message via mattermost with this information: Your name, email, start & end date, phone number
 - [ ] Write a message in mattermost in the LAAC town square channel to introduce yourself to the team. Include your name, position, work subject and a funny/unusual/interesting fact about you.
-- [ ] Download the [charte informatique](https://www.ssi.ens.fr/charte/charte.pdf), sign it electronically, and upload it [here](https://mycore.core-cloud.net/index.php/s/rV7OVlMEipPn6xc){:target="_blank"}.
+- [ ] Download the [charte informatique](https://www.ssi.ens.fr/charte/charte.pdf), sign it electronically, and upload it [here](https://sdrive.cnrs.fr/s/4Yf3RDiR9pN2BXd){:target="_blank"}.
 
 
 ## How do you get an ENS card (& ENS email)?
