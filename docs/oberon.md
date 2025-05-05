@@ -28,8 +28,10 @@ When working on your personal computer, it is advised most of the time to work o
 
 ## Conda environments
 
-In order to use libraries and programms that are not by default installed on oberon, we use [conda](https://docs.conda.io/en/latest/){:target="_blank"} environments. A list of useful environments is made available to laac members. Those environments cannot be modified and aim at providing members with the commonly used environments without requiring them to install their own. They can be found in the `/scratch1/data/laac_data/conda` folder. The following environments are available:
+In order to use libraries and programms that are not by default installed on oberon, we use [conda](https://docs.conda.io/en/latest/){:target="_blank"} environments. The conda CLI can be used but we recommend using micromamba instead (works the same way), both can be loaded with `module load` commands (run `module avail` for a list of available modules).
+A list of useful environments is made available to laac members. Those environments cannot be modified and aim at providing members with the commonly used environments without requiring them to install their own. They can be found in the `/scratch1/data/laac_data/conda` folder. The following environments are available:
 - CP-laac (`/scratch1/data/laac_data/conda/CP-laac`) : Contains the most common packages we use when interacting with datasets (childproject, datalad, git-annex). It is intended to be the default environment to use when working on the server. Add the line `conda activate /scratch1/data/laac_data/conda/CP-laac` to the bottom of your `~/.bashrc` file to activate it by default when you log in the server.
+- ALICE-laac (`/scratch1/data/laac_data/conda/ALICE-laac`) : Contains the required packages to run the ALICE model on the cluster. It is intended to be used only in jobs submitted to slurm (ad running models outside of slurm jobs is proscribed). Add the line `micromamba activate /scratch1/data/laac_data/conda/ALICE-laac` in your job script running ALICE.
 
 For specific projects and when you need specific packages, you may need to set up your own conda environment (once not useful anymore, you should remove it). [Install the environment in your working directory](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#specifying-a-location-for-an-environment){:target="_blank"} `/scratch2/username` and not in the default location `~/.conda/envs` by using the `-p` option. Otherwise, you could run out of space quickly. For example if creating an environment from a yaml file named `env.yml` , I can use the command `conda env create -f env.yml -p /scratch2/lpeurey/conda/projectX-env` to create a new environment named projectX-env in my personal space.
 
@@ -40,16 +42,93 @@ If you are unsure of what you’re doing, Loann can help.
 
 ## Helpful configurations
 
-To facilitate using those different principles, here are some operations you can conduct to configure your workspace.
+To facilitate using those different principles, here is an example of a bashrc file (file executed upon entering a session) along with descriptions of its content. Your file should be in `/home/username/.bashrc` (replace username by your username).
 
-- Landing in your working directory (`/scratch2/username`) when logging in oberon (dont forget to change <username> by your actual oberon username):
-  ```bash
-  echo -e "\n#land in your working directory when logging in\ncd /scratch2/username" >>~/.bashrc
-  ```
-- Activate the childproject environment when logging in (to activate another environment by default, change the environment name in the command):
-  ```bash
-  echo -e "\n#activate childproject environment when logging in\nconda activate /scratch2/lpeurey/conda/childproject" >>~/.bashrc
-  ```
+breakdown:
+ - lines 1 to 18 are default content, leave it unchanged unless you know what you are doing
+ - lines 20 to 30 are to set up colored terminal, the color can be changed with color codes
+ - lines 32 to 39 configures the prompt to be user@host:dir
+ - lines 41 to 48 includes auto coloring for usual commands
+ - lines 50 and 51 will automatically change your working directory to your workspace upon login, this is useful to not accidentally use /home for work projects (see [directories usage](#directories-and-usage)), change the username in this line to be yours.
+ - lines 53 to 56 edits the default permissions given to new files. This umask (0007) will give write permissions to the group but no permission to other users. This is good for collaborative work in the team, on data that should not be accessible to everyone. When using this, all your work is accessible to the team, so if you have folders you don't want shared within the team, remember to edit the permissions for those
+ - lines 58 to 73 loads automatically the conda/micromamba commands and activate the shared ChildProject environment, this will save you time at login, steps are different for each node, feel free to add node specific setups there
+
+You can use this entire file or parts of it in your own setup. Remember to change placeholders (like usernames) when needed.
+```bash
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -f ~/.firstlog ]
+then
+  ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+  cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys
+  chmod 600 ~/.ssh/authorized_keys
+  rm -f ~/.firstlog;
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;35m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls="ls --color=auto"
+    alias grep="grep --color=auto"
+    alias fgrep="fgrep --color=auto"
+    alias egrep="egrep --color=auto"
+fi
+
+#go to scratch2/lpeurey by default
+if [ $(pwd) = "/home/lpeurey" ] ; then cd /scratch2/lpeurey/ ; fi
+
+#umask to 0007 to:
+# - give write permissions to group
+# - remove all permisions to other
+umask 0007
+
+if [ $(hostname) = "oberon2" ]; then
+  # oberon2 config
+  module load micromamba/1.4.2-jnhh
+  eval "$(micromamba shell hook --shell=bash)"
+  alias conda="echo 'Using micromamba instead of conda' && micromamba"
+  micromamba activate /scratch1/data/laac_data/conda/CP-laac
+elif [ $(hostname) = "habilis" ]; then
+  # habilis config
+  load_conda
+  conda activate /scratch1/data/laac_data/conda/CP-laac
+elif [[ $(hostname) == "puck"* ]]; then
+  # compute nodes setup
+  module load micromamba/1.4.2-jnhh
+  eval "$(micromamba shell hook --shell=bash)"
+  alias conda="echo 'Using micromamba instead of conda' && micromamba"
+fi
+```
 
 ## Recommended set up for personal directory
 
