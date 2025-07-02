@@ -26,7 +26,7 @@ Childproject is based on a specific file structure to organize and save your dat
 In oberon, we provide a ready to use conda environment with childproject. You will likely use childproject a lot on the server when working with datasets.
 To activate it, run:
 ```bash
-conda activate /scratch2/lpeurey/conda/childproject
+conda activate /store/scratch/lpeurey/conda/childproject
 ```
 From there, you will be able able to run all the childproject features without further installs.
 

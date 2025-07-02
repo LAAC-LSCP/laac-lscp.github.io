@@ -15,12 +15,12 @@ Set up your SSH connection to oberon following the [CoML wiki](https://wiki.cogn
 
 ## Directories and usage
 
-Read how [data storage](https://wiki.cognitive-ml.fr/resources/cluster/architecture.html?highlight=storage#data-storage){:target="_blank"} is organized on oberon. By default, your `/scratch2/username` directory is readable by everyone.
+Read how [data storage](https://wiki.cognitive-ml.fr/resources/cluster/architecture.html?highlight=storage#data-storage){:target="_blank"} is organized on oberon. By default, your `/store/scratch/username` directory is readable by everyone.
 You must organize your directory in different folders with suitable permissions: see [recommended set up](#recommended-set-up-for-personal-directory)
 
-Most of the laac datasets are stored in `/scratch1/data/laac_data` as backups. You can explore it and use the datasets as needed but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
+Most of the laac datasets are stored in `/store/data/laac_data` as backups. You can explore it and use the datasets as needed but you should not have to edit them. If you notice any fault with the datasets please inform a member of the team to enforce the required changes.
 
-Your main working directory is `/scratch2/username`, you should store your ongoing projects there. We use [datalad](https://handbook.datalad.org/){:target="_blank"} and [childproject](https://childproject.readthedocs.io/en/latest/introduction.html){:target="_blank"} to interact with the datasets we utilize. We want you to create a datalad directory (in appliance with the [YODA principles](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html){:target="_blank"} : ie dataset nesting) for each project you lead. This will allow you to keep a record of the evolution of your project and to publish it easily to an online repository. To create your projects, you can follow the [YODA projects](./yoda-projects) instructions.
+Your main working directory is `/store/scratch/username`, you should store your ongoing projects there. We use [datalad](https://handbook.datalad.org/){:target="_blank"} and [childproject](https://childproject.readthedocs.io/en/latest/introduction.html){:target="_blank"} to interact with the datasets we utilize. We want you to create a datalad directory (in appliance with the [YODA principles](http://handbook.datalad.org/en/latest/basics/101-127-yoda.html){:target="_blank"} : ie dataset nesting) for each project you lead. This will allow you to keep a record of the evolution of your project and to publish it easily to an online repository. To create your projects, you can follow the [YODA projects](./yoda-projects) instructions.
 
 Storage space is not infinite, when you finished working on a project, clean you directories and [unload the datasets (or large files)](http://docs.datalad.org/en/latest/generated/man/datalad-drop.html){:target="_blank"} you don’t need anymore.
 
@@ -29,11 +29,11 @@ When working on your personal computer, it is advised most of the time to work o
 ## Conda environments
 
 In order to use libraries and programms that are not by default installed on oberon, we use [conda](https://docs.conda.io/en/latest/){:target="_blank"} environments. The conda CLI can be used but we recommend using micromamba instead (works the same way), both can be loaded with `module load` commands (run `module avail` for a list of available modules).
-A list of useful environments is made available to laac members. Those environments cannot be modified and aim at providing members with the commonly used environments without requiring them to install their own. They can be found in the `/scratch1/data/laac_data/conda` folder. The following environments are available:
-- CP-laac (`/scratch1/data/laac_data/conda/CP-laac`) : Contains the most common packages we use when interacting with datasets (childproject, datalad, git-annex). It is intended to be the default environment to use when working on the server. Add the line `conda activate /scratch1/data/laac_data/conda/CP-laac` to the bottom of your `~/.bashrc` file to activate it by default when you log in the server.
-- ALICE-laac (`/scratch1/data/laac_data/conda/ALICE-laac`) : Contains the required packages to run the ALICE model on the cluster. It is intended to be used only in jobs submitted to slurm (ad running models outside of slurm jobs is proscribed). Add the line `micromamba activate /scratch1/data/laac_data/conda/ALICE-laac` in your job script running ALICE.
+A list of useful environments is made available to laac members. Those environments cannot be modified and aim at providing members with the commonly used environments without requiring them to install their own. They can be found in the `/store/data/laac_data/conda` folder. The following environments are available:
+- CP-laac (`/store/data/laac_data/conda/CP-laac`) : Contains the most common packages we use when interacting with datasets (childproject, datalad, git-annex). It is intended to be the default environment to use when working on the server. Add the line `conda activate /store/data/laac_data/conda/CP-laac` to the bottom of your `~/.bashrc` file to activate it by default when you log in the server.
+- ALICE-laac (`/store/data/laac_data/conda/ALICE-laac`) : Contains the required packages to run the ALICE model on the cluster. It is intended to be used only in jobs submitted to slurm (ad running models outside of slurm jobs is proscribed). Add the line `micromamba activate /store/data/laac_data/conda/ALICE-laac` in your job script running ALICE.
 
-For specific projects and when you need specific packages, you may need to set up your own conda environment (once not useful anymore, you should remove it). [Install the environment in your working directory](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#specifying-a-location-for-an-environment){:target="_blank"} `/scratch2/username` and not in the default location `~/.conda/envs` by using the `-p` option. Otherwise, you could run out of space quickly. For example if creating an environment from a yaml file named `env.yml` , I can use the command `conda env create -f env.yml -p /scratch2/lpeurey/conda/projectX-env` to create a new environment named projectX-env in my personal space.
+For specific projects and when you need specific packages, you may need to set up your own conda environment (once not useful anymore, you should remove it). [Install the environment in your working directory](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#specifying-a-location-for-an-environment){:target="_blank"} `/store/scratch/username` and not in the default location `~/.conda/envs` by using the `-p` option. Otherwise, you could run out of space quickly. For example if creating an environment from a yaml file named `env.yml` , I can use the command `conda env create -f env.yml -p /store/scratch/lpeurey/conda/projectX-env` to create a new environment named projectX-env in my personal space.
 
 ## Jobs
 
@@ -105,7 +105,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 #go to scratch2/lpeurey by default
-if [ $(pwd) = "/home/lpeurey" ] ; then cd /scratch2/lpeurey/ ; fi
+if [ $(pwd) = "/home/lpeurey" ] ; then cd /store/scratch/lpeurey/ ; fi
 
 #umask to 0007 to:
 # - give write permissions to group
@@ -117,11 +117,11 @@ if [ $(hostname) = "oberon2" ]; then
   module load micromamba/1.4.2-jnhh
   eval "$(micromamba shell hook --shell=bash)"
   alias conda="echo 'Using micromamba instead of conda' && micromamba"
-  micromamba activate /scratch1/data/laac_data/conda/CP-laac
+  micromamba activate /store/data/laac_data/conda/CP-laac
 elif [ $(hostname) = "habilis" ]; then
   # habilis config
   load_conda
-  conda activate /scratch1/data/laac_data/conda/CP-laac
+  conda activate /store/data/laac_data/conda/CP-laac
 elif [[ $(hostname) == "puck"* ]]; then
   # compute nodes setup
   module load micromamba/1.4.2-jnhh
@@ -147,7 +147,7 @@ Replace \<username\> by your actual username in all the commands.
 
 First navigate to your working directory:
 ```bash
-[username@oberon ~]$ cd /scratch2/username
+[username@oberon ~]$ cd /store/scratch/username
 [username@oberon username]$
 ```
 

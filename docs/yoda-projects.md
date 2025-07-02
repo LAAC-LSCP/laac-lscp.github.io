@@ -59,7 +59,7 @@ When working on the lab server (oberon), you should install your datasets from t
 ```bash
 mkdir datasets
 cd datasets
-datalad clone -d .. /scratch1/data/laac_data/mydata/ # for example to install a dataset named mydata
+datalad clone -d .. /store/data/laac_data/mydata/ # for example to install a dataset named mydata
 ```
 `..` points to the root of your project repo
 

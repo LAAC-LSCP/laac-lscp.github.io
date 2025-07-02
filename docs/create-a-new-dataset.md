@@ -72,9 +72,9 @@ child-project --version
 
 ### Datalad procedures
 
-To facilitate the dataset creation, we use templates that you need to install. First navigate your working folder (e.g. `cd /scratch2/<username>` replace username with your actual username). Enter the following command lines to clone the repo and launch the installation :
+To facilitate the dataset creation, we use templates that you need to install. First navigate your working folder (e.g. `cd /store/scratch/<username>` replace username with your actual username). Enter the following command lines to clone the repo and launch the installation :
 ```bash
-cd /scratch2/username #change the path to a working directory where we create a new folder for the installation
+cd /store/scratch/username #change the path to a working directory where we create a new folder for the installation
 
 # copy the code into a new folder named datalad-procedures
 git clone https://github.com/LAAC-LSCP/datalad-procedures.git
@@ -212,7 +212,7 @@ datalad create -c laac mydataset
 
 The output you get will resemble this (but can have some differences):
 ```
-[INFO   ] Creating a new annex repo at /scratch2/lpeurey/datasets/mydataset/
+[INFO   ] Creating a new annex repo at /store/scratch/lpeurey/datasets/mydataset/
 [INFO   ] Scanning for unlocked files (this may take some time) 
 [INFO   ] Running procedure cfg_el1000 
 [INFO   ] == Command start (output follows) ===== 
@@ -233,7 +233,7 @@ The output you get will resemble this (but can have some differences):
 [INFO   ] Configure additional publication dependency on "public"         
 .: origin(+) [git@gin.g-node.org:/LAAC-LSCP/mydataset.git (git)]
 [INFO   ] == Command exit (modification check follows) ===== 
-create(ok): /scratch2/lpeurey/datasets/mydataset/ (dataset)
+create(ok): /store/scratch/lpeurey/datasets/mydataset/ (dataset)
 ```
 
 The procedure should also carry out the first push to your remote repository(/ies). You should have a look to the online page of your repo on GIN (eg https://gin.g-node.org/LAAC-LSCP/mydataset-confidential)
@@ -356,7 +356,7 @@ If you already moved your audio files into `recordings/raw`, you should now rena
 1. copy the 2 script files into your `scripts` folder :
    - [script for creating the recording metadata](../ressources/scripts/lena_create_rec_metadata.py)
    - [script for splitting the recordings](../ressources/scripts/split_lena_recordings.py)
-2. run the commands to first create the recording index and then split the recordings. Run it from the base folder of the dataset (e.g. `/scratch2/lpeurey/mydataset`):
+2. run the commands to first create the recording index and then split the recordings. Run it from the base folder of the dataset (e.g. `/store/scratch/lpeurey/mydataset`):
 ```bash
 python scripts/lena_create_rec_metadata.py
 # you should now have the file metadata/recordings.csv in the dataset

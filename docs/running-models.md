@@ -11,7 +11,7 @@ description: "Running model analysis on your data"
 This guides assume you are using the childproject data structure and that you store you project in the **oberon** server.
 They are meant to guide you run the models in the cluster to obtain automated annotations, import those new annotations to the childproject dataset and then upload the changes made to the dataset to gin.
 
-We will be using your personal working directory on oberon a lot. Throughout this guide, we use the name `/scratch2/username`, always remember to put your own directory path by replacing 'username' with your actual oberon username.
+We will be using your personal working directory on oberon a lot. Throughout this guide, we use the name `/store/scratch/username`, always remember to put your own directory path by replacing 'username' with your actual oberon username.
 
 <details open markdown="block">
   <summary>
@@ -95,10 +95,10 @@ If you want both VTC and ALICE annotations, go directly to the ALICE section as 
 
 You should only install the repo and conda environment the first time. If you ran the model in the past, just reuse the same folder and conda environment.
 
-The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `/scratch2/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
-We made the choice here to store our VTC in a directory `modules` meant to store the different model repositories. You can create that folder if you want: `mkdir /scratch2/username/modules`.
+The code for VTC is stored in [this github repo](https://github.com/MarvinLvn/voice-type-classifier/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `/store/scratch/username` subdirectory (don't forget to replace 'username' with your own username on oberon).
+We made the choice here to store our VTC in a directory `modules` meant to store the different model repositories. You can create that folder if you want: `mkdir /store/scratch/username/modules`.
 ```bash
-cd /scratch2/username/modules
+cd /store/scratch/username/modules
 git clone --recurse-submodules https://github.com/MarvinLvn/voice-type-classifier.git #should take a dozens of seconds
 cd voice-type-classifier
 ```
@@ -139,10 +139,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #!!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/voice-type-classifier/conda-vtc-env #!!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
@@ -177,10 +177,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/voice-type-classifier/conda-vtc-env #!!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/voice-type-classifier/conda-vtc-env #!!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
@@ -211,7 +211,7 @@ You should only install the repo and conda environment the first time. If you ra
 
 The code for ALICE can be found in [this github repo](https://github.com/LoannPeurey/ALICE){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
-cd /scratch2/username/modules
+cd /store/scratch/username/modules
 git clone --recurse-submodules https://github.com/LoannPeurey/ALICE.git #should take a dozens of seconds
 cd ALICE
 ```
@@ -251,10 +251,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
@@ -297,10 +297,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
@@ -342,10 +342,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/ALICE/conda-alice-env #!!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
@@ -383,13 +383,13 @@ To do so, first activate your conda environment and install the libgcc fron cond
 conda activate ./conda-alice-env
 conda install libgcc
 ```
-Once the installation is complete, we will edit our job script to explicitly use the new libgcc path as a library path. Change the environment activation section by adding in the script the line `export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH` right after the activation of the environment.
+Once the installation is complete, we will edit our job script to explicitly use the new libgcc path as a library path. Change the environment activation section by adding in the script the line `export LD_LIBRARY_PATH=/store/scratch/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH` right after the activation of the environment.
 The activation section should look something like this:
 ```bash
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/ALICE/conda-alice-env #put your conda env path
-export LD_LIBRARY_PATH=/scratch2/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH # replace the path with your true conda environment path
+conda activate /store/scratch/username/modules/ALICE/conda-alice-env #put your conda env path
+export LD_LIBRARY_PATH=/store/scratch/username/modules/ALICE/conda-alice-env/lib:$LD_LIBRARY_PATH # replace the path with your true conda environment path
 ``` 
 
 -----
@@ -402,7 +402,7 @@ You should only install the repo and conda environment the first time. If you ra
 
 The code for VCM is stored in [this github repo](https://github.com/LAAC-LSCP/vcm/){:target="_blank"}. So the first step is to clone the repository in oberon, in a `scratch2/username` subdirectory.
 ```bash
-cd /scratch2/username/modules
+cd /store/scratch/username/modules
 git clone https://github.com/LAAC-LSCP/vcm.git
 cd vcm
 ```
@@ -446,10 +446,10 @@ echo "Running job on $(hostname)"
 
 # load conda environment
 source /shared/apps/anaconda3/etc/profile.d/conda.sh
-conda activate /scratch2/username/modules/vcm/conda-vcm-env # !!!! EDIT THIS !!!!
+conda activate /store/scratch/username/modules/vcm/conda-vcm-env # !!!! EDIT THIS !!!!
 
 # set the paths
-dataset_path="/scratch2/username/datasets/mydata" #!!!! EDIT THIS !!!!
+dataset_path="/store/scratch/username/datasets/mydata" #!!!! EDIT THIS !!!!
 profile="raw" #!!!! EDIT THIS IF YOUR AUDIOS WERE CONVERTED !!!!
 
 dataset_path=${dataset_path%/}
