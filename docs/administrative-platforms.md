@@ -69,6 +69,30 @@ Teleworking involves two steps
 
 ![cnrs agate tempo website, 'Absences' tab, 'Télétravail' and enter information to ask for teleworked time. 'Valider' to send your request](../ressources/img/declare-telework.png)
 
+### Sick Leave
+
+They are two types of sick leave for contract employees or students:
+1. Ordinary Sick Leave 
+This type of leave is granted in cases of illness that are not particularly serious but make it impossible     for you to perform your duties. **A medical certificate done by doctor is required to obtain this leave**.
+
+How to declare it -- This form allows you to report your sick leave **within 48 hours**
+- Log into the [ariane](https://ariane.cnrs.fr/){:target="_blank"} website (with sesame credentials). Then the request is made [here](https://cnrs.employee.eu.people-doc.com/request-forms/transmission-au-srh-d-un-arret-maladie){:target="_blank"}. Make sure to add your medical certificate.
+- When your sick leave if finished, the day you resume your duties, make sure to fill your "Attestation de reprise de fonctions". You will find the form [here](https://intranet.cnrs.fr/Cnrs_pratique/recruter/conges/Pages/Cong%C3%A9-de-maladie.aspx){:target="_blank"} on the right tab called "Formulaire". Then transfer it to Radhia Achheb our administrative officer. 
+
+Regarding your pay --
+You may be entitled to paid ordinary sick leave under the following conditions:
+- After four months of service: one month at full pay and one month at half pay
+- After two years of service: two months at full pay and two months at half pay
+- After three years of service: three months at full pay and three months at half pay
+
+2. Serious Illness Leave
+Provided you are currently employed and have at least three years of service, you may be eligible for serious illness leave if you suffer from a condition that prevents you from performing your work and requires long-term treatment and care.
+To be granted this leave, **you must undergo an examination by an approved medical specialist, and your file must be submitted for review to the CNRS Medical Committee.**
+This leave is granted for periods of three to six months, renewable up to a maximum of three years.
+During this period, CNRS will pay your full salary for the first twelve months, and half your salary for the following twenty-four months.
+
+More details [here](https://intranet.cnrs.fr/Cnrs_pratique/recruter/conges/Documents/guide_conge_maladie_DIFF.pdf){:target="_blank"}
+
 ## ENS
 
 ENS uses the HAMAC platform, to access it, go to the 'environnement numérique de travail' of the ENS [here](http://ent.ens.fr){:target="_blank"}. Click the 'Connexion' button on the right of the page and enter your ENS credentials.
