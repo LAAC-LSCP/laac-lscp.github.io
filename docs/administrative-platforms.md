@@ -72,7 +72,9 @@ Teleworking involves two steps
 ### Sick Leave
 
 They are two types of sick leave for contract employees or students:
+
 1. Ordinary Sick Leave 
+
 This type of leave is granted in cases of illness that are not particularly serious but make it impossible     for you to perform your duties. **A medical certificate done by doctor is required to obtain this leave**.
 
 How to declare it -- This form allows you to report your sick leave **within 48 hours**
@@ -86,6 +88,7 @@ You may be entitled to paid ordinary sick leave under the following conditions:
 - After three years of service: three months at full pay and three months at half pay
 
 2. Serious Illness Leave
+
 Provided you are currently employed and have at least three years of service, you may be eligible for serious illness leave if you suffer from a condition that prevents you from performing your work and requires long-term treatment and care.
 To be granted this leave, **you must undergo an examination by an approved medical specialist, and your file must be submitted for review to the CNRS Medical Committee.**
 This leave is granted for periods of three to six months, renewable up to a maximum of three years.
