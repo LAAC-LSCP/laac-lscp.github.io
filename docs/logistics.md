@@ -26,13 +26,13 @@ If you arrive to the airports, do NOT take taxis from people who approach you. T
 
 ## Getting in
 
-Our lab (LSCP) is the only one on the 4th floor of the Jaurès building (29 rue d'ulm). Two ways of getting here:
+Our lab (LSCP) is the only one on the 4th floor of the Jaurès building (29 rue d'ulm). In Oct 2025, there was construction work going on in the garden, so you could only come in through 29 rue d'Ulm. You can wait for someone to open the door for you, or ring to gain access by the guard who's sitting by the entrance. Tell the person who opens for you who you are meeting in the LSCP - they'll let you through. This building is called Jaurès. Go through the glass doors that are right in front of the entrance, and either take the stairs or the very slow but effective elevator to the left. The LSCP is on the 4th floor.
 
-1. You can come into the ENS through the 24 rue lhomond entrance; there is a buzzer on the right of the door, and a guard will buzz you right in. You can then follow the signs to the bâtiment Jaurès. Once inside Jaurès head up to the 4th floor. You'll see the stairs right away - in fact, you have to go up 5 steps to get to the ground level. If you'd rather not take the stairs up to the 4th floor, you'll find a very slow but effective elevator to the left after you've come up the 5 steps. If you're carrying something heavy or have mobility difficulties, prioritize the second option.
+Once the garden construction work is over, another way may be possible: Come into another ENS building through the 24 rue lhomond entrance; there is a buzzer on the right of the door, and a guard will buzz you right in. You can then follow the signs to the bâtiment Jaurès. You'll see the stairs right away - in fact, you have to go up 5 steps to get to the ground level. If you're carrying something heavy or have mobility difficulties, prioritize going through the 29 rue d'ulm option.
 
-2. Alternatively, you can come in through 29 rue d'Ulm, but you need to wait for someone to open the door for you. You can wait and tell a passerby that you're meeting Dr. Cristia at the LSCP - they'll let you through. Or you can call me & I'll come down to meet you. When you make it in, go through the glass doors straight ahead. The elevator will be on your right, or you can take the stairs up to the 4th floor.
+Once you get to the fourth floor, you'll find the entrance to the lab, for which you always need a card.
 
-The lab is open from 9am to 7pm. 
+The lab is open from 9am to 7pm for those who have a card. If you have a card and want to access outside these hours, you'll need to submit a request. Ask Alicia about it. 
 
 - you need your card to re-enter the lab after going to the restroom
 

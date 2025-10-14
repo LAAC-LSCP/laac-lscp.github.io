@@ -24,7 +24,7 @@ Depending on who is involved, discussion may also be in French sometimes. For ad
 
 ## Mattermost
 
-Mattermost is a messaging service where we can interact with all the members of the LAAC and CoML teams on a daily basis. It is very similar to slack, you can use direct messages as well as subject specific channels shared inside a project for example. If you can log in successfully but can not see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
+Mattermost is a messaging service where we can interact with all the members of the LAAC and CoML teams on a daily basis. It is very similar to slack, you can use direct messages as well as subject specific channels shared inside a project for example. If you can log in successfully but cannot see the LAAC and LSCP teams, ask Loann to add you. Depending on your topic, you may also want to ask to be added to the CoML team.
 
 We also use it to have an index of members and a calendar of away dates. To access them, use the 'boards' button on the top right of the 'town square' channel, you can access and edit the 'LAAC members' and 'away calendar' boards where you should create your page and enter leave days when necessary.
 
@@ -57,4 +57,4 @@ You can easily add those calendar to your personal google agenda by clicking on 
 
 - as much as possible use mattermost, which we check a lot more often than email. Nearly everyone is on it! Use direct messages to individuals for anything super-specific or private. For things related to projects, prioritize creating a channel and adding everyone who is relevant, so that they are up to date. You should also feel free to post general questions in the public channels (at the team or lab level)
 
-- for emergencies, you can also drop by Alex’ office (mezzanine above 406) or call 06 60 63 89 41 -- but please think if you need a response super quickly, or you can wait. The preference is for asynchronous mattermost communication!
+- for emergencies, you can also drop by Alex’ office (office 417, which is on the first mezzanine, above 406) or call 06 60 63 89 41 -- but please think if you need a response super quickly, or you can wait. The preference is for asynchronous mattermost communication!
